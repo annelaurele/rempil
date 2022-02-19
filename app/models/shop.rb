@@ -1,6 +1,10 @@
 class Shop < ApplicationRecord
   enum category: {
-    boolangerie: 0,
+    boulangerie: 0,
+    restaurant: 1,
+    boucherie: 2,
+    epicerie: 3,
+    traiteur: 4
   }, _prefix: true
 
   belongs_to :user
