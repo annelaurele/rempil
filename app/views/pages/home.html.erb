@@ -10,13 +10,14 @@
   </div>
   <div>
     <br><h2>BONJOUR <%= @user.name %></h2>
-    <p style="color: #FFBD36">Ton adresse : <strong><%= @user.address %></strong></p> 
+    <p><span style="color: #FFBD36">Ton adresse : <strong><%= @user.address %> </strong></span><span class="url-modifier"> Modifier</span> </p> 
+    <%# <%= link_to 'Modifier', edit_user_path(user), class: "url-modifier" %>
     <p>Trouve ton commerçant partenaire</p>
     <div>
       <%= form_tag shops_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
-          class: "",
+          class: "form-search",
           placeholder: "Pizza, boulangerie..."
         %>
         <%= submit_tag "Chercher", class: "btn btn-secondary" %>
@@ -24,3 +25,4 @@
     </div>
   </div>
 </div>
+

@@ -1,0 +1,26 @@
+<div class="justify-content-center"><br>
+  <h1><strong><span id="important"><%= @shops.count %></span></strong> commerces à côté de chez toi.</span>.</h1>
+</div>
+
+<div class="justify-content-center">
+  <%= form_tag shops_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-search",
+      placeholder: "Pizza, boulangerie..."
+    %>
+    <%= submit_tag "Chercher", class: "btn btn-secondary" %>
+  <% end %>
+</div>
+
+<% @shops.each do |shop| %>
+  <div class="card">
+    <%= image_tag "pizza.jpg" %>
+    <div class="card-infos">
+      <div>
+        <h2><%= shop.name %></h2>
+        <p>Catégorie : <%= shop.category %></p>
+      </div>
+      <h2 class="card-distance">A 300m</h2>
+  </div>
+<% end %>
