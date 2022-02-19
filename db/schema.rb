@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2022_02_19_153401) do
-=======
 ActiveRecord::Schema.define(version: 2022_02_19_163031) do
->>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,6 +77,16 @@ ActiveRecord::Schema.define(version: 2022_02_19_163031) do
     t.index ["user_id"], name: "index_shops_on_user_id"
   end
 
+  create_table "slot_hours", force: :cascade do |t|
+    t.integer "opening_hour"
+    t.integer "closing_hour"
+    t.string "day_of_the_week"
+    t.bigint "shop_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["shop_id"], name: "index_slot_hours_on_shop_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -106,4 +112,5 @@ ActiveRecord::Schema.define(version: 2022_02_19_163031) do
   add_foreign_key "rentals", "shops"
   add_foreign_key "rentals", "users"
   add_foreign_key "shops", "users"
+  add_foreign_key "slot_hours", "shops"
 end
