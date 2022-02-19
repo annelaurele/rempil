@@ -6,7 +6,12 @@ class ShopsController < ApplicationController
     end
 
     def index
-        @shops = Shop.all
-        @user = current_user
+        if params[:query].present?
+            sql_query = "category ILIKE :query OR name ILIKE :query"
+            @shops = Shop.where(sql_query, query: "%#{params[:query]}%")
+        else
+            @shops = Shop.all
+        end
     end
+
 end
