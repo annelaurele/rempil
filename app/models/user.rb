@@ -7,5 +7,4 @@ class User < ApplicationRecord
   has_many :rentals, dependent: :destroy
   has_many :ratings, dependent: :destroy
   has_many :shops_as_owner, through: :shops, source: :rentals #Alias pour proprietaire/status
-  has_one_attached :photo
 end
