@@ -1,2 +1,26 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container search-home">
+  <div class="item-home">
+    <div>
+      <%= image_tag "logo-blanc.png", class: "logo-home" %>
+      <p>La consigne près de chez toi</p>
+    </div>
+    <div>
+      <%= image_tag "julia.PNG", class: "user-picture" %>
+    </div>
+  </div>
+  <div>
+    <br><h2>BONJOUR <%= @user.name %></h2>
+    <p style="color: #FFBD36">Ton adresse : <strong><%= @user.address %></strong></p> 
+    <p>Trouve ton commerçant partenaire</p>
+    <div>
+      <%= form_tag shops_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "",
+          placeholder: "Pizza, boulangerie..."
+        %>
+        <%= submit_tag "Chercher", class: "btn btn-secondary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
