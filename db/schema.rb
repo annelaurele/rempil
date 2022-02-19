@@ -10,10 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_15_192404) do
+ActiveRecord::Schema.define(version: 2022_02_17_191703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer "rating"
+    t.bigint "shop_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["shop_id"], name: "index_ratings_on_shop_id"
+    t.index ["user_id"], name: "index_ratings_on_user_id"
+  end
+
+  create_table "rentals", force: :cascade do |t|
+    t.date "rental_time_start"
+    t.date "rental_time_end"
+    t.integer "status"
+    t.bigint "shop_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["shop_id"], name: "index_rentals_on_shop_id"
+    t.index ["user_id"], name: "index_rentals_on_user_id"
+  end
+
+  create_table "shops", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "description"
+    t.string "mobile"
+    t.string "email"
+    t.integer "category"
+    t.string "merchant_picture"
+    t.date "opening_hours"
+    t.decimal "average_rate"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_shops_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +61,19 @@ ActiveRecord::Schema.define(version: 2022_02_15_192404) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "last_name"
+    t.string "address"
+    t.string "mobile"
+    t.string "image_url"
+    t.integer "status"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "ratings", "shops"
+  add_foreign_key "ratings", "users"
+  add_foreign_key "rentals", "shops"
+  add_foreign_key "rentals", "users"
+  add_foreign_key "shops", "users"
 end
