@@ -1,0 +1,17 @@
+<div class="container search">
+  <p> La consigne près de chez toi !</p>
+  <h2>BONJOUR <%= user.name %> !</h2>
+  <p>Ton adresse : <%= user.address %> </p> 
+  <p>Trouve ton commerçant partenaire</p>
+  <div>
+    <%= form_tag shops_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "",
+        placeholder: "Pizza, boulangerie..."
+      %>
+      <%= submit_tag "Chercher", class: "btn btn-secondary" %>
+    <% end %>
+    </div>
+  </div>
+</div>

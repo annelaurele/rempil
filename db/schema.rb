@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 2022_02_19_114626) do
     t.string "mobile"
     t.string "image_url"
     t.integer "status"
+    t.boolean "shop"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
