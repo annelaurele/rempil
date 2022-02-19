@@ -1,4 +1,41 @@
 .description-card {
-    border: dashed red;
-    background-color: orange;
+    border-radius: 12px;
+    width: 90%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.shop-show-title {
+    width: 90%;
+    padding: 0;
+}
+
+.shop-show-big-image {
+    background-size: cover;
+    max-width: 100%;  
+    height: auto;
+    margin: 12px 0;
+    border-radius: 9px;
+}
+
+.sub-show-card {
+}
+
+.sub-card-button {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 2px;
+}
+
+#shop-title {
+
+}
+
+#shop-address {
+    font-size: 16px;
+    color: #B1E4E3;
+}
+
+#categorie-shop {
+    font-style: italic;
+    color: #C8C9C7;
 }
