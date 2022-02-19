@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'Date'
 
 #Creation users
 
@@ -19,10 +18,10 @@ shop = Shop.create(name: "Boulangerie", address: "Paris", description: "Ceci est
 
 #Creation rental
 
-loc = Rental.new(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: "en cours")
+# loc = Rental.new(status: "en cours")
 
-loc.user = julia
-loc.shop = shop
-shop.user = al
-loc.save
-al.save
+# loc.user = julia
+# loc.shop = shop
+# shop.user = al
+# loc.save
+# al.save
