@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_19_114626) do
+ActiveRecord::Schema.define(version: 2022_02_19_163031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 2022_02_19_114626) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "number_box"
+    t.integer "max_capacity"
     t.index ["shop_id"], name: "index_rentals_on_shop_id"
     t.index ["user_id"], name: "index_rentals_on_user_id"
   end
@@ -71,7 +73,18 @@ ActiveRecord::Schema.define(version: 2022_02_19_114626) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "closing_hours"
     t.index ["user_id"], name: "index_shops_on_user_id"
+  end
+
+  create_table "slot_hours", force: :cascade do |t|
+    t.integer "opening_hour"
+    t.integer "closing_hour"
+    t.string "day_of_the_week"
+    t.bigint "shop_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["shop_id"], name: "index_slot_hours_on_shop_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -99,4 +112,5 @@ ActiveRecord::Schema.define(version: 2022_02_19_114626) do
   add_foreign_key "rentals", "shops"
   add_foreign_key "rentals", "users"
   add_foreign_key "shops", "users"
+  add_foreign_key "slot_hours", "shops"
 end
