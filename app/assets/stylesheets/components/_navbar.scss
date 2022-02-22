@@ -1,9 +1,23 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar {
   bottom: 0;
   width: 100%;
   position: fixed;
+  z-index: 100;
+}
+
+.navbar-nav {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-link {
+  color: #C8C9C7;
+}
+
+.nav-item {
+  margin-right: 30px;
+  margin-left: 5px;
 }
 
 .navbar-lewagon .navbar-collapse {
