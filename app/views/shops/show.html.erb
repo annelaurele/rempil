@@ -5,7 +5,7 @@
 
 
 <div class="container description-card">
-    <%= image_tag "resto_tmp.jpg", class: "shop-show-big-image" %>
+    <%= cl_image_tag @shop.photo.key , class: "shop-show-big-image" %>
     <p> <%= @shop.description %> </p>
     <div class="sub-show-card">
         <p id="categorie-shop" > Catégorie : <%= @shop.category %> </p>

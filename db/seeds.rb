@@ -183,13 +183,13 @@ SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Dimanche", 
 biocoop = Shop.create(id: 12, name: "Biocoop", address: "7 Place de la Trinité, 31000 Toulouse", mobile: "0534424919", email: "", category: 3, description: "Vous pourrez y trouver des fruits et légumes frais de saison et locaux, du pain frais et tous les produits en vrac d'épicerie", user: annelaure, average_rate: 4.3)
 file = URI.open('https://www.biocooptrinite-toulouse.com/images/500/0/docs/97/Abonnements/biocoop-trinite02.jpg')
 biocoop.photo.attach(io: file, filename: 'biocoop.png', content_type: 'image/png')
-SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Lundi", shop: lamiecaline)
-SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Mardi", shop: lamiecaline)
-SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Mercredi", shop: lamiecaline)
-SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Jeudi", shop: lamiecaline)
-SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Vendredi", shop: lamiecaline)
-SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Samedi", shop: lamiecaline)
-SlotHour.create(opening_hour: 9, closing_hour: 12, day_of_the_week: "Dimanche", shop: lamiecaline)
+SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Lundi", shop: biocoop)
+SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Mardi", shop: biocoop)
+SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Mercredi", shop: biocoop)
+SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Jeudi", shop: biocoop)
+SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Vendredi", shop: biocoop)
+SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Samedi", shop: biocoop)
+SlotHour.create(opening_hour: 9, closing_hour: 12, day_of_the_week: "Dimanche", shop: biocoop)
 
 #Creation rentals
 
