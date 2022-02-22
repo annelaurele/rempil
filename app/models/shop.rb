@@ -13,4 +13,9 @@ class Shop < ApplicationRecord
   has_many :rentals
   has_many :slot_hours, dependent: :destroy
   has_one_attached :photo
+
+  include AlgoliaSearch
+  algoliasearch do
+    attributes :name, :category
+  end
 end
