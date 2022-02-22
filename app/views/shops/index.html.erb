@@ -15,7 +15,7 @@
 
 <% @shops.each do |shop| %>
   <div class="card">
-    <%= image_tag "pizza.jpg" %>
+    <%= cl_image_tag shop.photo.key %>
     <div class="card-infos">
       <div>
         <h2><%= shop.name %></h2>

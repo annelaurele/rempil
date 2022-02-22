@@ -5,7 +5,7 @@ class Shop < ApplicationRecord
     boucherie: 2,
     épicerie: 3,
     traiteur: 4,
-    salon: 5
+    salon_de_thé: 5
   }, _prefix: true
 
   belongs_to :user
