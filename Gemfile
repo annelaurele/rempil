@@ -26,7 +26,7 @@ gem 'redis', '~> 4.0'
 # gem 'image_processing', '~> 1.2'
 gem 'bootstrap', '~> 5.1.3'
 gem 'bundler', '~> 2.3'
-gem "rqrcode", "~> 2.0"
+gem 'rqrcode', '~> 2.1', '>= 2.1.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
