@@ -1,0 +1,74 @@
+body{
+  background-color: white!important;
+}
+
+.rentals-retour {
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.btn-secondary{
+  background-color: #329190;
+  border: none;
+}
+
+.rentals-booking h1{
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 30px;
+}
+
+.rentals-booking h2{
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 30px;
+}
+
+.rentals-booking p{
+  font-size: 20px;
+  margin-left: 30px;
+  color: #B1E4E3;
+}
+
+.rentals-form-reservation{
+  width: 85%;
+  margin-left: 30px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.simple_form.new_rental{
+width: 85%;
+margin-left: 30px;
+}
+
+.form-control .numeric .integer .optional{
+  background-color: white;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    filter: drop-shadow(0 0 0.75rem #C8C9C7);
+    border-radius: 5px;
+    border: none;
+    font-style: italic;
+    opacity: 80%
+}
+
+ label{
+  display:none;
+}
+
+::placeholder {
+  color: #C8C9C7;
+}
