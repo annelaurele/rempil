@@ -4,7 +4,8 @@ class Shop < ApplicationRecord
     restaurant: 1,
     boucherie: 2,
     epicerie: 3,
-    traiteur: 4
+    traiteur: 4,
+    salon: 5
   }, _prefix: true
 
   belongs_to :user
