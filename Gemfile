@@ -41,6 +41,7 @@ gem 'simple_form'
 gem 'cloudinary', '~> 1.16.0'
 gem 'bootstrap', '~> 5.1.3'
 gem 'bundler', '~> 2.3'
+gem "algoliasearch-rails"
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
