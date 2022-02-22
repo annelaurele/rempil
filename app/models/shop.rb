@@ -3,7 +3,7 @@ class Shop < ApplicationRecord
     boulangerie: 0,
     restaurant: 1,
     boucherie: 2,
-    epicerie: 3,
+    épicerie: 3,
     traiteur: 4,
     salon: 5
   }, _prefix: true
