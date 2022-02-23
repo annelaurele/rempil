@@ -6,13 +6,13 @@
 }
 
 .logo-home {
-  width: 60%;
+  width: 45%;
   align-items: left;
   margin-bottom: 5px;
 }
 
 .user-picture {
-  width: 100px;
+  width: 70px;
   vertical-align: right;
   align-items: right;
   border-radius: 50px;
@@ -26,4 +26,14 @@
 .url-modifier {
   font-size: 12px;
   margin-left: 5px;
+}
+
+.btn-home-search {
+  background-color: #B1E4E3;
+  border: 1px solid #B1E4E3;
+}
+
+.form-search {
+  padding-top: 4px;
+  padding-bottom: 7px;
 }
