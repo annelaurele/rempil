@@ -3,12 +3,14 @@
   width: 100%;
   position: fixed;
   z-index: 100;
+  color: #C8C9C7;
 }
 
 .navbar-nav {
   text-align: center;
   display: flex;
   flex-direction: row;
+  color: #C8C9C7;
 }
 
 .nav-link {
@@ -18,6 +20,10 @@
 .nav-item {
   margin-right: 30px;
   margin-left: 5px;
+}
+
+.nav-item .active {
+  color: black;
 }
 
 .navbar-lewagon .navbar-collapse {

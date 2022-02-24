@@ -11,18 +11,19 @@
   object-fit: cover;
 }
 
-.card h2 {
+.card-infos h2 {
+  color: black;
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card p {
+.card-infos p {
   font-size: 12px;
+  color: #C8C9C7;
   opacity: .7;
   margin: 0;
 }
-
 
 .card .card-infos {
   padding: 16px;
@@ -44,6 +45,7 @@
 
 .card-infos h3 {
   font-size: 14px;
+  color: #B1E4E3;
   padding-top: 25px;
   padding-left: 10px;
   font-weight: bold;
