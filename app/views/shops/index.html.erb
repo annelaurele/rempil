@@ -1,9 +1,28 @@
+<div class="container">    
+  <h4>Trouve ton commerçant</h4>
+  <div>
+    <%= form_tag shops_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-search",
+        placeholder: "Traiteur, boulangerie..."
+      %>
+      <%= submit_tag "Go !", class: "btn btn-secondary btn-home-search" %>
+    <% end %>
+  </div>
+</div>
+
 <div class="justify-content-center container"><br>
-  <p><strong><span id="important"><%= @shops.count %></span></strong> commerce(s) à côté de chez toi.</span>.</p>
+  <% if params[:query].present? %>
+    <h4><strong><span id="important"><%= @shops.count %></span></strong> <%= params[:query] %>(s) à côté de chez toi</h4>
+  <% else %>
+    <h4><strong><span id="important"><%= @shops.count %></span></strong> commerce(s) à côté de chez toi</h4>
+  <% end %>
 </div>
 
 <% @shops.each do |shop| %>
-  <div class="card">
+  <%= link_to shop_path(shop.id), class: "card" do %>
+  <%# <div class="card"> %>
     <%= cl_image_tag shop.photo.key %>
     <div class="card-infos">
       <div>
@@ -12,5 +31,5 @@
         <h3 class="card-distance">300m</h3>
       </div>
     </div>
-  </div>
+  <% end %>
 <% end %>

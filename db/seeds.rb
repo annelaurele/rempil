@@ -29,7 +29,7 @@ marina = User.create(name: "Marina", last_name: "Magnoli", email: "mgnl.marina@g
 
 elliot = User.create(name: "Elliot", last_name: "Thyrant", email: "xaron.thyrant@gmail.com", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", status: "Petite pousse", shop: "false", image_url: ActionController::Base.helpers.image_path('arbre.jpg'))
 
-annelaure = User.create(name: "Anne-Laure", last_name: "Le", email: "annelaurele@hotmail.fr", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", shop: "true")
+annelaure = User.create(name: "Anne-Laure", last_name: "Le", email: "annelaurele@hotmail.fr", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", shop: "true", image_url: ActionController::Base.helpers.image_path('arbre.jpg'))
 
 #Creation shops
 
@@ -197,3 +197,14 @@ puts '----- Creating rentals -----'
 
 Rental.new(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: "En cours", shop: stcyp, user: marina)
 Rental.new(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: "Rendu", shop: prosciutteria, user: elliot)
+
+#Creation menus
+
+puts '----- Creating menus -----'
+
+# categorie boulangerie
+# fournil de pierre
+# la mie caline
+
+menu1 = Menu.create(name: "Menu salade", number_of_box: 1, shop: lamiecaline)
+menu2 =
