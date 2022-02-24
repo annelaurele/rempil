@@ -197,3 +197,14 @@ puts '----- Creating rentals -----'
 
 Rental.new(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: "En cours", shop: stcyp, user: marina)
 Rental.new(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: "Rendu", shop: prosciutteria, user: elliot)
+
+#Creation menus
+
+puts '----- Creating menus -----'
+
+# categorie boulangerie
+# fournil de pierre
+# la mie caline
+
+menu1 = Menu.create(name: "Menu salade", number_of_box: 1, shop: lamiecaline)
+menu2 =
