@@ -1,3 +1,17 @@
+<div class="container">    
+  <h4>Trouve ton commerçant</h4>
+  <div>
+    <%= form_tag shops_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-search",
+        placeholder: "Traiteur, boulangerie..."
+      %>
+      <%= submit_tag "Go !", class: "btn btn-secondary btn-home-search" %>
+    <% end %>
+  </div>
+</div>
+
 <div class="justify-content-center container"><br>
   <h4><strong><span id="important"><%= @shops.count %></span></strong> <%= params[:query] %>(s) à côté de chez toi</h4>
 </div>
