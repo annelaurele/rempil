@@ -1,5 +1,9 @@
 <div class="justify-content-center container"><br>
-  <h4><strong><span id="important"><%= @shops.count %></span></strong> <%= params[:query] %>(s) à côté de chez toi</h4>
+  <% if params[:query].present? %>
+    <h4><strong><span id="important"><%= @shops.count %></span></strong> <%= params[:query] %>(s) à côté de chez toi</h4>
+  <% else %>
+    <h4><strong><span id="important"><%= @shops.count %></span></strong> commerce(s) à côté de chez toi</h4>
+  <% end %>
 </div>
 
 <% @shops.each do |shop| %>
