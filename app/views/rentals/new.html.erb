@@ -4,15 +4,17 @@
 
 <div class="rentals-booking">
   <h1>Réservation</h1>
-  <h2>Boulangerie Foucher</h2>
-  <p>Rue de Julia - 31000 Toulouse</p>
-  <%= image_tag "bakery.jpg", class: "rentals-form-reservation" %>
+  <h2> <%= @shop.name %> </h2>
+  <p> <%= @shop.address %> </p>
+  <%= cl_image_tag @shop.photo.key , class: "rentals-form-reservation" %>
   <p>Ouvert, ferme à 19h</p>
 
-<%= simple_form_for(@rental) do |f| %>
+
+ <%= simple_form_for([@shop, @rental], method: "post") do |f| %>
   <%= f.input :number_box, :label => "Nombre de (max : #{@rental.max_capacity} boîtes)", input_html: { max: @rental.max_capacity, min: 1, value: 1} %>
   <%= f.input :rental_time_start, :label => "Date de récupération", placeholder: "Date de rendu", as: :string, required: false, input_html: {class: "datepicker"} %>
   <%= f.input :rental_time_end, :label => "Date de rendu", placeholder: "Date de rendu", as: :string, required: false, input_html: {class: "datepicker"} %>
   <%= f.submit "Je réserve", class: "btn btn-secondary btn-lg btn-block reservation resa-form" %>
-<% end %>
+<% end %> 
+
 </div>
