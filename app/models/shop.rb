@@ -12,6 +12,7 @@ class Shop < ApplicationRecord
   has_many :ratings
   has_many :rentals
   has_many :slot_hours, dependent: :destroy
+  has_many :menus
   has_one_attached :photo
 
   include AlgoliaSearch

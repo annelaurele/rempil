@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_19_163031) do
+ActiveRecord::Schema.define(version: 2022_02_24_192842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,17 @@ ActiveRecord::Schema.define(version: 2022_02_19_163031) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "menus", force: :cascade do |t|
+    t.string "name"
+    t.integer "number_of_box"
+    t.bigint "shop_id", null: false
+    t.bigint "rental_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["rental_id"], name: "index_menus_on_rental_id"
+    t.index ["shop_id"], name: "index_menus_on_shop_id"
+  end
+
   create_table "ratings", force: :cascade do |t|
     t.integer "rating"
     t.bigint "shop_id", null: false
@@ -54,8 +65,8 @@ ActiveRecord::Schema.define(version: 2022_02_19_163031) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "number_box"
     t.integer "max_capacity"
+    t.integer "total_of_box"
     t.index ["shop_id"], name: "index_rentals_on_shop_id"
     t.index ["user_id"], name: "index_rentals_on_user_id"
   end
@@ -106,6 +117,8 @@ ActiveRecord::Schema.define(version: 2022_02_19_163031) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "menus", "rentals"
+  add_foreign_key "menus", "shops"
   add_foreign_key "ratings", "shops"
   add_foreign_key "ratings", "users"
   add_foreign_key "rentals", "shops"
