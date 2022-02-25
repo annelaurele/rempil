@@ -208,3 +208,4 @@ menu2 = Menu.create(name: "Salade Poké", description: "Une salade inspirée du 
 menu3 = Menu.create(name: "Pizza aux fromages", description: "Pizza individuelle généreusement garnie de 4 fromages.", price: 9, number_of_box: 1, shop: lamiecaline)
 menu4 = Menu.create(name: "Pizza lardons champignons", description: "Pâte à pizza, coulis de tomate, lardons, champignons, emmental, mozzarella.", price: 9, number_of_box: 1, shop: lamiecaline)
 menu5 = Menu.create(name: "Quiche poireaux saumon", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 9, number_of_box: 1, shop: lamiecaline)
+menu6 = Menu.create(name: "Quiche lorraine", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 9, number_of_box: 1, shop: lamiecaline)
