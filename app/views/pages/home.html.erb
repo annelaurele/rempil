@@ -15,16 +15,22 @@
   </div>
 </div>
 
-<div class="cards-category">
-  <div class="card-category-item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Breakfast
-  </div>
 
-  <div class="card-category-item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Lunch
-  </div>
-
-  <div class="card-category-item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    Dinner
+<div class="content">
+  <div class="cards-category">
+    <div class="card-category-item" style="background-image: url(<%= image_path("boulangerie.jpg")%>)">
+      <a href="/shops?query=boulangerie">BOULANGERIE</a>
+    </div>
+    <div class="card-category-item" style="background-image: url(<%= image_path("pizza.jpg")%>)">
+      <a href="/shops?query=boucherie">BOUCHERIE</a>
+    </div>
+    <div class="card-category-item" style="background-image: url(<%= image_path("traiteur.jpg")%>)">
+      <a href="/shops?query=traiteur">TRAITEUR</a>
+    </div>
+    <div class="card-category-item" style="background-image: url(<%= image_path("restaurant.jpg")%>)">
+      <a href="/shops?query=restaurant">RESTAURANT</a>
+    </div>
   </div>
 </div>
+
+Les commerçants près de chez toi
