@@ -2,7 +2,7 @@
   <div class="item-home">
     <div>
       <%= image_tag "REMPIL-couleur.png", class: "logo-home" %>
-      <p>La consigne près de chez toi</p>
+      <p class="url-modifier">La consigne près de chez toi</p>
     </div>
     <div>
       <%= image_tag current_user.image_url, class: "user-picture" %>
@@ -12,5 +12,19 @@
     <br><h2>Bonjour <%= @user.name %> !</h2>
     <p><span style="color: #FFBD36"><strong><%= @user.address %> </strong></span><span class="url-modifier"> Tu n'es pas là ?</span> </p>
     <%# <%= link_to 'Modifier', edit_user_path(user), class: "url-modifier" %>
+  </div>
+</div>
+
+<div class="cards-category">
+  <div class="card-category-item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    Breakfast
+  </div>
+
+  <div class="card-category-item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+    Lunch
+  </div>
+
+  <div class="card-category-item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+    Dinner
   </div>
 </div>
