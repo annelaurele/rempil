@@ -1,28 +1,35 @@
 <div class="container search-home">
   <div class="item-home">
     <div>
-      <%= image_tag "logo-blanc.png", class: "logo-home" %>
-      <p>La consigne près de chez toi</p>
+      <%= image_tag "REMPIL-couleur.png", class: "logo-home" %>
+      <p class="url-modifier">La consigne près de chez toi</p>
     </div>
     <div>
-      <%= image_tag "julia.PNG", class: "user-picture" %>
+      <%= image_tag current_user.image_url, class: "user-picture" %>
     </div>
   </div>
   <div>
-    <br><h2>BONJOUR <%= @user.name %></h2>
-    <p><span style="color: #FFBD36">Ton adresse : <strong><%= @user.address %> </strong></span><span class="url-modifier"> Modifier</span> </p> 
+    <br><h2>Bonjour <%= @user.name %> !</h2>
+    <p><span style="color: #FFBD36"><strong><%= @user.address %> </strong></span><span class="url-modifier"> Tu n'es pas là ?</span> </p>
     <%# <%= link_to 'Modifier', edit_user_path(user), class: "url-modifier" %>
-    <p>Trouve ton commerçant partenaire</p>
-    <div>
-      <%= form_tag shops_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-search",
-          placeholder: "Pizza, boulangerie..."
-        %>
-        <%= submit_tag "Chercher", class: "btn btn-secondary" %>
-      <% end %>
+  </div>
+</div>
+
+<div class="content">
+  <div class="cards-category">
+    <div class="card-category-item" style="background-image: url(<%= image_path("boulangerie.jpg")%>)">
+      <a href="/shops?query=boulangerie">BOULANGERIE</a>
+    </div>
+    <div class="card-category-item" style="background-image: url(<%= image_path("pizza.jpg")%>)">
+      <a href="/shops?query=boucherie">BOUCHERIE</a>
+    </div>
+    <div class="card-category-item" style="background-image: url(<%= image_path("traiteur.jpg")%>)">
+      <a href="/shops?query=traiteur">TRAITEUR</a>
+    </div>
+    <div class="card-category-item" style="background-image: url(<%= image_path("restaurant.jpg")%>)">
+      <a href="/shops?query=restaurant">RESTAURANT</a>
     </div>
   </div>
 </div>
 
+Les commerçants près de chez toi
