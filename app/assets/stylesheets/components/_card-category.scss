@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-size: 18px;
+  font-size: 16px;
   color: white !important;
   font-weight: bolder;
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
@@ -20,7 +20,8 @@
   flex-grow: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-right: 5px;
+  margin-right: 5px;;
+  margin-bottom: 5px;
 }
 
 .content {
