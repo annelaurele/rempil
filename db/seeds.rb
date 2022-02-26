@@ -203,7 +203,7 @@ SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Vendredi", 
 SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Samedi", shop: leSaintSauvage)
 SlotHour.create(opening_hour: 9, closing_hour: 12, day_of_the_week: "Dimanche", shop: leSaintSauvage)
 
-starbucks = Shop.create(id: 13, name: "Starbucks", address: "5 Rue des Changes, 31000 Toulouse", mobile: "0561471930", email: "", category: 0, description: "Torréfaction maison pour de délicieuses boissons chaudes et froides, avec du sucré et du salé !", user: julia, average_rate: 3.7, longitude: 43.60026256906625, latitude: 1.4441091106798012)
+starbucks = Shop.create(id: 14, name: "Starbucks", address: "5 Rue des Changes, 31000 Toulouse", mobile: "0561471930", email: "", category: 0, description: "Torréfaction maison pour de délicieuses boissons chaudes et froides, avec du sucré et du salé !", user: julia, average_rate: 3.7, longitude: 43.60026256906625, latitude: 1.4441091106798012)
 file = URI.open('https://images.ladepeche.fr/api/v1/images/view/5c363ca43e45464630439d20/large/image.jpg')
 starbucks.photo.attach(io: file, filename: 'starbucks.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Lundi", shop: starbucks)
@@ -214,7 +214,7 @@ SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Vendredi", 
 SlotHour.create(opening_hour: 9, closing_hour: 19, day_of_the_week: "Samedi", shop: starbucks)
 SlotHour.create(opening_hour: 9, closing_hour: 10, day_of_the_week: "Dimanche", shop: starbucks)
 
-panetiere = Shop.create(id: 14, name: "La Panetière", address: "2 Rue de Metz, 31000 Toulouse", mobile: "0561732990", email: "", category: 0, description: "Le goût du bien-manger. Des produits frais, sains et équilibrés", user: annelaure, average_rate: 3.7, longitude: 43.599880939608894, latitude: 1.441918695513136)
+panetiere = Shop.create(id: 15, name: "La Panetière", address: "2 Rue de Metz, 31000 Toulouse", mobile: "0561732990", email: "", category: 0, description: "Le goût du bien-manger. Des produits frais, sains et équilibrés", user: annelaure, average_rate: 3.7, longitude: 43.599880939608894, latitude: 1.441918695513136)
 file = URI.open('https://www.lapanetiere.fr/images/panetiere-toulouse-lafourcade16.jpg?crc=46408542')
 panetiere.photo.attach(io: file, filename: 'panetiere.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Lundi", shop: panetiere)
@@ -225,7 +225,7 @@ SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Vendredi", 
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Samedi", shop: panetiere)
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Dimanche", shop: panetiere)
 
-perlette = Shop.create(id: 15, name: "Perlette", address: "57 Rue des Filatiers, 31000 Toulouse", mobile: "0982366046", email: "", category: 0, description: "Perlette propose des patisseries sur place ou à emporter, mais aussi des menus salés.", user: julia, average_rate: 4.5, longitude: 43.599880939608894, latitude: 1.441918695513136)
+perlette = Shop.create(id: 16, name: "Perlette", address: "57 Rue des Filatiers, 31000 Toulouse", mobile: "0982366046", email: "", category: 0, description: "Perlette propose des patisseries sur place ou à emporter, mais aussi des menus salés.", user: julia, average_rate: 4.5, longitude: 43.599880939608894, latitude: 1.441918695513136)
 file = URI.open('https://www.luckymiam.com/wp-content/uploads/perlette-lucky-miam-9.jpg')
 perlette.photo.attach(io: file, filename: 'perlette.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Lundi", shop: perlette)
@@ -235,7 +235,6 @@ SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Jeudi", sho
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Vendredi", shop: perlette)
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Samedi", shop: perlette)
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Dimanche", shop: perlette)
-
 
 #Creation rentals
 
