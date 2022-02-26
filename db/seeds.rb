@@ -236,8 +236,6 @@ SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Vendredi", 
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Samedi", shop: perlette)
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Dimanche", shop: perlette)
 
->>>>>>> 092cecacadf4e0edac04ddaadfb409073c9651a6
-
 #Creation rentals
 
 puts '----- Creating rentals -----'
