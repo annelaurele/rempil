@@ -12,7 +12,17 @@
         <p> Ouvert, ferme à <p>
         <div class="sub-card-button">
             <i class="fas fa-solid fa-star"></i>
-            <button type="button" class="btn btn-info">Réserver</button>
+            <%
+=begin%>
+ <button type="button" class="">Réserver</button> 
+<%
+=end%>
+            <%= link_to "Réserver ce château", new_shop_rental_path(@shop.id), class: "btn btn-info" %>
         </div>
+        <%# <div class="shop-menu">
+          <% @menus.each do |menu| %>
+            <%# <%= @menu.name %>
+          <%# <% end %>
+        <%# </div> %>
     </div>
 </div>
