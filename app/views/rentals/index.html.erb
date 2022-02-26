@@ -1,0 +1,50 @@
+<div class="container-dashboard">
+    <button type="button" class="btn btn-primary">Primary</button>
+    <h1 style="font-size: 24px;">Ton status: <%= @user.status %></h1>
+    <h2 style="font-size: 20px;">Consignes en cours: <%= @total.size %><h2>
+
+
+    <ul class="nav nav-pills mb-3 dash-button" id="pills-tab" role="tablist" style="font-size: 15px;">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">En cours</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Rendu</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Payé</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent" >
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <h2 id="dash-menu-info-text"> Détails des consignes en cours</h2>
+            <div class="big-div-shops">
+                <div class="aligner">
+                    <% @actuals.each do |actual| %>
+                        <div class="dash-card">
+                            <div class="div-shop-item dash-shop-pic">
+                                <%= cl_image_tag actual.shop.photo.key, :transformation=>[
+                                {:gravity=>"face", :height=>400, :width=>400, :crop=>"crop"},
+                                {:radius=>"50"},
+                                {:width=>100, :crop=>"scale"}
+                                ] %>
+                            </div>
+                            <div class="div-shop-item">
+                                <p id="dash-menu-info-text"><%= actual.shop.name %></p>
+                                <p>Nombre de consignes: <%= actual.total_of_box %></p>
+                                <p>A rendre avant le: <%= actual.rental_time_end %></p>
+                                <button type="button" class="btn btn-info dash-info-button">Info</button>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <h2> Détails des consignes rendues</h2>
+        </div>
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <h2> Détails des consignes payées</h2>
+        </div>
+    </div>
+</div>

@@ -8,6 +8,6 @@ Rails.application.routes.draw do
       get 'qrcode', to: 'rentals#qrcode'
     end
   end
-
+  resources :rentals, only: [:index]
   resources :test
 end

@@ -21,15 +21,15 @@ User.destroy_all
 
 puts '----- Creating users -----'
 
-julia = User.create(name: "Julia", last_name: "Foucher", email: "julia814@hotmail.fr", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", shop: "true", image_url: ActionController::Base.helpers.image_path('julia.PNG'))
+julia = User.create(name: "Julia", last_name: "Foucher", email: "julia814@hotmail.fr", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", status: 1 , shop: "true", image_url: ActionController::Base.helpers.image_path('julia.PNG'))
 # file = URI.open(ActionController::Base.helpers.image_path('images/julia.PNG'))
 # julia.photo.attach(io: file, filename: 'julia.PNG', content_type: 'image/png')
 
-marina = User.create(name: "Marina", last_name: "Magnoli", email: "mgnl.marina@gmail.com", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", status: "Grand arbre", shop: "false", image_url: ActionController::Base.helpers.image_path('marina.jpg'))
+marina = User.create(name: "Marina", last_name: "Magnoli", email: "mgnl.marina@gmail.com", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", status: 0, shop: "false", image_url: ActionController::Base.helpers.image_path('marina.jpg'))
 
-elliot = User.create(name: "Elliot", last_name: "Thyrant", email: "xaron.thyrant@gmail.com", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", status: "Petite pousse", shop: "false", image_url: ActionController::Base.helpers.image_path('arbre.jpg'))
+elliot = User.create(name: "Elliot", last_name: "Thyrant", email: "xaron.thyrant@gmail.com", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", status: 2, shop: "false", image_url: ActionController::Base.helpers.image_path('arbre.jpg'))
 
-annelaure = User.create(name: "Anne-Laure", last_name: "Le", email: "annelaurele@hotmail.fr", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", shop: "true", image_url: ActionController::Base.helpers.image_path('arbre.jpg'))
+annelaure = User.create(name: "Anne-Laure", last_name: "Le", email: "annelaurele@hotmail.fr", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", status: 1 , shop: "true", image_url: ActionController::Base.helpers.image_path('arbre.jpg'))
 
 #Creation shops
 
@@ -195,8 +195,9 @@ SlotHour.create(opening_hour: 9, closing_hour: 12, day_of_the_week: "Dimanche", 
 
 puts '----- Creating rentals -----'
 
-Rental.new(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: "En cours", shop: stcyp, user: marina)
-Rental.new(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: "Rendu", shop: prosciutteria, user: elliot)
+Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 0, shop: stcyp, user: elliot)
+Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 0, shop: prosciutteria, user: elliot)
+Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 0, shop: biocoop, user: elliot)
 
 #Creation menus
 
@@ -207,4 +208,3 @@ puts '----- Creating menus -----'
 # la mie caline
 
 menu1 = Menu.create(name: "Menu salade", number_of_box: 1, shop: lamiecaline)
-menu2 =
