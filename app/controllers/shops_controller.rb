@@ -10,6 +10,8 @@ class ShopsController < ApplicationController
     def show
         @shop = Shop.find(params[:id])
         # @rent
+        @similar_shops = Shop.where(category:@shop.category).where.not(id: @shop.id)
         als_count = Rental.where(user: current_user)  #.where id = current_user ??
+        @menus = Menu.where(shop: @shop)
     end
 end

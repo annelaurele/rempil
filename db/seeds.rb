@@ -18,6 +18,7 @@ require 'open-uri'
 Rental.destroy_all
 Shop.destroy_all
 User.destroy_all
+Menu.destroy_all
 
 puts '----- Creating users -----'
 
@@ -191,9 +192,39 @@ SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Vendredi", 
 SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Samedi", shop: biocoop)
 SlotHour.create(opening_hour: 9, closing_hour: 12, day_of_the_week: "Dimanche", shop: biocoop)
 
+leSaintSauvage = Shop.create(id: 13, name: "Le Saint Sauvage", address: "20 Rue des Salenques, 31000 Toulouse", mobile: "0561235686", email: "", category: 1, description: "Table gastronomique à l'éclairage tamisé, entre chaises transparentes, fauteuils en velours et miroirs dorés.", user: annelaure, average_rate: 4.6)
+file = URI.open('https://www.biocooptrinite-toulouse.com/images/500/0/docs/97/Abonnements/biocoop-trinite02.jpg')
+leSaintSauvage.photo.attach(io: file, filename: 'biocoop.png', content_type: 'image/png')
+SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Lundi", shop: leSaintSauvage)
+SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Mardi", shop: leSaintSauvage)
+SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Mercredi", shop: leSaintSauvage)
+SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Jeudi", shop: leSaintSauvage)
+SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Vendredi", shop: leSaintSauvage)
+SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Samedi", shop: leSaintSauvage)
+SlotHour.create(opening_hour: 9, closing_hour: 12, day_of_the_week: "Dimanche", shop: leSaintSauvage)
+
 #Creation rentals
 
 puts '----- Creating rentals -----'
 
-Rental.new(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: "En cours", shop: stcyp, user: marina)
-Rental.new(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: "Rendu", shop: prosciutteria, user: elliot)
+Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: "En cours", shop: stcyp, user: marina)
+Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: "Rendu", shop: prosciutteria, user: elliot)
+
+#Creation menus
+puts '----- Creating menus -----'
+# la mie caline
+Menu.create!(name: "Salade César", description: "La classique salade césar composée de poulet, oeuf, parmesan et huile d'olive.", price: 8, number_of_box: 1, shop: lamiecaline)
+Menu.create(name: "Salade Poké", description: "Une salade inspirée du poke bowl.", price: 8, number_of_box: 1, shop: lamiecaline)
+Menu.create(name: "Pizza aux fromages", description: "Pizza individuelle généreusement garnie de 4 fromages.", price: 9, number_of_box: 1, shop: lamiecaline)
+Menu.create(name: "Pizza lardons champignons", description: "Pâte à pizza, coulis de tomate, lardons, champignons, emmental, mozzarella.", price: 9, number_of_box: 1, shop: lamiecaline)
+Menu.create(name: "Quiche poireaux saumon", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 9, number_of_box: 1, shop: lamiecaline)
+Menu.create(name: "Quiche lorraine", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 9, number_of_box: 1, shop: lamiecaline)
+
+
+#prosciutteria
+Menu.create(name: "Salade César", description: "La classique salade césar composée de poulet, oeuf, parmesan et huile d'olive.", price: 8, number_of_box: 1, shop: prosciutteria)
+Menu.create(name: "Salade Poké", description: "Une salade inspirée du poke bowl.", price: 8, number_of_box: 1, shop: prosciutteria)
+Menu.create(name: "Pizza aux fromages", description: "Pizza individuelle généreusement garnie de 4 fromages.", price: 9, number_of_box: 1, shop: prosciutteria)
+Menu.create(name: "Pizza lardons champignons", description: "Pâte à pizza, coulis de tomate, lardons, champignons, emmental, mozzarella.", price: 9, number_of_box: 1, shop: prosciutteria)
+Menu.create(name: "Quiche poireaux saumon", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 9, number_of_box: 1, shop: prosciutteria)
+Menu.create(name: "Quiche lorraine", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 9, number_of_box: 1, shop: prosciutteria)
