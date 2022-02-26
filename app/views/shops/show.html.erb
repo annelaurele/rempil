@@ -5,6 +5,7 @@
 
 
 <div class="container description-card">
+
     <%= cl_image_tag @shop.photo.key, class: "shop-show-big-image" %>
     <p> <%= @shop.description %> </p>
     <div class="sub-show-card">
@@ -14,7 +15,7 @@
             <i class="fas fa-solid fa-star"></i>
             <%
 =begin%>
- <button type="button" class="">Réserver</button> 
+ <button type="button" class="">Réserver</button>
 <%
 =end%>
             <%= link_to "Réserver ce château", new_shop_rental_path(@shop.id), class: "btn btn-info" %>
