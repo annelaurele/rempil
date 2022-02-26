@@ -203,9 +203,9 @@ Rental.new(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.
 puts '----- Creating menus -----'
 
 # la mie caline
-menu1 = Menu.create(name: "Salade César", description: "La classique salade césar composée de poulet, oeuf, parmesan et huile d'olive.", price: 8, number_of_box: 1, shop: lamiecaline)
-menu2 = Menu.create(name: "Salade Poké", description: "Une salade inspirée du poke bowl.", price: 8, number_of_box: 1, shop: lamiecaline)
-menu3 = Menu.create(name: "Pizza aux fromages", description: "Pizza individuelle généreusement garnie de 4 fromages.", price: 9, number_of_box: 1, shop: lamiecaline)
-menu4 = Menu.create(name: "Pizza lardons champignons", description: "Pâte à pizza, coulis de tomate, lardons, champignons, emmental, mozzarella.", price: 9, number_of_box: 1, shop: lamiecaline)
-menu5 = Menu.create(name: "Quiche poireaux saumon", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 9, number_of_box: 1, shop: lamiecaline)
-menu6 = Menu.create(name: "Quiche lorraine", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 9, number_of_box: 1, shop: lamiecaline)
+item1 = Menu.create(name: "Salade César", description: "La classique salade césar composée de poulet, oeuf, parmesan et huile d'olive.", price: 8, number_of_box: 1, shop: lamiecaline)
+item2 = Menu.create(name: "Salade Poké", description: "Une salade inspirée du poke bowl.", price: 8, number_of_box: 1, shop: lamiecaline)
+item3 = Menu.create(name: "Pizza aux fromages", description: "Pizza individuelle généreusement garnie de 4 fromages.", price: 9, number_of_box: 1, shop: lamiecaline)
+item4 = Menu.create(name: "Pizza lardons champignons", description: "Pâte à pizza, coulis de tomate, lardons, champignons, emmental, mozzarella.", price: 9, number_of_box: 1, shop: lamiecaline)
+item5 = Menu.create(name: "Quiche poireaux saumon", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 9, number_of_box: 1, shop: lamiecaline)
+item6 = Menu.create(name: "Quiche lorraine", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 9, number_of_box: 1, shop: lamiecaline)
