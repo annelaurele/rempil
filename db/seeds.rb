@@ -236,7 +236,6 @@ SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Vendredi", 
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Samedi", shop: perlette)
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Dimanche", shop: perlette)
 
->>>>>>> 092cecacadf4e0edac04ddaadfb409073c9651a6
 
 #Creation rentals
 
@@ -287,4 +286,3 @@ item3 = Menu.create(name: "Pizza aux fromages", description: "Pizza individuelle
 item4 = Menu.create(name: "Pizza lardons champignons", description: "Pâte à pizza, coulis de tomate, lardons, champignons, emmental, mozzarella.", price: 9, number_of_box: 1, shop: fournil)
 item5 = Menu.create(name: "Quiche poireaux saumon", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 9, number_of_box: 1, shop: fournil)
 item6 = Menu.create(name: "Quiche lorraine", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 9, number_of_box: 1, shop: fournil)
->>>>>>> 092cecacadf4e0edac04ddaadfb409073c9651a6
