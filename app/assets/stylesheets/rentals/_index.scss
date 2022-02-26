@@ -1,0 +1,50 @@
+.dash-button {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.big-div-shops {
+    display: flex;
+    flex-direction: column;
+}
+
+.aligner {
+    justify-content: center;
+}
+
+.dash-card {
+    display: flex;
+    align-items: center;
+    padding-bottom: 12px;
+}
+
+.big-div-shop {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.div-shop-item {
+    align-items: center;
+    font-size: 16px;
+    margin: 0;
+}
+
+.div-shop-item p {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}
+
+.dash-shop-pic {
+    padding: 0 12px 0 12px;
+}
+
+.dash-info-button {
+    height: fit-content;
+}
+
+#dash-menu-info-text {
+    font-size: 24px;
+    font-weight: bold;
+}
