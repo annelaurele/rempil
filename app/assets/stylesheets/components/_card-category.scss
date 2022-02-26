@@ -1,0 +1,36 @@
+.card-category-item {
+  background-size: cover;
+  background-position: center;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 18px;
+  color: white !important;
+  font-weight: bolder;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  margin: 5px 0px 0px 5px;
+  text-decoration: none !important;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.cards-category {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-right: 5px;
+}
+
+.content {
+  display: flex;
+}
+
+.card-category-item a {
+  z-index: 10000;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+
