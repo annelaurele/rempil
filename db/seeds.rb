@@ -315,23 +315,27 @@ puts '----- Creating menus -----'
 #----------------LA MIE CALINE----------------#
 Menu.create!(name: "Salade César", description: "La classique salade césar composée de poulet, oeuf, parmesan et huile d'olive.", price: 8, number_of_box: 1, shop: lamiecaline)
 Menu.create(name: "Salade Poké", description: "Une salade inspirée du poke bowl.", price: 8, number_of_box: 1, shop: lamiecaline)
-Menu.create(name: "Pizza aux fromages", description: "Pizza individuelle généreusement garnie de 4 fromages.", price: 9, number_of_box: 1, shop: lamiecaline)
-Menu.create(name: "Pizza lardons champignons", description: "Pâte à pizza, coulis de tomate, lardons, champignons, emmental, mozzarella.", price: 9, number_of_box: 1, shop: lamiecaline)
-Menu.create(name: "Quiche poireaux saumon", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 9, number_of_box: 1, shop: lamiecaline)
-Menu.create(name: "Quiche lorraine", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 9, number_of_box: 1, shop: lamiecaline)
-
-#----------------PROSCIUTTERIA----------------#
-Menu.create(name: "Salade César", description: "La classique salade césar composée de poulet, oeuf, parmesan et huile d'olive.", price: 8, number_of_box: 1, shop: prosciutteria)
-Menu.create(name: "Salade Poké", description: "Une salade inspirée du poke bowl.", price: 8, number_of_box: 1, shop: prosciutteria)
-Menu.create(name: "Pizza aux fromages", description: "Pizza individuelle généreusement garnie de 4 fromages.", price: 9, number_of_box: 1, shop: prosciutteria)
-Menu.create(name: "Pizza lardons champignons", description: "Pâte à pizza, coulis de tomate, lardons, champignons, emmental, mozzarella.", price: 9, number_of_box: 1, shop: prosciutteria)
-Menu.create(name: "Quiche poireaux saumon", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 9, number_of_box: 1, shop: prosciutteria)
-Menu.create(name: "Quiche lorraine", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 9, number_of_box: 1, shop: prosciutteria)
+Menu.create(name: "Pizza aux fromages", description: "Pizza individuelle généreusement garnie de 4 fromages.", price: 4, number_of_box: 1, shop: lamiecaline)
+Menu.create(name: "Pizza lardons champignons", description: "Pâte à pizza, coulis de tomate, lardons, champignons, emmental, mozzarella.", price: 4, number_of_box: 1, shop: lamiecaline)
+Menu.create(name: "Quiche poireaux saumon", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 4, number_of_box: 1, shop: lamiecaline)
+Menu.create(name: "Quiche lorraine", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 4, number_of_box: 1, shop: lamiecaline)
 
 #----------------FOURNIL DE PIERRE----------------#
-item1 = Menu.create(name: "Salade César", description: "La classique salade césar composée de poulet, oeuf, parmesan et huile d'olive.", price: 8, number_of_box: 1, shop: fournil)
-item2 = Menu.create(name: "Salade Poké", description: "Une salade inspirée du poke bowl.", price: 8, number_of_box: 1, shop: fournil)
-item3 = Menu.create(name: "Pizza aux fromages", description: "Pizza individuelle généreusement garnie de 4 fromages.", price: 9, number_of_box: 1, shop: fournil)
-item4 = Menu.create(name: "Pizza lardons champignons", description: "Pâte à pizza, coulis de tomate, lardons, champignons, emmental, mozzarella.", price: 9, number_of_box: 1, shop: fournil)
-item5 = Menu.create(name: "Quiche poireaux saumon", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 9, number_of_box: 1, shop: fournil)
-item6 = Menu.create(name: "Quiche lorraine", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 9, number_of_box: 1, shop: fournil)
+item1 = Menu.create(name: "La salade tomate mozza", description: "Tomate, mozzarella, pesto, pâtes serpentini, roquette.", price: 7, number_of_box: 1, shop: fournil)
+item2 = Menu.create(name: "La salade César", description: "Poulet rôti mariné citron-romarin, oeuf poché, bacon, chiffonnade Cantal AOP, tomates cerises, croûtons, batavia, ciboulette.", price: 7, number_of_box: 1, shop: fournil)
+item3 = Menu.create(name: "Quiche chèvre épinard", description: "Pâte brisée, chèvre, épinard, fromage frais, crème fraîche, oeuf.", price: 5, number_of_box: 1, shop: fournil)
+item4 = Menu.create(name: "Quiche lorraine", description: "Pâte brisée, jambon*, lardons*, emmental, crème fraîche, oeuf.", price: 5, number_of_box: 1, shop: fournil)
+
+#----------------PANETIERE----------------#
+Menu.create!(name: "Poké bowl saumon", description: "Riz, mangue, jeune pousse d'épinard, tomate cerise, saumon fumé, pavot, vinaigrette au soja et gingembre.", price: 9, number_of_box: 1, shop: panetiere)
+Menu.create(name: "Taboulé libanais", description: "Taboulais libanais, feuille de batavia, boulette falafel, tomate cerise.", price: 7, number_of_box: 1, shop: panetiere)
+Menu.create(name: "Pizza royale", description: "Sauce tomate, fromage râpé, champignon, jambon blanc, olive noire, herbes de Provence.", price: 3, number_of_box: 1, shop: panetiere)
+Menu.create(name: "Pizza Margarita", description: "Sauce tomate, fromage râpé, olive noire, herbes de Provence.", price: 3, number_of_box: 1, shop: panetiere)
+Menu.create(name: "Croque boulanger poulet", description: "Pain multi-graînes, poulet, bechamel, fromage, sel, poivre.", price: 5, number_of_box: 1, shop: panetiere)
+Menu.create(name: "Croque boulanger jambon", description: "Pain multi-graînes, jambon, bechamel, fromage, sel, poivre.", price: 5, number_of_box: 1, shop: panetiere)
+
+#----------------PERLETTE----------------#
+Menu.create(name: "Bagel cream cheese & saumon", description: "Pain pavot, cream cheese, saumon fumé, aneth.", price: 3, number_of_box: 1, shop: perlette)
+Menu.create(name: "Bagel poulet curry", description: "Pain pavot, poulet, curry, moutarde, roquette.", price: 3, number_of_box: 1, shop: perlette)
+Menu.create!(name: "Miss Perlette", description: "Crème légère mascarpone vanillée, framboises fraîches, meringues craquantes et fondantes.", price: 4, number_of_box: 1, shop: perlette)
+Menu.create(name: "Le Banoffee", description: "Tartelette spéculoos, caramel, bananes, crème montée.", price: 4, number_of_box: 1, shop: perlette)
