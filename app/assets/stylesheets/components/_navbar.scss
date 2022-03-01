@@ -1,35 +1,30 @@
-.navbar {
+.icon-bar {
+  width: 100%; /* Full-width */
+  background-color: #F9F9F9; /* Light-grey background */
+  overflow: auto; /* Overflow due to float */
   bottom: 0;
-  width: 100%;
   position: fixed;
   z-index: 100;
   color: #C8C9C7;
-}
 
-.navbar-nav {
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  color: #C8C9C7;
 }
 
 .nav-link {
-  color: #C8C9C7;
+  float: left; /* Float links side by side */
+  text-align: center; /* Center-align text */
+  width: 33%; /* Equal width (5 icons with 20% width each = 100%) */
+  padding: 2px 0; /* Some top and bottom padding */
+  transition: all 0.3s ease; /* Add transition for hover effects */
+  color: #C8C9C7; /* Light grey text color */
+  font-size: 36px; /* Increased font size */
+  // margin-left: 60px;
+  // margin-right: 30px;
 }
 
-.nav-item {
-  margin-right: 70px;
-  margin-left: 10px;
+.icon-bar a:hover {
+  color: #000; /* Add a hover color */
 }
 
-.nav-item .active {
-  color: black;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.nav-name {
+  font-size: 16px;
 }

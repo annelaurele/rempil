@@ -1,6 +1,10 @@
 class RentalsController < ApplicationController
   def index
-    
+    @user = current_user
+    @total = Rental.where(user: @user)
+    @actuals = @total.where(status: 0)
+    @pasts = @total.where(status: 1)
+    @paids = @total.where(status: 2)
   end
 
   def new
