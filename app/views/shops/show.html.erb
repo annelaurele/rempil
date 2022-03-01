@@ -12,27 +12,23 @@
         <p id="categorie-shop" > Catégorie : <%= @shop.category %> </p>
         <p id="couleur-heure"> Ouvert, ferme à <p>
           <div class="card-menu-list">
-            <h3>Menu:</h3>
+            <h3 id="menu-show">Menu:</h3>
             <ul>
-              <% @shop.menus.each do |menu| %>
-                  <li><%= menu.name %></li>
-              <% end %>
+              <select id="mounth">
+                  <option value="hide">Menu proposé</option>
+                  <option value="saladecesar">Salade César</option>
+                  <option value="saladepoke">Salade Poké</option>
+                  <option value="pizza">Pizza aux fromages</option>
+                  <option value="pizza">Pizza lardons champignons</option>
+                  <option value="quiche">Quiche poireaux saumon</option>
+                  <option value="quichelorraine">Quiche lorraine</option>
+              </select>
             </ul>
           </div>
         <div class="sub-card-button">
             <i class="fas fa-solid fa-star"></i>
-            <%
-=begin%>
- <button type="button" class="">Réserver</button>
-<%
-=end%>
-            <%= link_to "Réserver ce château", new_shop_rental_path(@shop.id), class: "btn btn-info" %>
+            <%= link_to "Réserver", new_shop_rental_path(@shop.id), class: "btn btn-info" %>
         </div>
-        <%# <div class="shop-menu">
-          <% @menus.each do |menu| %>
-            <%# <%= @menu.name %>
-          <%# <% end %>
-        <%# </div> %>
     </div>
 </div>
 
