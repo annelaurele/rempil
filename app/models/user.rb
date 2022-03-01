@@ -2,12 +2,12 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   enum status: {
-    grand: 0,
-    moyen: 1,
-    petit: 2,
-    graine: 3
+    graine: 0,
+    petite_pousse: 1,
+    jolie_fleur: 2,
+    grand_arbre: 3
   }, _prefix: true
-  
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :shops, dependent: :destroy #As a client

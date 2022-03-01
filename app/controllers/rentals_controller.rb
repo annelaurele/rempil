@@ -7,23 +7,6 @@ class RentalsController < ApplicationController
     @paids = @total.where(status: 2)
   end
 
-  def new
-    @shop = Shop.find(params[:shop_id])
-    @rental = Rental.new
-  end
-
-  def create
-    @shop = Shop.find(params[:shop_id])
-    @rental = Rental.new(rental_params)
-    @rental.shop = @shop
-    @rental.user = current_user
-    if @rental.save
-      redirect_to shop_rental_qrcode_path(@shop, @rental)
-    else
-      render :new
-    end
-  end
-
   def qrcode
     @qr = RQRCode::QRCode.new("16")
     @svg = @qr.as_svg(
@@ -33,6 +16,23 @@ class RentalsController < ApplicationController
     standalone: true,
     use_path: true
     )
+  end
+
+  def create
+    @shop = Shop.find(params[:shop_id])
+    @rental = Rental.new(status: 0, total_of_box: 1)
+    @rental.shop = @shop
+    @rental.user = current_user
+    if @rental.save
+      redirect_to shop_rental_qrcode_path(@shop, @rental)
+    else
+      render :new
+    end
+  end
+
+  def new
+    @shop = Shop.find(params[:shop_id])
+    @rental = Rental.new
   end
 
   def rental_params
