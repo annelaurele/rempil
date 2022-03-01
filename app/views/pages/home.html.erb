@@ -5,7 +5,9 @@
       <p class="url-modifier">La consigne près de chez toi</p>
     </div>
     <div>
-      <%= image_tag current_user.image_url, class: "user-picture" %>
+      <% if current_user %>
+        <%= image_tag current_user.image_url, class: "user-picture" %>
+      <% end %>
     </div>
   </div>
   <div>
