@@ -304,9 +304,9 @@ SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Dimanche", 
 
 puts '----- Creating rentals -----'
 
-Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 0, shop: stcyp, user: elliot)
-Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 0, shop: prosciutteria, user: elliot)
-Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 0, shop: biocoop, user: elliot)
+Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 0, shop: stcyp, user: elliot, total_of_box: 2)
+Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 0, shop: prosciutteria, user: elliot, total_of_box: 1)
+Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 0, shop: biocoop, user: elliot, total_of_box: 1)
 
 #Creation menus
 
