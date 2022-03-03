@@ -6,10 +6,11 @@
   position: fixed;
   z-index: 100;
   color: #C8C9C7;
+  padding-top: 5px;
 
 }
 
-.nav-link {
+.menu {
   float: left; /* Float links side by side */
   text-align: center; /* Center-align text */
   width: 33%; /* Equal width (5 icons with 20% width each = 100%) */
@@ -21,10 +22,21 @@
   // margin-right: 30px;
 }
 
-.active, .nav-link:hover {
-  color: black;
-}
-
 .nav-name {
   font-size: 16px;
+}
+
+nav ul li{
+  list-style:none;
+  float:left;
+  padding-right:20px;
+}
+nav ul li a{
+  text-decoration:none;
+  background-color:#ccc;
+  padding:4px 5px;
+}
+.active-navbar{
+  color:black;
+  fill:black;
 }

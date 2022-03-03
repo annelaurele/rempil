@@ -11,9 +11,13 @@
     </div>
   </div>
   <div>
-    <br><h2>Bonjour <%= @user.name %> !</h2>
-    <p><span style="color: #FFBD36"><strong><%= @user.address %> </strong></span><span class="url-modifier"> Tu n'es pas là ?</span> </p>
-    <%# <%= link_to 'Modifier', edit_user_path(user), class: "url-modifier" %>
+    <% if current_user %>
+      <br><h2>Bonjour <%= @user.name %> !</h2>
+      <p><span style="color: #FFBD36"><strong><%= @user.address %> </strong></span><span class="url-modifier"> Tu n'es pas là ?</span> </p>
+    <% else %>
+    <%= link_to "Se connecter", new_user_session, class: "btn sign_in btn-info" %>
+    <% end %>
+      <%# <%= link_to 'Modifier', edit_user_path(user), class: "url-modifier" %>
   </div>
 </div>
 
