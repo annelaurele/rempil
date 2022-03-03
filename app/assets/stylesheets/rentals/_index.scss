@@ -1,8 +1,64 @@
-.dash-button {
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
+/*----------Header----------*/
+.header-dashboard{
+  display: flex;
+  margin-left: 15px;
 }
+
+/*----------MENU DASHBOARD STATUT----------*/
+.menu-dashboard-statut ul li{
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+#encours{
+  background-color: #B1E4E3;
+  border: 2px solid #B1E4E3;
+  padding: 5px 30px 5px 30px;
+  border-radius: 30px;
+  margin-left: -30px;
+}
+
+#rendu{
+border: 2px solid #B1E4E3;
+padding: 5px 30px 5px 30px;
+border-radius: 30px;
+}
+
+#paye{
+  border: 2px solid #B1E4E3;
+  padding: 5px 30px 5px 30px;
+  border-radius: 30px;
+}
+/*----------Notification----------*/
+
+.-count, .-count:before, .ringBell:after {
+  position: absolute;
+}
+
+.-count, .-count:before {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+
+.-count {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: #FFBD36;
+  margin: -55px 0px 0px 79px;
+  margin-top: -49px;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 90;
+}
+
+/*----------MENU CARD----------*/
 
 .big-div-shops {
     display: flex;
@@ -17,6 +73,7 @@
     display: flex;
     align-items: center;
     padding-bottom: 12px;
+    height: 140px;
 }
 
 .big-div-shop {
@@ -33,7 +90,7 @@
 
 .div-shop-item p {
     margin-top: 0;
-    margin-bottom: 0rem;
+    margin-bottom: 5px;
 }
 
 .dash-shop-pic {
@@ -41,10 +98,30 @@
 }
 
 .dash-info-button {
-    height: fit-content;
+    border: none;
+    background-color: #329190;
+    border-radius: 8px;
+    color: white;
+    height: 30px;
+    font-size: 13px;
 }
 
 #dash-menu-info-text {
     font-size: 24px;
     font-weight: bold;
+    margin-top: 40px;
+    margin-left: 15px;
+    margin-bottom: 30px;
+}
+
+.dash-comment-button{
+    border: 2px solid #329190;
+    background-color: white;
+    border-radius: 8px;
+    color: black;
+    font-size: 13px;
+}
+
+.button-dashboard-card{
+  display: flex;
 }
