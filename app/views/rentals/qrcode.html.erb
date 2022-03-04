@@ -1,9 +1,40 @@
+<nav class="navbar-nav fixed-top">
+  <div class="nav-items d-flex justify-content-between">
+    <div class="item">
+      <a href="/shops"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
+    <div class="item">
+      <p class="number-consigne">Consigne n°31</p>
+    </div>
+  </div>
+</nav>
+
+<div class="img-banner" style="background-image: url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+</div>
+
 <div class="container">
-  <h2 class="qr_page_title">Ta réservation est validée 🎉</h2>
-  <p class="qr-description">Présente ton QR Code à ton commerçant</h2>
+  <h2 class="qr-title">Perlette</h2>
+  <p class="qr-adresse">57 rue des Filatiers, 31000 Toulouse</p>
+  <p class="qr-description">Ta réservation est validée 🎉<br>Présente ton QR Code à ton commerçant</h2>
   <div class="qrcode">
     <%= @svg.html_safe %>
   </div>
-    <%# <p class="qr_page_desciption">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p> %>
-    <%= link_to "Voir mes consignes", rentals_path, class: "btn btn-resa btn-info btn-block" %>
+</div>
+
+<div class="container rappel-resa">
+  <h2 class="rappel-resa-title">Rappel de ta commande :</h2>
+  <div class="resa-items">
+    <div class="resa-item">
+    Salade César
+    </div>
+    <div class="resa-item">
+    Quiche Lorraine
+    </div>
+  <h2 class="resa-total">Total : 14€</h2>
+</div>
+
+<%= link_to "Voir mes consignes", rentals_path, class: "btn btn-resa btn-info btn-block" %>
+
+<!--------------------- ASTUCE FOOTER --------------------->
+<div class="content-wrapper-qrcode">
 </div>
