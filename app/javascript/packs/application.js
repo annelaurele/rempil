@@ -81,3 +81,5 @@ $('select').each(function () {
   });
 
 });
+
+import "@fortawesome/fontawesome-free/css/all"
