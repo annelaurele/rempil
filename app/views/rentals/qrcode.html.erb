@@ -12,24 +12,21 @@
 <%# <div class="img-banner" style="background-image: url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
 </div> %>
 
-<div class="">
-  <%= cl_image_tag @shop.photo.key, class: "shop-qrcode-image" %>
-</div>
+<%= cl_image_tag @shop.photo.key, class: "shop-qrcode-image" %>
 
 <div class="container-shop">
   <h2 class="qr-title"><%= @shop.name %></h2>
   <p class="qr-adresse"><%= @shop.address %></p>
-  <p class="qr-description">Ta réservation est validée 🎉<br>Présente ton QR Code à ton commerçant</h2>
+  <p class="qr-description">Ta réservation est validée 🎉<br>À présenter à ton commerçant</h2>
   <div class="qrcode">
     <%= @svg.html_safe %>
   </div>
 </div>
 
 <div class="container-rappel-resa">
-  <h2 class="rappel-resa-title">Rappel de ta commande :</h2>
+  <h2 class="rappel-resa-title"><strong>Rappel de ta commande</strong></h2>
   <div class="resa-items">
     <div class="resa-item">
-    Salade César
     </div>
     <div class="resa-item">
     Quiche Lorraine
@@ -38,7 +35,7 @@
 </div>
 
 <div class="sticky-btn">
-  <%= link_to "Voir mes consignes", rentals_path, class: "btn btn-info btn-block" %>
+  <%= link_to "Voir mes consignes", rentals_path, class: "btn btn-info btn-consignes btn-block" %>
 </div>
 
 <!--------------------- ASTUCE FOOTER --------------------->
