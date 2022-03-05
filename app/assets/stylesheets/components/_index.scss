@@ -5,3 +5,7 @@
 @import "card";
 @import "card-category";
 @import "star-note";
+
+.content-wrapper-index {
+  min-height: calc(30vh - 70px - 80px);
+}
