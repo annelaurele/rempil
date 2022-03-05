@@ -10,26 +10,27 @@
     <p> <%= @shop.description %> </p>
     <div class="sub-show-card">
         <p id="categorie-shop" > Catégorie : <%= @shop.category %> </p>
-        <p id="couleur-heure"> Ouvert, ferme à <p>
+        <%# <p id="couleur-heure"> Ouvert, ferme à <p> %>
           <div class="card-menu-list">
-            <h3>Menu:</h3>
+            <h3 id="menu-show">Menu:</h3>
             <ul>
-              <% @shop.menus.each do |menu| %>
-                  <li><%= menu.name %></li>
-              <% end %>
+              <select id="mounth">
+                  <option value="hide">Menu proposé</option>
+                  <option value="saladecesar">Salade César</option>
+                  <option value="saladepoke">Salade Poké</option>
+                  <option value="pizza">Pizza aux fromages</option>
+                  <option value="pizza">Pizza lardons champignons</option>
+                  <option value="quiche">Quiche poireaux saumon</option>
+                  <option value="quichelorraine">Quiche lorraine</option>
+              </select>
             </ul>
           </div>
         <div class="sub-card-button">
-            <i class="fas fa-solid fa-star"></i>
-            <%# <%=begin%>
- <%# <button type="button" class="">Réserver</button> %>
-<%# <%end%>
-            <%= link_to "Réserver", shop_rentals_path(@shop.id), class: "btn btn-info" %>
+            <%# <i class="fas fa-solid fa-star"></i> %>
+            <%= link_to "Réserver", shop_rentals_path(@shop.id), method: :post, class: "btn btn-info" %>
         </div>
     </div>
 </div>
-
-
 
 <h2 id="commercant-title-similaire">Commerçants similaires</h2>
 <div class="commercant-similaire-carousel">
@@ -39,7 +40,7 @@
       <h4 id="shop-title-commercant"> <%= shop.name %> </h4>
       <p id="shop-description-commercant"> <%= shop.description %> </p>
       <p id="categorie-commercant" > Catégorie : <%= @shop.category %> </p>
-      <p id="couleur-heure"> Ouvert, ferme à <p>
+      <%# <p id="couleur-heure"> Ouvert, ferme à <p> %>
     </div>
   <% end %>
 </div>

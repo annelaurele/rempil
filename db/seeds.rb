@@ -203,7 +203,7 @@ SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Vendredi",
 SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Samedi", shop: alimentation)
 
 biocoop = Shop.create(id: 12, name: "Biocoop", address: "7 Place de la Trinité, 31000 Toulouse", mobile: "0534424919", email: "", category: 3, description: "Vous pourrez y trouver des fruits et légumes frais de saison et locaux, du pain frais et tous les produits en vrac d'épicerie", user: annelaure, average_rate: 4.3, longitude: 43.599937791716464, latitude: 1.4448434548568247)
-file = URI.open('https://www.biocooptrinite-toulouse.com/images/500/0/docs/97/Abonnements/biocoop-trinite02.jpg')
+file = URI.open('https://monpetit20e.com/wp-content/uploads/2020/11/primeurspre%CC%81fe%CC%81re%CC%81s.jpg')
 biocoop.photo.attach(io: file, filename: 'biocoop.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Lundi", shop: biocoop)
 SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Mardi", shop: biocoop)
@@ -304,9 +304,9 @@ SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Dimanche", 
 
 puts '----- Creating rentals -----'
 
-Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 0, shop: stcyp, user: elliot)
-Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 0, shop: prosciutteria, user: elliot)
-Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 0, shop: biocoop, user: elliot)
+Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 0, shop: stcyp, user: elliot, total_of_box: 2)
+Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 0, shop: prosciutteria, user: elliot, total_of_box: 1)
+Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 0, shop: biocoop, user: elliot, total_of_box: 1)
 
 #Creation menus
 

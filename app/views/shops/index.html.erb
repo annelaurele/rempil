@@ -25,11 +25,19 @@
   <%# <div class="card"> %>
     <%= cl_image_tag shop.photo.key %>
     <div class="card-infos">
-      <div>
+      <div class="card-shop-name">
         <h2><%= shop.name %></h2>
-        <p>Catégorie : <%= shop.category %></p>
+        <p class="btn btn-ghost"><%= shop.category.gsub(/_/,' ') %></p>
+      </div>
+      <div class="card-shop-distance">
         <h3 class="card-distance">300m</h3>
+      </div>
       </div>
     </div>
   <% end %>
 <% end %>
+
+
+<!--------------------- ASTUCE FOOTER --------------------->
+<div class="content-wrapper-index">
+</div>

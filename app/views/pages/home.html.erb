@@ -5,13 +5,19 @@
       <p class="url-modifier">La consigne près de chez toi</p>
     </div>
     <div>
-      <%= image_tag current_user.image_url, class: "user-picture" %>
+      <% if current_user %>
+        <%= image_tag current_user.image_url, class: "user-picture" %>
+      <% end %>
     </div>
   </div>
   <div>
-    <br><h2>Bonjour <%= @user.name %> !</h2>
-    <p><span style="color: #FFBD36"><strong><%= @user.address %> </strong></span><span class="url-modifier"> Tu n'es pas là ?</span> </p>
-    <%# <%= link_to 'Modifier', edit_user_path(user), class: "url-modifier" %>
+    <% if current_user %>
+      <br><h2>Bonjour <%= @user.name %> !</h2>
+      <p><span style="color: #FFBD36"><strong><%= @user.address %> </strong></span><span class="url-modifier"> Tu n'es pas là ?</span> </p>
+    <% else %>
+    <%= link_to "Se connecter", new_user_session_path, class: "btn sign_in btn-info" %>
+    <% end %>
+      <%# <%= link_to 'Modifier', edit_user_path(user), class: "url-modifier" %>
   </div>
 </div>
 
@@ -36,6 +42,6 @@
   </div>
 </div>
 
-<div class= "container">
+<%# <div class= "container">
   <br><h3>Près de chez<span style="color: #FFBD36"> TOI</span><h3>
-</div>
+</div> %>

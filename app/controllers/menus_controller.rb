@@ -5,4 +5,5 @@ class MenusController < ApplicationController
 
   def show
     @menu = Menu.find(params[:shop])
+  end
 end
