@@ -29,6 +29,8 @@ class RentalsController < ApplicationController
     @shop = Shop.find(params[:shop_id])
     @rental = Rental.new(status: 0, total_of_box: 1)
     @rental.shop = @shop
+    @datedebut = My_new_rental.rental_time_start = Date.now
+    @daterendu = My_new_rental.rental_time_end = Date.now + 14.day
     @rental.user = current_user
     if @rental.save
       redirect_to shop_rental_qrcode_path(@shop, @rental)
