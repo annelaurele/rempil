@@ -41,7 +41,7 @@
                                 <p>A rendre avant le: <%= actual.rental_time_end %></p>
                                 <div class="button-dashboard-card">
                                     <div id="button-fiche">
-                                      <button type="button" class="btn btn-info dash-info-button">Voir la fiche</button>
+                                    <%= link_to "Voir la fiche", shops_path, class: "btn btn-info dash-info-button" %>
                                     </div>
                                     <div id="button-comment">
                                     <%= link_to "Mettre un commentaire", new_rating_path, class: "btn btn-info dash-comment-button" %>
