@@ -34,6 +34,11 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
 });
 
+
+import { initStarRating } from '../plugins/init_star_rating';
+
+initStarRating();
+
 $('select').each(function () {
   var $this = $(this), numberOfOptions = $(this).children('option').length;
 
@@ -82,3 +87,5 @@ $('select').each(function () {
   });
 
 });
+
+import "@fortawesome/fontawesome-free/css/all"

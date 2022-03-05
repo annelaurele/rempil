@@ -11,21 +11,21 @@
   object-fit: cover;
 }
 
-.card-infos h2 {
+.shop-card-infos h2 {
   color: black;
-  font-size: 16px;
+  font-size: 22px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-infos p {
-  font-size: 12px;
-  color: #C8C9C7;
-  opacity: .7;
-  margin: 0;
-}
+// .card-infos p {
+//   font-size: 12px;
+//   color: #C8C9C7;
+//   opacity: .7;
+//   margin: 0;
+// }
 
-.card .card-infos {
+.card .shop-card-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -33,7 +33,7 @@
   position: relative;
 }
 
-.card-infos .card-distance {
+.shop-card-infos .card-distance {
   position: absolute;
   right: 16px;
   top: -20px;
@@ -43,10 +43,18 @@
   height: 100%;
 }
 
-.card-infos h3 {
+.shop-card-infos h3 {
   font-size: 14px;
   color: #B1E4E3;
   padding-top: 25px;
   padding-left: 10px;
   font-weight: bold;
+}
+
+.container-infos {
+  margin-left: 10px;
+}
+
+.container-index {
+  margin-left: 10px;
 }

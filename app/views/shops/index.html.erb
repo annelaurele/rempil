@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-index">
   <h4>Trouve ton commerçant</h4>
   <div>
     <%= form_tag shops_path, method: :get do %>
@@ -12,7 +12,7 @@
   </div>
 </div>
 
-<div class="justify-content-center container"><br>
+<div class="container-infos"><br>
   <% if params[:query].present? %>
     <h4><strong><span id="important"><%= @shops.count %></span></strong> <%= params[:query] %>(s) à côté de chez toi</h4>
   <% else %>
@@ -20,16 +20,25 @@
   <% end %>
 </div>
 
-<% @shops.each do |shop| %>
-  <%= link_to shop_path(shop.id), class: "card" do %>
-  <%# <div class="card"> %>
-    <%= cl_image_tag shop.photo.key %>
-    <div class="card-infos">
-      <div>
-        <h2><%= shop.name %></h2>
-        <p>Catégorie : <%= shop.category %></p>
-        <h3 class="card-distance">300m</h3>
+<div class="index-shop-cards">
+  <% @shops.each do |shop| %>
+    <%= link_to shop_path(shop.id), class: "card" do %>
+    <%# <div class="card"> %>
+      <%= cl_image_tag shop.photo.key %>
+      <div class="shop-card-infos">
+        <div class="card-shop-name">
+          <h2><%= shop.name %></h2>
+          <p class="btn btn-ghost"><%= shop.category.gsub(/_/,' ') %></p>
+        </div>
+        <div class="card-shop-distance">
+          <h3 class="card-distance">300m</h3>
+        </div>
+        </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
+
+<!--------------------- ASTUCE FOOTER --------------------->
+<div class="content-wrapper-index">
+</div>

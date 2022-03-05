@@ -1,8 +1,11 @@
 // Specific CSS for your home-page
-.search-home {
+.container-search-home {
   background-color: #2C9199;
   color: white;
-  padding: 30px;
+  padding: 40px;
+  padding-top: 25px;
+  padding-bottom: 15px;
+  margin: -15px;
 }
 
 .logo-home {
@@ -24,8 +27,16 @@
 }
 
 .url-modifier {
-  font-size: 12px;
-  margin-left: 5px;
+  font-size: 16px;
+}
+
+.container-categories {
+  margin-top: 5px;
+  margin-left: 23px;
+}
+
+.container-distance {
+  margin-left: 23px;
 }
 
 .btn-home-search {
@@ -36,4 +47,40 @@
 .form-search {
   padding-top: 4px;
   padding-bottom: 7px;
+  width: 323px;
+}
+
+.btn-ghost {
+  color: black;
+  font-size: 12px;
+  border: 1px solid #B1E4E3;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+  margin-top: 5px;
+}
+
+.shop-distance-cards{
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    width: auto;
+    height: 499px;
+    margin-top: -15px;
+    margin-left: -22px;
+}
+
+.shop-card-distance{
+    margin-left: 22px;
+    margin-top: 20px;
+    width: 374px;
+    background-color: white;
+    filter: drop-shadow(0 0 0.75rem #C8C9C7);
+    padding: 15px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.content-wrapper-qrcode {
+  min-height: calc(50vh - 70px - 80px);
 }
