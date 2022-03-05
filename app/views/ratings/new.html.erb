@@ -1,0 +1,11 @@
+
+<div class="container" style="text-align: center" >
+  <br><h3>Donne ton<span style="color: #FFBD36"> AVIS </span>!</h3><br>
+      <%= simple_form_for @rating do |f| %>
+      <p>Ecris-ton avis <span style="color: #FFBD36">ici... </p>
+        <%= f.input :content, placeholder: "Ecris ici..." %>
+      <p>Et ta note <span style="color: #FFBD36">là...</span></p>
+        <div class="star-note"><%= f.input :rating, collection: (1..5).to_a %></div>
+        <%= f.submit "Je valide", class: "btn btn-info" %>
+      <% end %>
+</div>
