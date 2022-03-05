@@ -60,27 +60,22 @@
   margin-top: 5px;
 }
 
-.shop-distance-cards{
-    white-space: nowrap;
-    overflow-y: hidden;
-    overflow-x: scroll;
-    width: auto;
-    height: 499px;
-    margin-top: -15px;
-    margin-left: -22px;
+.shop-distance-cards {
+  margin-left: -12px;
 }
 
-.shop-card-distance{
-    margin-left: 22px;
-    margin-top: 20px;
-    width: 374px;
-    background-color: white;
-    filter: drop-shadow(0 0 0.75rem #C8C9C7);
-    padding: 15px;
-    border-radius: 15px;
-    display: inline-block;
+.distance-shop-card {
+  border-radius: 15px;
 }
 
-.content-wrapper-qrcode {
-  min-height: calc(50vh - 70px - 80px);
+// .card-img-top {
+//   border-radius: 15px;
+// }
+
+.card-shop-distance-category-description {
+  font-size: 16px;
+}
+
+.content-wrapper-home {
+  min-height: calc(30vh - 70px - 80px);
 }

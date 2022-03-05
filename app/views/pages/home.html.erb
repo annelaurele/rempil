@@ -49,10 +49,11 @@
   <div class="shop-distance-cards">
 
     <% @shops.each do |shop| %>
-    <div class="shop-card-distance">
-      <%= cl_image_tag shop.photo.key, class: "shop-show-big-image" %>
-      <h4 id="shop-title-commercant"> <%= shop.name %> </h4>
-      <div class="card-shop-distance-category">
+    <div class="card distance-shop-card" style="width: 23.3rem;">
+      <%= cl_image_tag shop.photo.key, class: "card-img-top" %>
+      <div class="card-body">
+        <h4 id="shop-title-commercant"> <%= shop.name %> </h4>
+        <p class="card-shop-distance-category-description"><%= shop.description %></p>
         <p class="btn btn-ghost"><%= shop.category.gsub(/_/,' ') %></p>
       </div>
     </div>
@@ -62,6 +63,5 @@
 
 </div>
 
-<!--------------------- ASTUCE FOOTER --------------------->
 <div class="content-wrapper-home">
 </div>
