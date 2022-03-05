@@ -29,9 +29,10 @@ class RentalsController < ApplicationController
   def create
     @shop = Shop.find(params[:shop_id])
     @rental = Rental.new(status: 0, total_of_box: 1)
+    @rental.rental_time_start = Date.today
+    @rental.rental_time_end = Date.today + 14.day
     @rental.shop = @shop
-    @datedebut = My_new_rental.rental_time_start = Date.now
-    @daterendu = My_new_rental.rental_time_end = Date.now + 14.day
+
     @rental.user = current_user
     if @rental.save
       redirect_to shop_rental_qrcode_path(@shop, @rental)
@@ -47,6 +48,21 @@ class RentalsController < ApplicationController
 
   def rental_params
     params.require(:rental).permit(:rental_time_start, :rental_time_end, :status, :shop_id, :user_id, :number_box, :max_capacity)
+  end
+
+  def set_status_pending
+    @rental.mark('En cours')
+    redirect_to @rental
+  end
+
+  def set_status_rendered
+    @rental.mark('Rendu')
+    redirect_to @rental
+  end
+
+  def set_status_paid
+    @rental.mark('Payé')
+    redirect_to @rental
   end
 
 end
