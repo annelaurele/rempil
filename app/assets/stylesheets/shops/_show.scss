@@ -41,6 +41,31 @@
     color: #C8C9C7;
 }
 
+.card-menu-show {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-menu-show-text-align {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.picture_menu_show {
+  display: flex;
+}
+
+.name-card-menu-show {
+  font-weight: bold;
+  margin: 0px;
+}
+
+.price-card-menu-show {
+  margin: 0px;
+}
+
+
 /*---------- Commerçant similaire -----------*/
 
 #commercant-title-similaire{
