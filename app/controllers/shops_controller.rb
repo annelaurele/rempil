@@ -13,5 +13,6 @@ class ShopsController < ApplicationController
         # @rent
     als_count = Rental.where(user: current_user)  #.where id = current_user ??
     @menus = Menu.where(shop: @shop)
+    @rental = Rental.new
   end
 end
