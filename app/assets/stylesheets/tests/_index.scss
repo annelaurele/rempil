@@ -6,26 +6,32 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
-  height: 100px;
 }
 
+.shop-qrcode-image {
+  height: 276px;
+  margin-top: 43px;
+}
 
 .qr-title {
   font-size: 2.65em;
   width: 90%;
-  padding: 0;
-  margin-top: 12px;
+  margin-left: 10px;
   margin-bottom: 0;
+  margin-top: 10px;
 }
 
 .qr-adresse {
-  margin-top: 0;
-  color: #B1E4E3
+  margin-left: 10px;
+  color: #B1E4E3;
+  font-size: 18px;
 }
 
 .qr-description {
-  font-size: 20px;
+  text-align: center;
+  font-size: 22px;
   padding-top: 10px;
+  margin-left: 10px;
 }
 
 .qrcode {
@@ -45,6 +51,10 @@
   height: 0;
   bottom: 0;
   z-index: 1;
+}
+
+.container-rappel-resa {
+  text-align: center;
 }
 
 .rappel-resa-title {
@@ -77,6 +87,10 @@
   font-size: 20px;
 }
 
+.btn-consignes {
+  font-size: 20px;
+}
+
 .content-wrapper-qrcode {
-  min-height: calc(100vh - 70px - 80px);
+  min-height: calc(50vh - 70px - 80px);
 }
