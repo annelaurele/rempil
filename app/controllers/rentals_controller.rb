@@ -1,10 +1,11 @@
 class RentalsController < ApplicationController
   def index
     @user = current_user
-    @total = Rental.where(user: @user)
-    @actuals = @total.where(status: 0)
-    @pasts = @total.where(status: 1)
-    @paids = @total.where(status: 2)
+    @total = Rental.where(user: @user).map(&:total_of_box).sum
+    @all_users_rentals = Rental.where(user: @user)
+    @actuals = @all_users_rentals.where(status: 0)
+    @pasts = @all_users_rentals.where(status: 1)
+    @paids = @all_users_rentals.where(status: 2)
   end
 
   def qrcode
