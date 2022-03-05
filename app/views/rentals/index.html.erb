@@ -8,13 +8,13 @@
       </div>
       <div class="text-header-dashboard">
         <h1 style="font-size: 24px; margin-left: 15px;font-weight: 700;"> <span style="color: #329190;"> Ton statut : </span><%= @user.status.gsub(/_/,' ') %></h1>
-        <h2 style="font-size: 20px; margin-left: 15px; color:#B1E4E3; font-weight: 700;">Consignes en cours : <%= @total.size %><h2>
+        <h2 style="font-size: 20px; margin-left: 15px; color:#B1E4E3; font-weight: 700;">Consignes en cours : <%= @total %><h2>
       </div>
     </div>
 
     <div class="menu-dashboard-statut">
       <ul>
-        <li id="encours">En cours</li><span class="-count">3</span>
+        <li id="encours">En cours</li><span class="-count"><%= @total %></span>
         <li id="rendu"> Rendu </li>
         <li id="paye"> Payé </li>
       </ul>
