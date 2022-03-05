@@ -2,6 +2,10 @@
   background-color: #2C9199;
 }
 
+.number-consigne {
+  font-size: 18px;
+}
+
 .img-banner {
   background-size: cover;
   background-position: center;
@@ -18,7 +22,6 @@
   width: 90%;
   margin-left: 10px;
   margin-bottom: 0;
-  margin-top: 10px;
 }
 
 .qr-adresse {
@@ -45,12 +48,13 @@
 }
 
 .sticky-btn {
-  position: sticky;
-  /*float: right;*/
-  right: 0;
-  height: 0;
-  bottom: 0;
+  position: fixed;
+  /* float: right; */
+  /* right: 0; */
+  /* height: 0; */
+  bottom: 103px;
   z-index: 1;
+  width: 100%;
 }
 
 .container-rappel-resa {

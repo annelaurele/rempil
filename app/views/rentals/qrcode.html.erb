@@ -4,15 +4,12 @@
       <a href="/shops"><i class="fa-solid fa-arrow-left"></i></a>
     </div>
     <div class="item">
-      <p class="number-consigne">Consigne n°31</p>
+      <p class="number-consigne">Consigne n°<%= @total %></p>
     </div>
   </div>
 </nav>
 
-<%# <div class="img-banner" style="background-image: url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
-</div> %>
-
-<%= cl_image_tag @shop.photo.key, class: "shop-qrcode-image" %>
+<%= cl_image_tag @shop.photo.key, class: "shop-show-big-image" %>
 
 <div class="container-shop">
   <h2 class="qr-title"><%= @shop.name %></h2>
