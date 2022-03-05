@@ -9,6 +9,8 @@ class RentalsController < ApplicationController
 
   def qrcode
     @qr = RQRCode::QRCode.new("16")
+    @shop = Shop.find(params[:shop_id])
+    @rental = Rental.find(params[:rental_id])
     @svg = @qr.as_svg(
     color: "000",
     shape_rendering: "crispEdges",

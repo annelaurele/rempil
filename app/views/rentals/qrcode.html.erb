@@ -9,19 +9,23 @@
   </div>
 </nav>
 
-<div class="img-banner" style="background-image: url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+<%# <div class="img-banner" style="background-image: url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+</div> %>
+
+<div class="">
+  <%= cl_image_tag @shop.photo.key, class: "shop-qrcode-image" %>
 </div>
 
-<div class="container">
-  <h2 class="qr-title">Perlette</h2>
-  <p class="qr-adresse">57 rue des Filatiers, 31000 Toulouse</p>
+<div class="container-shop">
+  <h2 class="qr-title"><%= @shop.name %></h2>
+  <p class="qr-adresse"><%= @shop.address %></p>
   <p class="qr-description">Ta réservation est validée 🎉<br>Présente ton QR Code à ton commerçant</h2>
   <div class="qrcode">
     <%= @svg.html_safe %>
   </div>
 </div>
 
-<div class="container rappel-resa">
+<div class="container-rappel-resa">
   <h2 class="rappel-resa-title">Rappel de ta commande :</h2>
   <div class="resa-items">
     <div class="resa-item">
