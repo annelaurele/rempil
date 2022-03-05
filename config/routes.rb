@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   end
   resources :rentals, only: [:index]
   resources :test
+
+  resources :ratings, only: [:new, :create]
 end
