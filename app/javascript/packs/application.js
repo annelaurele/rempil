@@ -24,8 +24,12 @@ require("channels")
 
 // External imports
 import "bootstrap";
+<<<<<<< HEAD
 import "@fortawesome/fontawesome-free/css/all";
 import { initStarRating } from '../plugins/init_star_rating';
+=======
+import "controllers"
+>>>>>>> master
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
