@@ -6,6 +6,7 @@ class RentalsController < ApplicationController
     @actuals = @all_users_rentals.where(status: 0)
     @pasts = @all_users_rentals.where(status: 1)
     @paids = @all_users_rentals.where(status: 2)
+    @rating = Rating.new
   end
 
   def qrcode

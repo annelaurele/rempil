@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   resources :shops do
     resources :rentals, only: [:create, :new] do
       get 'qrcode', to: 'rentals#qrcode'
+        resources :ratings, only: [:new, :create]
     end
   end
   resources :rentals, only: [:index]
   resources :test
 
-  resources :ratings, only: [:new, :create]
 end
