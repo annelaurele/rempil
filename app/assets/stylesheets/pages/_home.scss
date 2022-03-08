@@ -52,7 +52,7 @@
 
 .btn-ghost {
   color: black;
-  font-size: 12px;
+  font-size: 16px;
   border: 1px solid #B1E4E3;
   border-radius: 50px;
   font-weight: lighter;
@@ -60,12 +60,26 @@
   margin-top: 5px;
 }
 
-.shop-distance-cards {
+.shop-distance-carousel {
   margin-left: -12px;
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  width: auto;
+  height: 670px;
+  p {
+    white-space: pre-line;
+  }
+}
+
+.shop-distance-carousel a {
+  color: black;
 }
 
 .distance-shop-card {
   border-radius: 15px;
+  display: inline-block;
+  height: 45vh;
 }
 
 // .card-img-top {
@@ -76,6 +90,6 @@
   font-size: 16px;
 }
 
-.content-wrapper-home {
-  min-height: calc(30vh - 70px - 80px);
-}
+// .content-wrapper-home {
+//   min-height: calc(-100vh - 20px - 80px);
+// }
