@@ -1,4 +1,4 @@
 class SelectionRental < ApplicationRecord
-  has_many: menus
-  has_many: rentals
+  belongs_to :rental
+  belongs_to :menu
 end

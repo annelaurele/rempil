@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_05_154519) do
+ActiveRecord::Schema.define(version: 2022_03_08_193831) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,8 +75,13 @@ ActiveRecord::Schema.define(version: 2022_03_05_154519) do
   end
 
   create_table "selection_rentals", force: :cascade do |t|
+    t.bigint "rental_id", null: false
+    t.bigint "menu_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "quantity"
+    t.index ["menu_id"], name: "index_selection_rentals_on_menu_id"
+    t.index ["rental_id"], name: "index_selection_rentals_on_rental_id"
   end
 
   create_table "shops", force: :cascade do |t|
@@ -133,6 +138,8 @@ ActiveRecord::Schema.define(version: 2022_03_05_154519) do
   add_foreign_key "ratings", "users"
   add_foreign_key "rentals", "shops"
   add_foreign_key "rentals", "users"
+  add_foreign_key "selection_rentals", "menus"
+  add_foreign_key "selection_rentals", "rentals"
   add_foreign_key "shops", "users"
   add_foreign_key "slot_hours", "shops"
 end

@@ -1,5 +1,6 @@
 class Menu < ApplicationRecord
   belongs_to :shop
   belongs_to :rental, optional: true
-  belongs_to :SelectionRental
+
+  has_many :selection_rentals
 end
