@@ -1,6 +1,8 @@
 class RatingsController < ApplicationController
   def new
     @rating = Rating.new
+    @shop = Shop.find(params[:shop_id])
+    @rental = Rental.find(params[:rental_id])
   end
 
   def create
