@@ -24,43 +24,26 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "@fortawesome/fontawesome-free/css/all";
+import { initStarRating } from '../plugins/init_star_rating';
+import "controllers"
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+  initStarRating();
   // Call your functions here, e.g:
   // initSelect2();
 });
 
+// -----------star rating -------------
 
-import { initStarRating } from '../plugins/init_star_rating';
 
-initStarRating();
 
-$('select').each(function () {
-  var $this = $(this), numberOfOptions = $(this).children('option').length;
 
-  $this.addClass('select-hidden');
-  $this.wrap('<div class="select"></div>');
-  $this.after('<div class="select-styled"></div>');
 
-  var $styledSelect = $this.next('div.select-styled');
-  $styledSelect.text($this.children('option').eq(0).text());
-
-  var $list = $('<ul />', {
-    'class': 'select-options'
-  }).insertAfter($styledSelect);
-
-  for (var i = 0; i < numberOfOptions; i++) {
-    $('<li />', {
-      text: $this.children('option').eq(i).text(),
-      rel: $this.children('option').eq(i).val()
-    }).appendTo($list);
-    //if ($this.children('option').eq(i).is(':selected')){
-    //  $('li[rel="' + $this.children('option').eq(i).val() + '"]').addClass('is-selected')
-    //}
-  }
+// -----------nav bar------------
 
   var $listItems = $list.children('li');
 
@@ -84,7 +67,3 @@ $('select').each(function () {
     $styledSelect.removeClass('active');
     $list.hide();
   });
-
-});
-
-import "@fortawesome/fontawesome-free/css/all"

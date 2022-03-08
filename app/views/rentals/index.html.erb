@@ -44,7 +44,33 @@
                                     <%= link_to "Voir la fiche", shops_path, class: "btn btn-info dash-info-button" %>
                                     </div>
                                     <div id="button-comment">
-                                    <%= link_to "Noter", new_rating_path, class: "btn btn-info dash-comment-button" %>
+                                    <button type="button" class="btn btn-info dash-comment-button" data-toggle="modal" data-target="#Modalrating">
+                                        Je note</button>
+                                    </div>
+                                    <div class="modal fade" id="Modalrating" role="dialog" aria-labelledby="ModalreviewLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div>
+                                                        <h3 class="modal-title">Donne ton avis sur</h3>
+                                                        <h3 style="color: #FFBD36"><%= actual.shop.name %></h3>
+                                                    </div>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <%= simple_form_for [actual.shop, actual, @rating] do |f| %>
+                                                    <p style="text-align: center">Ecris ton avis <span style="color: #FFBD36">ici... </p>
+                                                    <%= f.input :content, placeholder: "J'adore ce commerçant..." %>
+                                                    <p style="text-align: center">Et ta note <span style="color: #FFBD36">là...</span></p>
+                                                    <div class="star-note"><%= f.input :rating, collection: (1..5).to_a %></div>
+                                                    <%= f.submit "Je valide", class: "btn btn-block btn-info" %>
+                                                    <% end %>
+                                                </div>
+                                            </div>
+                                        </div>
+>>>>>>> fac3b267011224747cd71a53560193b35dd677b2
                                     </div>
                                 </div>
                             </div>

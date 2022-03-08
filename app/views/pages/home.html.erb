@@ -1,4 +1,4 @@
-<div class="container search-home">
+<div class="container-search-home">
   <div class="item-home">
     <div>
       <%= image_tag "REMPIL-couleur.png", class: "logo-home" %>
@@ -21,8 +21,8 @@
   </div>
 </div>
 
-<div class= "container" style="text-align: left">
-  <br><h3>Une petite <span style="color: #FFBD36">FAIM </span>?<h3>
+<div class= "container-categories" style="text-align: left">
+  <br><h3>Meilleures <span style="color: #FFBD36">catégories</span><h3>
 </div>
 
 <div class="content container">
@@ -42,6 +42,26 @@
   </div>
 </div>
 
-<%# <div class= "container">
-  <br><h3>Près de chez<span style="color: #FFBD36"> TOI</span><h3>
-</div> %>
+<div class= "container-distance">
+
+  <br><h3>Près de chez<span style="color: #FFBD36"> toi</span><h3>
+
+  <div class="shop-distance-cards">
+
+    <% @shops.each do |shop| %>
+    <div class="card distance-shop-card" style="width: 23.3rem;">
+      <%= cl_image_tag shop.photo.key, class: "card-img-top" %>
+      <div class="card-body">
+        <h4 id="shop-title-commercant"> <%= shop.name %> </h4>
+        <p class="card-shop-distance-category-description"><%= shop.description %></p>
+        <p class="btn btn-ghost"><%= shop.category.gsub(/_/,' ') %></p>
+      </div>
+    </div>
+    <% end %>
+
+  </div>
+
+</div>
+
+<div class="content-wrapper-home">
+</div>
