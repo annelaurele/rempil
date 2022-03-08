@@ -4,6 +4,11 @@
 </div>
 
 
+    <%= simple_form_for([@shop, @rental], method: "post") do |f| %>
+      <%= f.input :status %>
+      <%= f.submit %>
+    <% end %>
+
 
 <div class="container description-card">
 
@@ -11,11 +16,9 @@
     <p> <%= @shop.description %> </p>
     <div class="sub-show-card">
         <p id="categorie-shop" > Catégorie : <%= @shop.category %> </p>
-        <%# <p id="couleur-heure"> Ouvert, ferme à <p> %>
           <div class="card-menu-list">
             <h3 id="menu-show">Menu:</h3>
             <ul>
-
               <% @menus.each do |menu| %>
               <div class="card-menu-show">
                 <div class="card-menu-show-text-align">

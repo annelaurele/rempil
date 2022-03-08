@@ -8,4 +8,5 @@ class Rental < ApplicationRecord
   belongs_to :user
   has_many :menus
 
+  belongs_to :SelectionRental
 end
