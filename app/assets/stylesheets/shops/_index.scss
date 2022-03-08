@@ -1,3 +1,23 @@
 .content-wrapper-index {
   min-height: calc(30vh - 70px - 80px);
 }
+
+.index-shops a {
+  color: black;
+}
+
+.shop-card {
+  border-radius: 15px;
+  display: inline-block;
+  height: 50vh;
+}
+
+.shop-info {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
+}
+
+.shop-description {
+  font-size: 16px;
+}

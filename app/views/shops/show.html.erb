@@ -10,7 +10,7 @@
     <%= cl_image_tag @shop.photo.key, class: "shop-show-big-image" %>
     <p> <%= @shop.description %> </p>
     <div class="sub-show-card">
-        <p id="categorie-shop" > Catégorie : <%= @shop.category %> </p>
+        <p class="btn btn-ghost"><%= @shop.category.gsub(/_/,' ') %></p>
         <%# <p id="couleur-heure"> Ouvert, ferme à <p> %>
           <div class="card-menu-list">
             <h3 id="menu-show">Menu:</h3>
@@ -49,15 +49,23 @@
     </div>
 </div>
 
-<h2 id="commercant-title-similaire">Commerçants similaires</h2>
-<div class="commercant-similaire-carousel">
-  <% @similar_shops.each do |shop| %>
-    <div class="card-commercant-similaire">
-      <%= cl_image_tag shop.photo.key, class: "shop-show-big-image" %>
-      <h4 id="shop-title-commercant"> <%= shop.name %> </h4>
-      <p id="shop-description-commercant"> <%= shop.description %> </p>
-      <p id="categorie-commercant" > Catégorie : <%= @shop.category %> </p>
-      <%# <p id="couleur-heure"> Ouvert, ferme à <p> %>
+<div class= "commercants-similaires">
+
+  <br><h3 class="title-similaire">Commerçants<span style="color: #FFBD36"> similaires</span><h3>
+
+  <div class="commercant-similaire-carousel">
+
+    <% @similar_shops.each do |shop| %>
+    <div class="card commercant-similaire" style="width: 23.3rem;">
+      <%= cl_image_tag shop.photo.key, class: "card-img-top" %>
+      <div class="card-body">
+        <h4 id="shop-title-commercant"> <%= shop.name %> </h4>
+        <p class="card-shop-distance-category-description"><%= shop.description %></p>
+        <p class="btn btn-ghost"><%= shop.category.gsub(/_/,' ') %></p>
+      </div>
     </div>
-  <% end %>
+    <% end %>
+
+  </div>
+
 </div>

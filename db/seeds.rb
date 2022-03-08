@@ -179,7 +179,7 @@ SlotHour.create(opening_hour: 10, closing_hour: 20, day_of_the_week: "Vendredi",
 SlotHour.create(opening_hour: 10, closing_hour: 20, day_of_the_week: "Samedi", shop: flowers)
 SlotHour.create(opening_hour: 14, closing_hour: 20, day_of_the_week: "Dimanche", shop: flowers)
 
-autre = Shop.create(id: 20, name: "L'autre salon de thé", address: "45 Rue des Tourneurs, 31000 Toulouse", mobile: "0534449366", email: "", category: 5, description: "Endroit idéal pour faire une pause gourmande !", user: annelaure, average_rate: 3.7, longitude: 43.6015888057811, latitude: 1.4449899153416401)
+autre = Shop.create(id: 20, name: "L'autre salon de thé", address: "45 Rue des Tourneurs, 31000 Toulouse", mobile: "0534449366", email: "", category: 5, description: "Endroit idéal pour faire une pause gourmande et sucrée !", user: annelaure, average_rate: 3.7, longitude: 43.6015888057811, latitude: 1.4449899153416401)
 file = URI.open('https://i.pinimg.com/originals/4d/24/31/4d243165934becd4192b4f1c18e2168a.jpg')
 autre.photo.attach(io: file, filename: 'autre.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 12, closing_hour: 20, day_of_the_week: "Lundi", shop: autre)
