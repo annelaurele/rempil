@@ -16,24 +16,25 @@ html{
   margin-top: 30px;
 }
 
-#encours{
+a.nav-menu-dashboard {
+    color: #329190;
+    text-decoration: none;
+    background-color: transparent;
+    border: 2px solid #B1E4E3;
+    padding: 5px 30px 5px 30px;
+    border-radius: 30px;
+}
+
+.nav-pills-dashboard .nav-menu-dashboard.active{
   background-color: #B1E4E3;
   border: 2px solid #B1E4E3;
   padding: 5px 30px 5px 30px;
   border-radius: 30px;
-  margin-left: -30px;
 }
 
-#rendu{
-border: 2px solid #B1E4E3;
-padding: 5px 30px 5px 30px;
-border-radius: 30px;
-}
-
-#paye{
-  border: 2px solid #B1E4E3;
-  padding: 5px 30px 5px 30px;
-  border-radius: 30px;
+.nav{
+  margin-top: 40px;
+  margin-left: 27px;
 }
 /*----------Notification----------*/
 
@@ -164,4 +165,8 @@ color: white;
 
 .button-dashboard-card{
   display: flex;
+}
+
+ul li{
+      margin-right: 5px;
 }
