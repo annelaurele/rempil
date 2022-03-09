@@ -26,26 +26,130 @@
       <%= link_to shop_path(shop.id) do %>
         <div class="card shop-card">
           <%= cl_image_tag shop.photo.key, class: "card-img-top" %>
-          <div class="shop-info">
+          <div class="d-flex justify-content-between shop-info">
             <h4 id="shop-name"> <%= shop.name %> </h4>
-            <p class="shop-description"><%= shop.description %></p>
             <p class="btn btn-ghost"><%= shop.category.gsub(/_/,' ') %></p>
-            <% if shop.slot_hours.where(day_of_the_week: "Lundi").count == 1 %>
-              <p>
-                <%= shop.slot_hours.where(day_of_the_week: "Lundi")[0].day_of_the_week %> :
-                <%= shop.slot_hours.where(day_of_the_week: "Lundi")[0].opening_hour %>h -
-                <%= shop.slot_hours.where(day_of_the_week: "Lundi")[0].closing_hour %>h
-              </p>
-            <% elsif shop.slot_hours.where(day_of_the_week: "Lundi").count == 2 %>
-              <%= shop.slot_hours.where(day_of_the_week: "Lundi")[0].day_of_the_week %> :
-              <% shop.slot_hours.where(day_of_the_week: "Lundi").each do |hour| %>
-                <%= hour.opening_hour %>h -
-                <%= hour.closing_hour %>h
-              <% end %>
-            <% end %>
           </div>
-        </div>
+          <p class="shop-description"><%= shop.description %></p>
       <% end %>
+
+
+<div class="accordion" id="accordionExample">
+
+    <div class="horaire-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-horaire text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Horaires ▾
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="horaire-body">
+
+        <% if shop.slot_hours.where(day_of_the_week: "Lundi").count == 1 %>
+          <p>
+            <%= shop.slot_hours.where(day_of_the_week: "Lundi")[0].day_of_the_week %> :
+            <%= shop.slot_hours.where(day_of_the_week: "Lundi")[0].opening_hour %>h -
+            <%= shop.slot_hours.where(day_of_the_week: "Lundi")[0].closing_hour %>h
+          </p>
+        <% elsif shop.slot_hours.where(day_of_the_week: "Lundi").count == 2 %>
+          <%= shop.slot_hours.where(day_of_the_week: "Lundi")[0].day_of_the_week %> :
+          <% shop.slot_hours.where(day_of_the_week: "Lundi").each do |hour| %>
+            <%= hour.opening_hour %>h -
+            <%= hour.closing_hour %>h
+          <% end %>
+        <% end %>
+
+        <% if shop.slot_hours.where(day_of_the_week: "Mardi").count == 1 %>
+          <p>
+            <%= shop.slot_hours.where(day_of_the_week: "Mardi")[0].day_of_the_week %> :
+            <%= shop.slot_hours.where(day_of_the_week: "Mardi")[0].opening_hour %>h -
+            <%= shop.slot_hours.where(day_of_the_week: "Mardi")[0].closing_hour %>h
+          </p>
+        <% elsif shop.slot_hours.where(day_of_the_week: "Mardi").count == 2 %>
+          <%= shop.slot_hours.where(day_of_the_week: "Mardi")[0].day_of_the_week %> :
+          <% shop.slot_hours.where(day_of_the_week: "Mardi").each do |hour| %>
+            <%= hour.opening_hour %>h -
+            <%= hour.closing_hour %>h
+          <% end %>
+        <% end %>
+
+        <% if shop.slot_hours.where(day_of_the_week: "Mercredi").count == 1 %>
+          <p>
+            <%= shop.slot_hours.where(day_of_the_week: "Mercredi")[0].day_of_the_week %> :
+            <%= shop.slot_hours.where(day_of_the_week: "Mercredi")[0].opening_hour %>h -
+            <%= shop.slot_hours.where(day_of_the_week: "Mercredi")[0].closing_hour %>h
+          </p>
+        <% elsif shop.slot_hours.where(day_of_the_week: "Mercredi").count == 2 %>
+          <%= shop.slot_hours.where(day_of_the_week: "Mercredi")[0].day_of_the_week %> :
+          <% shop.slot_hours.where(day_of_the_week: "Mercredi").each do |hour| %>
+            <%= hour.opening_hour %>h -
+            <%= hour.closing_hour %>h
+          <% end %>
+        <% end %>
+
+        <% if shop.slot_hours.where(day_of_the_week: "Jeudi").count == 1 %>
+          <p>
+            <%= shop.slot_hours.where(day_of_the_week: "Jeudi")[0].day_of_the_week %> :
+            <%= shop.slot_hours.where(day_of_the_week: "Jeudi")[0].opening_hour %>h -
+            <%= shop.slot_hours.where(day_of_the_week: "Jeudi")[0].closing_hour %>h
+          </p>
+        <% elsif shop.slot_hours.where(day_of_the_week: "Jeudi").count == 2 %>
+          <%= shop.slot_hours.where(day_of_the_week: "Jeudi")[0].day_of_the_week %> :
+          <% shop.slot_hours.where(day_of_the_week: "Jeudi").each do |hour| %>
+            <%= hour.opening_hour %>h -
+            <%= hour.closing_hour %>h
+          <% end %>
+        <% end %>
+
+        <% if shop.slot_hours.where(day_of_the_week: "Vendredi").count == 1 %>
+          <p>
+            <%= shop.slot_hours.where(day_of_the_week: "Vendredi")[0].day_of_the_week %> :
+            <%= shop.slot_hours.where(day_of_the_week: "Vendredi")[0].opening_hour %>h -
+            <%= shop.slot_hours.where(day_of_the_week: "Vendredi")[0].closing_hour %>h
+          </p>
+        <% elsif shop.slot_hours.where(day_of_the_week: "Vendredi").count == 2 %>
+          <%= shop.slot_hours.where(day_of_the_week: "Vendredi")[0].day_of_the_week %> :
+          <% shop.slot_hours.where(day_of_the_week: "Vendredi").each do |hour| %>
+            <%= hour.opening_hour %>h -
+            <%= hour.closing_hour %>h
+          <% end %>
+        <% end %>
+
+        <% if shop.slot_hours.where(day_of_the_week: "Samedi").count == 1 %>
+          <p>
+            <%= shop.slot_hours.where(day_of_the_week: "Samedi")[0].day_of_the_week %> :
+            <%= shop.slot_hours.where(day_of_the_week: "Samedi")[0].opening_hour %>h -
+            <%= shop.slot_hours.where(day_of_the_week: "Samedi")[0].closing_hour %>h
+          </p>
+        <% elsif shop.slot_hours.where(day_of_the_week: "Samedi").count == 2 %>
+          <%= shop.slot_hours.where(day_of_the_week: "Samedi")[0].day_of_the_week %> :
+          <% shop.slot_hours.where(day_of_the_week: "Samedi").each do |hour| %>
+            <%= hour.opening_hour %>h -
+            <%= hour.closing_hour %>h
+          <% end %>
+        <% end %>
+
+        <% if shop.slot_hours.where(day_of_the_week: "Dimanche").count == 1 %>
+          <p>
+            <%= shop.slot_hours.where(day_of_the_week: "Dimanche")[0].day_of_the_week %> :
+            <%= shop.slot_hours.where(day_of_the_week: "Dimanche")[0].opening_hour %>h -
+            <%= shop.slot_hours.where(day_of_the_week: "Dimanche")[0].closing_hour %>h
+          </p>
+        <% elsif shop.slot_hours.where(day_of_the_week: "Dimanche").count == 2 %>
+          <%= shop.slot_hours.where(day_of_the_week: "Dimanche")[0].day_of_the_week %> :
+          <% shop.slot_hours.where(day_of_the_week: "Dimanche").each do |hour| %>
+            <%= hour.opening_hour %>h -
+            <%= hour.closing_hour %>h
+          <% end %>
+        <% end %>
+
+      </div>
+    </div>
+</div>
+
+        </div>
     <% end %>
 
   </div>
