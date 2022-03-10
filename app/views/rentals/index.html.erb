@@ -11,78 +11,202 @@
         <h2 style="font-size: 20px; margin-left: 15px; color:#B1E4E3; font-weight: 700;">Consignes en cours : <%= @total %><h2>
       </div>
     </div>
+  <!---------------------------NAV TAB-------------------------------->
+<div class="tabs-to-dropdown">
+  <div class="nav-wrapper align-items-center justify-content-between">
+    <ul class="nav nav-pills-dashboard" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-menu-dashboard active" id="pills-pending-tab" data-toggle="pill" href="#pills-pending" role="tab" aria-controls="pills-pending" aria-selected="true">En cours<span class="-count"><%= @total %></span></a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-menu-dashboard" id="pills-render-tab" data-toggle="pill" href="#pills-render" role="tab" aria-controls="pills-render" aria-selected="false">Rendu</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-menu-dashboard" id="pills-paid-tab" data-toggle="pill" href="#pills-paid" role="tab" aria-controls="pills-paid" aria-selected="false">Payé</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!---------------------------EN COURS-------------------------------->
 
-    <div class="menu-dashboard-statut">
-      <ul>
-        <li id="encours">En cours</li><span class="-count"><%= @total %></span>
-        <li id="rendu"> Rendu </li>
-        <li id="paye"> Payé </li>
-      </ul>
-    </div>
 
-    <div class="tab-content" id="pills-tabContent" >
-        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-            <h2 id="dash-menu-info-text"> Détails des consignes en cours</h2>
+<div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-pending" role="tabpanel" aria-labelledby="pills-pending-tab">
+      <div class="container-fluid">
+        <h2 id="dash-menu-info-text"> Détails des consignes en cours</h2>
             <div class="big-div-shops">
                 <div class="aligner">
                     <% @actuals.each do |actual| %>
                     <div class="number-consigne-span"><%= actual.total_of_box %></div>
-                        <div class="dash-card">
-                            <div class="div-shop-item dash-shop-pic">
-                                <%= cl_image_tag actual.shop.photo.key, :transformation=>[
-                                {:gravity=>"face", :height=>500, :width=>400, :crop=>"crop"},
-                                {:radius=>"50"},
-                                {:width=>100, :crop=>"scale"}
-                                ] %>
-                            </div>
-                            <div class="div-shop-item">
-                                <h4 class="nom-restaurant-dashboard" style="font-weight: 600"><%= actual.shop.name %></h4>
-                                <p>Nombre de consignes: <%= actual.total_of_box %></p>
-                                <p>A rendre avant le: <%= actual.rental_time_end %></p>
-                                <div class="button-dashboard-card">
-                                    <div id="button-fiche">
-                                    <%= link_to "Voir la fiche", shops_path, class: "btn btn-info dash-info-button" %>
-                                    </div>
-                                    <div id="button-comment">
-                                    <button type="button" class="btn btn-info dash-comment-button" data-toggle="modal" data-target="#Modalrating">
-                                        Je note</button>
-                                    </div>
-                                    <div class="modal fade" id="Modalrating" role="dialog" aria-labelledby="ModalreviewLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <div>
-                                                        <h3 class="modal-title">Donne ton avis sur</h3>
-                                                        <h3 style="color: #FFBD36"><%= actual.shop.name %></h3>
-                                                    </div>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <%= simple_form_for [actual.shop, actual, @rating] do |f| %>
-                                                    <p style="text-align: center">Ecris ton avis <span style="color: #FFBD36">ici... </p>
-                                                    <%= f.input :content, placeholder: "J'adore ce commerçant..." %>
-                                                    <p style="text-align: center">Et ta note <span style="color: #FFBD36">là...</span></p>
-                                                    <div class="star-note"><%= f.input :rating, collection: (1..5).to_a %></div>
-                                                    <%= f.submit "Je valide", class: "btn btn-block btn-info" %>
-                                                    <% end %>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <% end %>
+  <div class="dash-card">
+    <div class="div-shop-item dash-shop-pic">
+      <%= cl_image_tag actual.shop.photo.key, :transformation=>[
+      {:gravity=>"face", :height=>500, :width=>400, :crop=>"crop"},
+      {:radius=>"50"},
+      {:width=>100, :crop=>"scale"}
+      ] %>
+    </div>
+    <div class="div-shop-item">
+    <h4 class="nom-restaurant-dashboard" style="font-weight: 600"><%= actual.shop.name %></h4>
+    <p>Nombre de consignes: <%= actual.total_of_box %></p>
+    <p>A rendre avant le: <%= actual.rental_time_end %></p>
+      <div class="button-dashboard-card">
+      <div id="button-fiche">
+      <%= link_to "Voir la fiche", shops_path, class: "btn btn-info dash-info-button" %>
+      </div>
+        <div id="button-comment">
+            <button type="button" class="btn btn-info dash-comment-button" data-toggle="modal" data-target="#Modalrating">Noter</button>
+        </div>
+        <div class="modal fade" id="Modalrating" role="dialog" aria-labelledby="ModalreviewLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                  <div>
+                  <h3 class="modal-title">Donne ton avis sur</h3>
+                  <h3 style="color: #FFBD36"><%= actual.shop.name %></h3>
+                  </div>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
+                <div class="modal-body">
+                  <%= simple_form_for [actual.shop, actual, @rating] do |f| %>
+                    <p style="text-align: center">Ecris ton avis <span style="color: #FFBD36">ici... </p>
+                    <%= f.input :content, placeholder: "J'adore ce commerçant..." %>
+                    <p style="text-align: center">Et ta note <span style="color: #FFBD36">là...</span></p>
+                    <div class="star-note"><%= f.input :rating, collection: (1..5).to_a %></div>
+                    <%= f.submit "Je valide", class: "btn btn-block btn-info" %>
+                  <% end %>
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-            <h2> Détails des consignes rendues</h2>
-        </div>
-        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-            <h2> Détails des consignes payées</h2>
-        </div>
+      </div>
+      </div>
     </div>
+  </div>
+                    <% end %>
+                </div>
+      </div>
+    </div>
+</div>
+
+
+<!---------------------------RENDUE-------------------------------->
+
+<div class="tab-pane fade" id="pills-render" role="tabpanel" aria-labelledby="pills-render-tab">
+  <div class="container-fluid">
+    <h2 id="dash-menu-info-text"> Détails des consignes rendues</h2>
+    <div class="big-div-shops">
+      <div class="aligner">
+        <% @actuals.each do |actual| %>
+          <div class="number-consigne-span"><%= actual.total_of_box %></div>
+  <div class="dash-card">
+    <div class="div-shop-item dash-shop-pic">
+      <%= cl_image_tag actual.shop.photo.key, :transformation=>[
+      {:gravity=>"face", :height=>500, :width=>400, :crop=>"crop"},
+      {:radius=>"50"},
+      {:width=>100, :crop=>"scale"}
+      ] %>
+    </div>
+    <div class="div-shop-item">
+    <h4 class="nom-restaurant-dashboard" style="font-weight: 600"><%= actual.shop.name %></h4>
+    <p>Nombre de consignes: <%= actual.total_of_box %></p>
+    <p>A rendre avant le: <%= actual.rental_time_end %></p>
+      <div class="button-dashboard-card">
+      <div id="button-fiche">
+      <%= link_to "Voir la fiche", shops_path, class: "btn btn-info dash-info-button" %>
+      </div>
+        <div id="button-comment">
+            <button type="button" class="btn btn-info dash-comment-button" data-toggle="modal" data-target="#Modalrating">Noter</button>
+        </div>
+        <div class="modal fade" id="Modalrating" role="dialog" aria-labelledby="ModalreviewLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                  <div>
+                  <h3 class="modal-title">Donne ton avis sur</h3>
+                  <h3 style="color: #FFBD36"><%= actual.shop.name %></h3>
+                  </div>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
+                <div class="modal-body">
+                  <%= simple_form_for [actual.shop, actual, @rating] do |f| %>
+                    <p style="text-align: center">Ecris ton avis <span style="color: #FFBD36">ici... </p>
+                    <%= f.input :content, placeholder: "J'adore ce commerçant..." %>
+                    <p style="text-align: center">Et ta note <span style="color: #FFBD36">là...</span></p>
+                    <div class="star-note"><%= f.input :rating, collection: (1..5).to_a %></div>
+                    <%= f.submit "Je valide", class: "btn btn-block btn-info" %>
+                  <% end %>
+                </div>
+            </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!---------------------------PAYE-------------------------------->
+<div class="tab-pane fade" id="pills-paid" role="tabpanel" aria-labelledby="pills-paid-tab">
+  <div class="container-fluid">
+    <h2 id="dash-menu-info-text"> Détails des consignes payées</h2>
+    <div class="big-div-shops">
+      <div class="aligner">
+          <% @actuals.each do |actual| %>
+            <div class="number-consigne-span"><%= actual.total_of_box %></div>
+  <div class="dash-card">
+    <div class="div-shop-item dash-shop-pic">
+      <%= cl_image_tag actual.shop.photo.key, :transformation=>[
+      {:gravity=>"face", :height=>500, :width=>400, :crop=>"crop"},
+      {:radius=>"50"},
+      {:width=>100, :crop=>"scale"}
+      ] %>
+    </div>
+    <div class="div-shop-item">
+    <h4 class="nom-restaurant-dashboard" style="font-weight: 600"><%= actual.shop.name %></h4>
+    <p>Nombre de consignes: <%= actual.total_of_box %></p>
+    <p>A rendre avant le: <%= actual.rental_time_end %></p>
+      <div class="button-dashboard-card">
+      <div id="button-fiche">
+      <%= link_to "Voir la fiche", shops_path, class: "btn btn-info dash-info-button" %>
+      </div>
+        <div id="button-comment">
+            <button type="button" class="btn btn-info dash-comment-button" data-toggle="modal" data-target="#Modalrating">Noter</button>
+        </div>
+        <div class="modal fade" id="Modalrating" role="dialog" aria-labelledby="ModalreviewLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                  <div>
+                  <h3 class="modal-title">Donne ton avis sur</h3>
+                  <h3 style="color: #FFBD36"><%= actual.shop.name %></h3>
+                  </div>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
+                <div class="modal-body">
+                  <%= simple_form_for [actual.shop, actual, @rating] do |f| %>
+                    <p style="text-align: center">Ecris ton avis <span style="color: #FFBD36">ici... </p>
+                    <%= f.input :content, placeholder: "J'adore ce commerçant..." %>
+                    <p style="text-align: center">Et ta note <span style="color: #FFBD36">là...</span></p>
+                    <div class="star-note"><%= f.input :rating, collection: (1..5).to_a %></div>
+                    <%= f.submit "Je valide", class: "btn btn-block btn-info" %>
+                  <% end %>
+                </div>
+            </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!---------------------------ASTUCE FOOTER-------------------------------->
+<div class="content-wrapper-dashboard">
 </div>

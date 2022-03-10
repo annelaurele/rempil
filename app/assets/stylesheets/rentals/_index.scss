@@ -1,5 +1,5 @@
 html{
-  height: 200%;
+  height: 100%;
   overflow: auto;
 }
 
@@ -16,24 +16,25 @@ html{
   margin-top: 30px;
 }
 
-#encours{
+a.nav-menu-dashboard {
+    color: #329190;
+    text-decoration: none;
+    background-color: transparent;
+    border: 2px solid #B1E4E3;
+    padding: 5px 30px 5px 30px;
+    border-radius: 30px;
+}
+
+.nav-pills-dashboard .nav-menu-dashboard.active{
   background-color: #B1E4E3;
   border: 2px solid #B1E4E3;
-  padding: 5px 30px 5px 30px;
+  padding: 5px 25px 5px 25px;
   border-radius: 30px;
-  margin-left: -30px;
 }
 
-#rendu{
-border: 2px solid #B1E4E3;
-padding: 5px 30px 5px 30px;
-border-radius: 30px;
-}
-
-#paye{
-  border: 2px solid #B1E4E3;
-  padding: 5px 30px 5px 30px;
-  border-radius: 30px;
+.nav{
+  margin-top: 40px;
+  margin-left: 27px;
 }
 /*----------Notification----------*/
 
@@ -56,7 +57,7 @@ border-radius: 30px;
   width: 30px;
   height: 30px;
   background-color: #FFBD36;
-  margin: -55px 0px 0px 79px;
+  margin: -55px 0px 0px 95px;
   margin-top: -49px;
   font-size: 16px;
   font-weight: bold;
@@ -126,8 +127,7 @@ border-radius: 30px;
     background-color: #329190;
     border-radius: 8px;
     color: white;
-    height: 30px;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 #dash-menu-info-text {
@@ -146,8 +146,8 @@ border-radius: 30px;
     background-color: white;
     border-radius: 8px;
     color: black;
-    font-size: 14px;
-    padding: 3px;
+    font-size: 16px;
+    padding: 4px 10px 4px 10px;
 }
 
 .dash-comment-button:hover{
@@ -164,4 +164,14 @@ color: white;
 
 .button-dashboard-card{
   display: flex;
+}
+
+ul li{
+      margin-right: 5px;
+}
+
+/*----------ASTUCE FOOTER----------*/
+
+.content-wrapper-dashboard {
+  min-height: calc(30vh - 70px - 80px);
 }

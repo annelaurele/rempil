@@ -7,7 +7,7 @@
   z-index: 100;
   color: #C8C9C7;
   padding-top: 5px;
-
+  text-decoration: none;
 }
 
 .menu {
@@ -17,9 +17,19 @@
   padding: 2px 0; /* Some top and bottom padding */
   transition: all 0.3s ease; /* Add transition for hover effects */
   color: #C8C9C7; /* Light grey text color */
-  font-size: 36px; /* Increased font size */
+  font-size: 26px; /* Increased font size */
   // margin-left: 60px;
   // margin-right: 30px;
+}
+
+.menu:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-bar:hover {
+  text-decoration: none;
+  color: black;
 }
 
 .nav-name {

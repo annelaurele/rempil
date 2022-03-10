@@ -46,17 +46,19 @@
 
   <br><h3>Près de chez<span style="color: #FFBD36"> toi</span><h3>
 
-  <div class="shop-distance-cards">
+  <div class="shop-distance-carousel">
 
     <% @shops.each do |shop| %>
-    <div class="card distance-shop-card" style="width: 23.3rem;">
-      <%= cl_image_tag shop.photo.key, class: "card-img-top" %>
-      <div class="card-body">
-        <h4 id="shop-title-commercant"> <%= shop.name %> </h4>
-        <p class="card-shop-distance-category-description"><%= shop.description %></p>
-        <p class="btn btn-ghost"><%= shop.category.gsub(/_/,' ') %></p>
-      </div>
-    </div>
+      <%= link_to shop_path(shop.id) do %>
+        <div class="card distance-shop-card" style="width: 23.3rem;">
+          <%= cl_image_tag shop.photo.key, class: "card-img-top" %>
+          <div class="card-body">
+            <h4 id="shop-title-commercant"> <%= shop.name %> </h4>
+            <p class="card-shop-distance-category-description"><%= shop.description %></p>
+            <p class="btn btn-ghost"><%= shop.category.gsub(/_/,' ') %></p>
+          </div>
+        </div>
+      <% end %>
     <% end %>
 
   </div>
