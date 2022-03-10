@@ -222,7 +222,7 @@ SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Jeudi", sh
 SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Vendredi", shop: coterie)
 SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Samedi", shop: coterie)
 
-boyer = Shop.create!( name: "Boucherie Maison Boyer", address: "62 Rue de Metz, 31000 Toulouse", mobile: "0561220039", email: "", category: 2, description: "La Maison Boyer à le plaisir de vous choisir des produits d'excellente qualité en boucherie, charcuterie et traiteur.", user: annelaure, average_rate: 4.9, longitude: 43.60097246553297, latitude: 1.450797246024921)
+boyer = Shop.create!(name: "Boucherie Maison Boyer", address: "62 Rue de Metz, 31000 Toulouse", mobile: "0561220039", email: "", category: 2, description: "La Maison Boyer à le plaisir de vous choisir des produits d'excellente qualité en boucherie, charcuterie et traiteur.", user: annelaure, average_rate: 4.9, longitude: 43.60097246553297, latitude: 1.450797246024921)
 file = URI.open('https://www.sobio.fr/wp-content/uploads/2020/07/CV_20140626_3639.jpg')
 boyer.photo.attach(io: file, filename: 'boyer.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Lundi", shop: boyer)
