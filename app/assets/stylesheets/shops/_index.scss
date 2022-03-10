@@ -1,3 +1,78 @@
+.nav-index{
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+.nav-items-index {
+  padding-bottom: 5px;
+  align-items: center;
+}
+
+.fleche-retour {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+  margin-left: 11px;
+}
+
+.fleche-retour:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.logo-nav {
+  width: 30%;
+  margin-left: 235px;
+}
+
 .content-wrapper-index {
   min-height: calc(30vh - 70px - 80px);
+}
+
+.index-shops a {
+  color: black;
+}
+
+.shop-card {
+  border-radius: 15px;
+  display: inline-block;
+  padding-bottom: 20px;;
+}
+
+.shop-info {
+  flex: 1 1 auto;
+  min-height: 1px;
+  margin-top: 10px;
+  padding-right: 1.25rem;
+  padding-left: 1.25rem;
+  padding-bottom: 0px;
+  align-items: center;
+}
+
+.shop-description {
+  font-size: 16px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.accordion {
+  margin-left: 10px;
+  color: #2C9199;
+}
+
+.btn-horaire {
+  font-size: 16px;
+  color: #2C9199;
+}
+
+.btn-horaire:hover {
+  color: #2C9199;
+}
+
+.horaire-body {
+  margin-left: 20px;
+}
+
+.horaire-body p {
+  margin-bottom: 0px;
 }

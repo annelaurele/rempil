@@ -1,12 +1,11 @@
 .description-card {
-    border-radius: 12px;
-    width: 90%;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 95%;
 }
 
 .shop-show-title {
-    width: 90%;
-    padding: 0;
+  width: 90%;
+  padding: 0;
+  margin-top: 95px;
 }
 
 .shop-show-big-image {
@@ -17,18 +16,10 @@
     border-radius: 9px;
 }
 
-.sub-show-card {
-
-}
-
 .sub-card-button {
     display: flex;
     justify-content: space-between;
     padding: 12px 2px;
-}
-
-#shop-title {
-
 }
 
 #shop-address {
@@ -68,37 +59,31 @@
 
 /*---------- Commerçant similaire -----------*/
 
-#commercant-title-similaire{
-  font-size: 20px;
-  font-weight: bold;
-  margin-left: 25px;
-  margin-top: 30px;
+.title-similaire {
+  margin-left: 20px;
 }
 
-.card-commercant-similaire{
-    margin-left: 22px;
-    margin-top: 20px;
-    width: 374px;
-    background-color: white;
-    filter: drop-shadow(0 0 0.75rem #C8C9C7);
-    padding: 15px;
-    border-radius: 15px;
-    display: inline-block;
+.commercant-similaire-carousel {
+  margin-left: 10px;
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  width: auto;
+  p {
+    white-space: pre-line;
+  }
+  height: 550px;
 }
 
-.commercant-similaire-carousel{
-    white-space: nowrap;
-    overflow-y: hidden;
-    overflow-x: scroll;
-    width: auto;
-    height: 670px;
-    p {
-      white-space: pre-line;
-    }
+.commercant-similaire-carousel a {
+  color: black;
+  text-decoration: none;
 }
 
-#categorie-commercant{
- color:  #C8C9C7;
+.commercant-similaire {
+  border-radius: 15px;
+  display: inline-block;
+  height: 49vh;
 }
 
 #couleur-heure{
