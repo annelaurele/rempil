@@ -28,12 +28,13 @@ class RentalsController < ApplicationController
 
   def create
     @shop = Shop.find(params[:shop_id])
-    @rental = Rental.new(status: 0, total_of_box: 1)
-    @rental.rental_time_start = Date.today
-    @rental.rental_time_end = Date.today + 14.day
-    @rental.shop = @shop
-
-    @rental.user = current_user
+    @rental = Rental.new(
+      rental_time_start: Date.today,
+      rental_time_end: Date.today + 14.day,
+      shop: @shop,
+      user: current_user
+    )
+    @rental.selection_rentals.build(manage_menus(rental_params[:menus].to_h))
     if @rental.save
       redirect_to shop_rental_qrcode_path(@shop, @rental)
     else
@@ -47,7 +48,7 @@ class RentalsController < ApplicationController
   end
 
   def rental_params
-    params.require(:rental).permit(:rental_time_start, :rental_time_end, :status, :shop_id, :user_id, :number_box, :max_capacity)
+    params.require(:rental).permit(menus: {})
   end
 
   def set_status_pending
@@ -65,4 +66,17 @@ class RentalsController < ApplicationController
     redirect_to @rental
   end
 
+  private
+
+  def manage_menus(menus)
+    selection_filtered = menus.map do |menu_id, quantity|
+      if quantity.to_i > 0
+        {menu_id: menu_id, quantity: quantity.to_i}
+      else
+        nil
+      end
+
+    end
+    selection_filtered.compact
+  end
 end
