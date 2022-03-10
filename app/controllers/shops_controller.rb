@@ -14,5 +14,6 @@ class ShopsController < ApplicationController
     als_count = Rental.where(user: current_user)  #.where id = current_user ??
     @menus = Menu.where(shop: @shop)
     @rental = Rental.new
+    @rating = Rating.new
   end
 end

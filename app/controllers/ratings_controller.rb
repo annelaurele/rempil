@@ -18,6 +18,10 @@ class RatingsController < ApplicationController
     end
   end
 
+  def show
+    @rating = Rating.find(params[:id])
+  end
+
   private
 
   def rating_params
