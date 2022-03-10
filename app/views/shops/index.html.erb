@@ -33,7 +33,7 @@
         <div class="card shop-card">
           <%= cl_image_tag shop.photo.key, class: "card-img-top" %>
           <div class="d-flex justify-content-between shop-info">
-            <h4 id="shop-name"> <%= shop.name %> <span style="decoration: none; color: #ffd700; font-size: 18px"> <%= icon('fas','star') %><%= shop.average_rate %></span></h4>
+            <h4 id="shop-name"> <%= shop.name %> <span style="decoration: none; color: #ffd700; font-size: 18px"> <%= icon('fas','star') %> <%= shop.average_rate %></span></h4>
             <p class="btn btn-ghost"><%= shop.category.gsub(/_/,' ') %></p>
           </div>
           <p class="shop-description"><%= shop.description %></p>
