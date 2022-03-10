@@ -169,3 +169,9 @@ color: white;
 ul li{
       margin-right: 5px;
 }
+
+/*----------ASTUCE FOOTER----------*/
+
+.content-wrapper-dashboard {
+  min-height: calc(30vh - 70px - 80px);
+}
