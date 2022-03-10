@@ -2,6 +2,7 @@ require 'open-uri'
 
 #Creation users
 
+SelectionRental.destroy_all
 Rental.destroy_all
 Shop.destroy_all
 User.destroy_all

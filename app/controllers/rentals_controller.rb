@@ -17,6 +17,7 @@ class RentalsController < ApplicationController
     # @menus = Menu.where(shop: @shop_id)
     # @menu = Menu.find(params[:shop_id])
     @total = Rental.where(user: @user).count + 1
+    @selection = SelectionRental.where(rental: @rental)
     @svg = @qr.as_svg(
     color: "000",
     shape_rendering: "crispEdges",
@@ -24,6 +25,7 @@ class RentalsController < ApplicationController
     standalone: true,
     use_path: true
     )
+    raise
   end
 
   def create
