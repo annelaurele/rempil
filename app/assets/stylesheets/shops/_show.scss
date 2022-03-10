@@ -3,8 +3,9 @@
 }
 
 .shop-show-title {
-    width: 90%;
-    padding: 0;
+  width: 90%;
+  padding: 0;
+  margin-top: 95px;
 }
 
 .shop-show-big-image {
@@ -15,18 +16,10 @@
     border-radius: 9px;
 }
 
-.sub-show-card {
-
-}
-
 .sub-card-button {
     display: flex;
     justify-content: space-between;
     padding: 12px 2px;
-}
-
-#shop-title {
-
 }
 
 #shop-address {
@@ -76,7 +69,6 @@
   overflow-y: hidden;
   overflow-x: scroll;
   width: auto;
-  height: 670px;
   p {
     white-space: pre-line;
   }

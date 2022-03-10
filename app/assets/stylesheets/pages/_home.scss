@@ -66,7 +66,6 @@
   overflow-y: hidden;
   overflow-x: scroll;
   width: auto;
-  height: 670px;
   p {
     white-space: pre-line;
   }
@@ -82,14 +81,10 @@
   height: 47vh;
 }
 
-// .card-img-top {
-//   border-radius: 15px;
-// }
-
 .card-shop-distance-category-description {
   font-size: 16px;
 }
 
-// .content-wrapper-home {
-//   min-height: calc(-100vh - 20px - 80px);
-// }
+.content-wrapper-home {
+  min-height: calc(27vh - 70px - 80px);
+}

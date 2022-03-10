@@ -1,9 +1,14 @@
+<nav class="navbar-nav nav-index fixed-top">
+  <div class="nav-items-index d-flex">
+      <a class="fleche-retour" href="/"><i class="fa-solid fa-arrow-left"></i></a>
+      <%= image_tag "REMPIL-couleur.png", class: "logo-nav" %>
+  </div>
+</nav>
+
 <div class="container shop-show-title">
     <h2 id="shop-title"> <%= @shop.name %> </h2>
     <h3 id="shop-address"> <%= @shop.address %> </h3>
 </div>
-
-
 
 <div class="container description-card">
 
@@ -67,5 +72,4 @@
     <% end %>
 
   </div>
-
 </div>
