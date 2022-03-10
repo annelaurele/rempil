@@ -61,6 +61,7 @@
   <div class="commercant-similaire-carousel">
 
     <% @similar_shops.each do |shop| %>
+    <%= link_to shop_path(shop.id) do %>
     <div class="card commercant-similaire" style="width: 23.3rem;">
       <%= cl_image_tag shop.photo.key, class: "card-img-top" %>
       <div class="card-body">
@@ -69,6 +70,7 @@
         <p class="btn btn-ghost"><%= shop.category.gsub(/_/,' ') %></p>
       </div>
     </div>
+    <% end %>
     <% end %>
 
   </div>
