@@ -9,7 +9,7 @@ class Shop < ApplicationRecord
   }, _prefix: true
 
   belongs_to :user
-  has_many :ratings
+  has_many :ratings, dependent: :destroy
   has_many :rentals
   has_many :slot_hours, dependent: :destroy
   has_many :menus, dependent: :destroy

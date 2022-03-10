@@ -27,11 +27,11 @@
       <%= cl_image_tag shop.photo.key %>
       <div class="shop-card-infos">
         <div class="card-shop-name">
-          <h2><%= shop.name %></h2>
+          <h2><%= shop.name %> <span style="decoration: none; color: #ffd700; font-size: 18px"> <%= icon('fas','star') %><%= shop.average_rate %></span></h2>
           <p class="btn btn-ghost"><%= shop.category.gsub(/_/,' ') %></p>
         </div>
         <div class="card-shop-distance">
-          <h3 class="card-distance">300m</h3>
+          <h3 class="card-distance"><%= rand(50..900)%> m</h3>
         </div>
         </div>
       </div>

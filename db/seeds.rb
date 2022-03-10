@@ -6,6 +6,7 @@ Rental.destroy_all
 Shop.destroy_all
 User.destroy_all
 Menu.destroy_all
+Rating.destroy_all
 
 puts '----- Creating users -----'
 
@@ -278,7 +279,7 @@ SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Vendredi", 
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Samedi", shop: lamiecaline)
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Dimanche", shop: lamiecaline)
 
-panetiere = Shop.create(id: 15, name: "La Panetière", address: "2 Rue de Metz, 31000 Toulouse", mobile: "0561732990", email: "", category: 0, description: "Le goût du bien-manger. Des produits frais, sains et équilibrés", user: annelaure, average_rate: 3.7, longitude: 43.599880939608894, latitude: 1.441918695513136)
+panetiere = Shop.create(name: "La Panetière", address: "2 Rue de Metz, 31000 Toulouse", mobile: "0561732990", email: "", category: 0, description: "Le goût du bien-manger. Des produits frais, sains et équilibrés", user: annelaure, average_rate: 3.7, longitude: 43.599880939608894, latitude: 1.441918695513136)
 file = URI.open('https://www.lapanetiere.fr/images/panetiere-toulouse-lafourcade16.jpg?crc=46408542')
 panetiere.photo.attach(io: file, filename: 'panetiere.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Lundi", shop: panetiere)
@@ -289,7 +290,7 @@ SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Vendredi", 
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Samedi", shop: panetiere)
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Dimanche", shop: panetiere)
 
-perlette = Shop.create(id: 16, name: "Perlette", address: "57 Rue des Filatiers, 31000 Toulouse", mobile: "0982366046", email: "", category: 0, description: "Perlette propose des patisseries sur place ou à emporter, mais aussi des menus salés.", user: julia, average_rate: 4.5, longitude: 43.599880939608894, latitude: 1.441918695513136)
+perlette = Shop.create(name: "Perlette", address: "57 Rue des Filatiers, 31000 Toulouse", mobile: "0982366046", email: "", category: 0, description: "Perlette propose des patisseries sur place ou à emporter, mais aussi des menus salés.", user: julia, average_rate: 4.5, longitude: 43.599880939608894, latitude: 1.441918695513136)
 file = URI.open('https://www.luckymiam.com/wp-content/uploads/perlette-lucky-miam-9.jpg')
 perlette.photo.attach(io: file, filename: 'perlette.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Lundi", shop: perlette)
@@ -339,3 +340,16 @@ Menu.create(name: "Bagel cream cheese & saumon", description: "Pain pavot, cream
 Menu.create(name: "Bagel poulet curry", description: "Pain pavot, poulet, curry, moutarde, roquette.", price: 3, number_of_box: 1, shop: perlette)
 Menu.create!(name: "Miss Perlette", description: "Crème légère mascarpone vanillée, framboises fraîches, meringues craquantes et fondantes.", price: 4, number_of_box: 1, shop: perlette)
 Menu.create(name: "Le Banoffee", description: "Tartelette spéculoos, caramel, bananes, crème montée.", price: 4, number_of_box: 1, shop: perlette)
+
+#Creation reviews
+
+puts '----- Creating reviews -----'
+
+Rating.create!(rating: 5, shop: perlette, user: julia, content: "J'adore cette boulangerie ! Leur pizza est bonne")
+Rating.create!(rating: 5, shop: perlette, user: elliot, content: "La meilleure boulangerie de Toulouse !")
+Rating.create!(rating: 4, shop: perlette, user: annelaure, content: "Vendeuse pas aimable et mais le pain est bon")
+Rating.create!(rating: 4, shop: perlette, user: marina, content: "J'aime bien, ça va")
+Rating.create!(rating: 3, shop: panetiere, user: julia, content: "Boulangerie sympa mais pas incroyable")
+Rating.create!(rating: 4, shop: panetiere, user: elliot, content: "Vendeuse pas très aimable mais le pain est bon")
+Rating.create!(rating: 3, shop: panetiere, user: annelaure, content: "J'y vais de temps en temps, je vous conseille la salade")
+Rating.create!(rating: 2, shop: panetiere, user: marina, content: "Pratique mais pas aimable")
