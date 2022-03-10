@@ -27,7 +27,6 @@ class RentalsController < ApplicationController
     standalone: true,
     use_path: true
     )
-    raise
   end
 
   def create
