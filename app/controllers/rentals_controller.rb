@@ -10,14 +10,16 @@ class RentalsController < ApplicationController
   end
 
   def qrcode
-    @qr = RQRCode::QRCode.new("16")
     @user = current_user
     @shop = Shop.find(params[:shop_id])
     @rental = Rental.find(params[:rental_id])
     # @menus = Menu.where(shop: @shop_id)
     # @menu = Menu.find(params[:shop_id])
     @total = Rental.where(user: @user).count + 1
-    @selection = SelectionRental.where(rental: @rental)
+    @menu = SelectionRental.where(rental: @rental).map do |selection|
+      selection.menu
+    end
+    @qr = RQRCode::QRCode.new(@rental.id.to_s)
     @svg = @qr.as_svg(
     color: "000",
     shape_rendering: "crispEdges",
