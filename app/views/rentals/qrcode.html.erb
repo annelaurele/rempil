@@ -1,11 +1,7 @@
-<nav class="navbar-nav fixed-top">
-  <div class="nav-items d-flex justify-content-between">
-    <div class="item">
-      <a class="fleche-retour" href="/shops"><i class="fa-solid fa-arrow-left"></i></a>
-    </div>
-    <div class="item">
+<nav class="navbar-nav nav-index fixed-top">
+  <div class="nav-items-index d-flex">
+      <a class="fleche-retour" href="/"><strong>←</strong></a>
       <p class="number-consigne">Consigne n°<%= @total %></p>
-    </div>
   </div>
 </nav>
 
@@ -32,7 +28,7 @@
 </div>
 
 <div class="sticky-btn">
-  <%= link_to "Voir mes consignes", rentals_path, class: "btn btn-info btn-consignes btn-block" %>
+  <%= link_to "Voir mes consignes", rentals_path, class: "btn btn-consignes btn-block" %>
 </div>
 
 <!--------------------- ASTUCE FOOTER --------------------->
