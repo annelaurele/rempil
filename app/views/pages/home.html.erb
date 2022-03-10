@@ -13,7 +13,7 @@
   <div>
     <% if current_user %>
       <br><h2>Bonjour <%= @user.name %> !</h2>
-      <p><span style="color: #FFBD36"><strong><%= @user.address %> </strong></span><span class="url-modifier"> Tu n'es pas là ?</span> </p>
+      <p><span style="color: #FFBD36"><strong><%= @user.address %></strong></span></p>
     <% else %>
     <%= link_to "Se connecter", new_user_session_path, class: "btn sign_in btn-info" %>
     <% end %>
