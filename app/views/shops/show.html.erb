@@ -29,9 +29,8 @@
           </div>
           <div class="modal-body">
             <% @shop.ratings.each do |rating| %>
-            <%= rating.user.name %>
-            <%= rating.rating %>
-            <%= rating.content %>
+            <div><span style="font-style: italic"><%= rating.user.name %></span><span style="color: #ffd700; font-size: 16px"> <%= rating.rating %><%= icon('fas','star') %></span></div>
+            <p style="font-size: 16px"><%= rating.content %></p><br>
             <% end %>
           </div>
         </div>
