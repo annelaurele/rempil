@@ -6,6 +6,7 @@ Rental.destroy_all
 Shop.destroy_all
 User.destroy_all
 Menu.destroy_all
+Rating.destroy_all
 
 puts '----- Creating users -----'
 
@@ -323,3 +324,16 @@ Menu.create(name: "Bagel cream cheese & saumon", description: "Pain pavot, cream
 Menu.create(name: "Bagel poulet curry", description: "Pain pavot, poulet, curry, moutarde, roquette.", price: 3, number_of_box: 1, shop: perlette)
 Menu.create!(name: "Miss Perlette", description: "Crème légère mascarpone vanillée, framboises fraîches, meringues craquantes et fondantes.", price: 4, number_of_box: 1, shop: perlette)
 Menu.create(name: "Le Banoffee", description: "Tartelette spéculoos, caramel, bananes, crème montée.", price: 4, number_of_box: 1, shop: perlette)
+
+#Creation reviews
+
+puts '----- Creating reviews -----'
+
+Rating.create!(rating: 5, shop: perlette, user: julia, content: "J'adore cette boulangerie ! Leur pizza est bonne")
+Rating.create!(rating: 5, shop: perlette, user: elliot, content: "La meilleure boulangerie de Toulouse !")
+Rating.create!(rating: 4, shop: perlette, user: annelaure, content: "Vendeuse pas aimable et mais le pain est bon")
+Rating.create!(rating: 4, shop: perlette, user: marina, content: "J'aime bien, ça va")
+Rating.create!(rating: 3, shop: panetiere, user: julia, content: "Boulangerie sympa mais pas incroyable")
+Rating.create!(rating: 4, shop: panetiere, user: elliot, content: "Vendeuse pas très aimable mais le pain est bon")
+Rating.create!(rating: 3, shop: panetiere, user: annelaure, content: "J'y vais de temps en temps, je vous conseille la salade")
+Rating.create!(rating: 2, shop: panetiere, user: marina, content: "Pratique mais pas aimable")

@@ -10,17 +10,42 @@
     <h3 id="shop-address"> <%= @shop.address %> </h3>
 </div>
 
+
+    <%= simple_form_for([@shop, @rental], method: "post") do |f| %>
+      <%= f.input :status %>
+      <%= f.submit %>
+    <% end %>
+
+
 <div class="container description-card">
 
     <%= cl_image_tag @shop.photo.key, class: "shop-show-big-image" %>
+    <p style="decoration: none; color: #ffd700; font-size: 18px"> <%= icon('fas','star') %><%= @shop.average_rate %> <span style= "font-size: 16px" data-toggle="modal" data-target="#Modalcomment">(Voir les commentaires)</span></p>
+    <div class="modal fade" id="Modalcomment" role="dialog" aria-labelledby="ModalreviewLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Les avis sur <span style="color: #FFBD36"><%= @shop.name %></span></h3>
+          </div>
+          <div class="modal-body">
+            <% @shop.ratings.each do |rating| %>
+            <%= rating.user.name %>
+            <%= rating.rating %>
+            <%= rating.content %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
     <p> <%= @shop.description %> </p>
     <div class="sub-show-card">
+        <p id="categorie-shop" > Catégorie : <%= @shop.category %> </p>
         <p class="btn btn-ghost"><%= @shop.category.gsub(/_/,' ') %></p>
         <%# <p id="couleur-heure"> Ouvert, ferme à <p> %>
           <div class="card-menu-list">
             <h3 id="menu-show">Menu:</h3>
+            <form action="/shops/<%= @shop.id %>/rentals" method="post" id="new_rental">
             <ul>
-
               <% @menus.each do |menu| %>
               <div class="card-menu-show">
                 <div class="card-menu-show-text-align">
@@ -35,10 +60,11 @@
                       <div class='ctrl'>
                         <div class='ctrl__button ctrl__button--decrement' data-insert-in-list-target="form_less" data-action="click->insert-in-list#less">&ndash;</div>
                         <div class='ctrl__counter'>
-                          <input class='ctrl__counter-input' maxlength='10' type='text' value='0' data-insert-in-list-target="items">
+                          <input class='ctrl__counter-input' maxlength='10' type='text' value='0' data-insert-in-list-target="items" name="rental[menus][<%= menu.id %>]">
                         </div>
                         <div class='ctrl__button ctrl__button--increment' data-insert-in-list-target="form_more" data-action="click->insert-in-list#more">+</div>
                       </div>
+                      <input type="hidden" name="authenticity_token" data-insert-in-list-target="tokenField">
                     </div>
                   </div>
                 </div>
@@ -48,9 +74,12 @@
             <% end  %>
             </ul>
           </div>
+
         <div class="sub-card-button">
-            <%= link_to "Réserver", shop_rentals_path(@shop.id), method: :post, class: "btn btn-info" %>
+            <%# <%= link_to "Réserver", shop_rentals_path(@shop.id), method: :post, class: "btn btn-info" %> %>
+            <input type="submit" value="Réserver">
         </div>
+        </form>
     </div>
 </div>
 
