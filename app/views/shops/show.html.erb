@@ -1,26 +1,23 @@
 <nav class="navbar-nav nav-index fixed-top">
+
   <div class="nav-items-index d-flex">
       <a class="fleche-retour" href="/"><strong>←</strong></i></a>
       <%= image_tag "REMPIL-couleur.png", class: "logo-nav" %>
   </div>
+
 </nav>
 
 <div class="container shop-show-title">
+
     <h2 id="shop-title"> <%= @shop.name %> </h2>
     <h3 id="shop-address"> <%= @shop.address %> </h3>
+
 </div>
-
-
-    <%= simple_form_for([@shop, @rental], method: "post") do |f| %>
-      <%= f.input :status %>
-      <%= f.submit %>
-    <% end %>
-
 
 <div class="container description-card">
 
     <%= cl_image_tag @shop.photo.key, class: "shop-show-big-image" %>
-    <p style="decoration: none; color: #ffd700; font-size: 18px"> <%= icon('fas','star') %><%= @shop.average_rate %> <span style= "font-size: 16px" data-toggle="modal" data-target="#Modalcomment">(Voir les commentaires)</span></p>
+    <p style="decoration: none; color: #ffd700; font-size: 18px"> <%= icon('fas','star') %> <%= @shop.average_rate %> <span style= "font-size: 16px" data-toggle="modal" data-target="#Modalcomment">(Voir les commentaires)</span></p>
     <div class="modal fade" id="Modalcomment" role="dialog" aria-labelledby="ModalreviewLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -38,11 +35,10 @@
     </div>
     <p> <%= @shop.description %> </p>
     <div class="sub-show-card">
-        <p id="categorie-shop" > Catégorie : <%= @shop.category %> </p>
         <p class="btn btn-ghost"><%= @shop.category.gsub(/_/,' ') %></p>
         <%# <p id="couleur-heure"> Ouvert, ferme à <p> %>
           <div class="card-menu-list">
-            <h3 id="menu-show">Menu:</h3>
+            <h3 id="menu-show"><%= @shop.name %> vous propose :</h3>
             <form action="/shops/<%= @shop.id %>/rentals" method="post" id="new_rental">
             <ul>
               <% @menus.each do |menu| %>
@@ -75,10 +71,9 @@
           </div>
 
         <div class="sub-card-button">
-            <%# <%= link_to "Réserver", shop_rentals_path(@shop.id), method: :post, class: "btn btn-info" %> %>
+            <%# <%= link_to "Réserver", shop_rentals_path(@shop.id), method: :post, class: "btn btn-info" %>
             <input type="submit" value="Réserver">
         </div>
-        </form>
     </div>
 </div>
 
