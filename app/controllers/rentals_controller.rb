@@ -13,10 +13,8 @@ class RentalsController < ApplicationController
     @user = current_user
     @shop = Shop.find(params[:shop_id])
     @rental = Rental.find(params[:rental_id])
-    # @menus = Menu.where(shop: @shop_id)
-    # @menu = Menu.find(params[:shop_id])
     @total = Rental.where(user: @user).count + 1
-    @menu = SelectionRental.where(rental: @rental).map do |selection|
+    @menus = SelectionRental.where(rental: @rental).map do |selection|
       selection.menu
     end
     @qr = RQRCode::QRCode.new(@rental.id.to_s)
