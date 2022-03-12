@@ -42,17 +42,9 @@
   </div>
 </div>
 
-<div class= "container-distance">
+<div class="container-distance">
 
-  <br><h3>Près de chez<span style="color: #FFBD36"> toi</span><h3>
-
-
-  <div id="map"
-      style="width: 100%; height: 250px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
-
+  <br><h3>Les plus<span style="color: #FFBD36"> populaires</span><h3>
 
   <div class="shop-distance-carousel">
 
@@ -68,10 +60,22 @@
             <span style="decoration: none; color: #ffd700; font-size: 18px"> <%= icon('fas','star') %> <%= shop.average_rate %></span>
           </div>
           <p class="shop-description"><%= shop.description %></p>
-        </div>
       <% end %>
+        </div>
     <% end %>
 
+  </div>
+
+</div>
+
+<div class= "container-distance">
+
+  <br><h3>Près de chez<span style="color: #FFBD36"> toi</span><h3>
+
+  <div id="map"
+      style="width: 100%; height: 450px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
 </div>
