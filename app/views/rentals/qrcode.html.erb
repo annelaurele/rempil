@@ -8,8 +8,10 @@
 <%= cl_image_tag @shop.photo.key, class: "shop-show-big-image" %>
 
 <div class="container-shop">
-  <h2 class="qr-title"><%= @shop.name %></h2>
-  <p class="qr-adresse"><%= @shop.address %></p>
+  <div class="name-adress-qrcode-restaurant">
+    <h2 class="qr-title"><%= @shop.name %></h2>
+    <p class="qr-adresse"><%= @shop.address %></p>
+  </div>
   <p class="qr-description">Ta réservation est validée 🎉<br>À présenter à ton commerçant</h2>
   <div class="qrcode">
     <%= @svg.html_safe %>

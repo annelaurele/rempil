@@ -27,6 +27,16 @@ import "bootstrap";
 import "@fortawesome/fontawesome-free/css/all";
 import { initStarRating } from '../plugins/init_star_rating';
 import "controllers"
+import { initMapbox } from '../plugins/init_mapbox';
+
+
+
+// -----------mapbox -------------
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})
+// -----------mapbox -------------
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';

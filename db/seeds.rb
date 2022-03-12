@@ -22,9 +22,9 @@ julia = User.create(name: "Julia", last_name: "Foucher", email: "julia814@hotmai
 
 marina = User.create(name: "Marina", last_name: "Magnoli", email: "mgnl.marina@gmail.com", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", status: 0, shop: "false", image_url: ActionController::Base.helpers.image_path('marina.jpg'))
 
-elliot = User.create(name: "Elliot", last_name: "Thyrant", email: "xaron.thyrant@gmail.com", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", status: 2, shop: "false", image_url: ActionController::Base.helpers.image_path('arbre.jpg'))
+elliot = User.create(name: "Elliot", last_name: "Thyrant", email: "xaron.thyrant@gmail.com", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", status: 2, shop: "false", image_url: ActionController::Base.helpers.image_path('bulbizare.png'))
 
-annelaure = User.create(name: "Anne-Laure", last_name: "Le", email: "annelaurele@hotmail.fr", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", status: 1 , shop: "true", image_url: ActionController::Base.helpers.image_path('arbre.jpg'))
+annelaure = User.create(name: "Anne-Laure", last_name: "Le", email: "annelaurele@hotmail.fr", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", status: 1 , shop: "true", image_url: ActionController::Base.helpers.image_path('bulbizare.png'))
 
 #Creation shops
 
@@ -111,7 +111,7 @@ SlotHour.create(opening_hour: 12, closing_hour: 23, day_of_the_week: "Vendredi",
 SlotHour.create(opening_hour: 12, closing_hour: 23, day_of_the_week: "Samedi", shop: boucheb)
 SlotHour.create(opening_hour: 12, closing_hour: 23, day_of_the_week: "Dimanche", shop: boucheb)
 
-prosciutteria = Shop.create!(name: "Prosciutteria Toulouse", address: "31 Rue des Filatiers, 31000 Toulouse", mobile: "0971216499", email: "", category: 1, description: "Nous proposons d’incroyables paninis XXL, des bruschettone, des salades gourmandes ainsi que de belles planches de charcuterie fines et fromages.", user: annelaure, average_rate: 4.5, longitude: 43.59904560254555, latitude: 1.4446076260213983)
+prosciutteria = Shop.create!(name: "Prosciutteria", address: "31 Rue des Filatiers, 31000 Toulouse", mobile: "0971216499", email: "", category: 1, description: "Nous proposons d’incroyables paninis XXL, des bruschettone, des salades gourmandes ainsi que de belles planches de charcuterie fines et fromages.", user: annelaure, average_rate: 4.5, longitude: 43.59904560254555, latitude: 1.4446076260213983)
 file = URI.open('https://images.squarespace-cdn.com/content/v1/5d3ace69b3d0000001bcaebf/1564415113289-BIMI49JLL2O616OE7EJ3/prosciutteria.jpg?format=1000w')
 prosciutteria.photo.attach(io: file, filename: 'prosciutteria.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 12, closing_hour: 22, day_of_the_week: "Lundi", shop: prosciutteria)
@@ -157,7 +157,7 @@ SlotHour.create(opening_hour: 10, closing_hour: 20, day_of_the_week: "Vendredi",
 SlotHour.create(opening_hour: 10, closing_hour: 20, day_of_the_week: "Samedi", shop: flowers)
 SlotHour.create(opening_hour: 14, closing_hour: 20, day_of_the_week: "Dimanche", shop: flowers)
 
-autre = Shop.create!(name: "L'autre salon de thé", address: "45 Rue des Tourneurs, 31000 Toulouse", mobile: "0534449366", email: "", category: 5, description: "Endroit idéal pour faire une pause gourmande et sucrée !", user: annelaure, average_rate: 3.7, longitude: 43.6015888057811, latitude: 1.4449899153416401)
+autre = Shop.create!(name: "L'autre salon", address: "45 Rue des Tourneurs, 31000 Toulouse", mobile: "0534449366", email: "", category: 5, description: "Endroit idéal pour faire une pause gourmande et sucrée !", user: annelaure, average_rate: 3.7, longitude: 43.6015888057811, latitude: 1.4449899153416401)
 file = URI.open('https://i.pinimg.com/originals/4d/24/31/4d243165934becd4192b4f1c18e2168a.jpg')
 autre.photo.attach(io: file, filename: 'autre.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 12, closing_hour: 20, day_of_the_week: "Lundi", shop: autre)
@@ -222,7 +222,7 @@ SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Jeudi", sh
 SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Vendredi", shop: coterie)
 SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Samedi", shop: coterie)
 
-boyer = Shop.create!(name: "Boucherie Maison Boyer", address: "62 Rue de Metz, 31000 Toulouse", mobile: "0561220039", email: "", category: 2, description: "La Maison Boyer à le plaisir de vous choisir des produits d'excellente qualité en boucherie, charcuterie et traiteur.", user: annelaure, average_rate: 4.9, longitude: 43.60097246553297, latitude: 1.450797246024921)
+boyer = Shop.create!(name: "Boucherie Boyer", address: "62 Rue de Metz, 31000 Toulouse", mobile: "0561220039", email: "", category: 2, description: "La Maison Boyer à le plaisir de vous choisir des produits d'excellente qualité en boucherie, charcuterie et traiteur.", user: annelaure, average_rate: 4.9, longitude: 43.60097246553297, latitude: 1.450797246024921)
 file = URI.open('https://www.sobio.fr/wp-content/uploads/2020/07/CV_20140626_3639.jpg')
 boyer.photo.attach(io: file, filename: 'boyer.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Lundi", shop: boyer)

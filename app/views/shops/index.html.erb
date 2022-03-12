@@ -1,7 +1,10 @@
 <nav class="navbar-nav nav-index fixed-top">
   <div class="nav-items-index d-flex">
-      <a class="fleche-retour" href="/"><strong>←</strong></a>
-      <%= image_tag "REMPIL-couleur.png", class: "logo-nav" %>
+      <%# <a class="fleche-retour" href="/"><strong>←</strong></a> %>
+      <%= link_to root_path do %>
+        <%= image_tag "left-arrow.png", class: "fleche-retour" %>
+        <%= image_tag "REMPIL-couleur.png", class: "logo-nav" %>
+      <% end %>
   </div>
 </nav>
 
@@ -33,12 +36,14 @@
         <div class="card shop-card">
           <%= cl_image_tag shop.photo.key, class: "card-img-top" %>
           <div class="d-flex justify-content-between shop-info">
-            <h4 id="shop-name"> <%= shop.name %> <span style="decoration: none; color: #ffd700; font-size: 18px"> <%= icon('fas','star') %> <%= shop.average_rate %></span></h4>
+            <h4 id="shop-name"> <%= shop.name %></h4>
             <p class="btn btn-ghost"><%= shop.category.gsub(/_/,' ') %></p>
+          </div>
+          <div class="shops-rates">
+            <span style="decoration: none; color: #ffd700; font-size: 18px"> <%= icon('fas','star') %> <%= shop.average_rate %></span>
           </div>
           <p class="shop-description"><%= shop.description %></p>
       <% end %>
-
 
 <div class="accordion" id="accordionExample">
 
