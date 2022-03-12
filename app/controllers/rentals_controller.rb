@@ -3,9 +3,9 @@ class RentalsController < ApplicationController
     @user = current_user
     @total = Rental.where(user: @user).map(&:total_of_box).sum
     @all_users_rentals = Rental.where(user: @user)
-    @actuals = @all_users_rentals.where(status: 0)
-    @pasts = @all_users_rentals.where(status: 1)
-    @paids = @all_users_rentals.where(status: 2)
+    @actuals = @all_users_rentals.where(status: 0).sort_by(&:rental_time_end)
+    @pasts = @all_users_rentals.where(status: 1).sort_by(&:rental_time_end)
+    @paids = @all_users_rentals.where(status: 2).sort_by(&:rental_time_end)
     @rating = Rating.new
   end
 
