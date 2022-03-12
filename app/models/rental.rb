@@ -8,5 +8,5 @@ class Rental < ApplicationRecord
   belongs_to :user
   has_many :menus
 
-  has_many :selection_rentals
+  has_many :selection_rentals, dependent: :destroy
 end

@@ -3,20 +3,23 @@ class RentalsController < ApplicationController
     @user = current_user
     @total = Rental.where(user: @user).map(&:total_of_box).sum
     @all_users_rentals = Rental.where(user: @user)
-    @actuals = @all_users_rentals.where(status: 0)
-    @pasts = @all_users_rentals.where(status: 1)
-    @paids = @all_users_rentals.where(status: 2)
+    @actuals = @all_users_rentals.where(status: 0).sort_by(&:rental_time_end)
+    @pasts = @all_users_rentals.where(status: 1).sort_by(&:rental_time_end)
+    @paids = @all_users_rentals.where(status: 2).sort_by(&:rental_time_end)
     @rating = Rating.new
   end
 
   def qrcode
-    @qr = RQRCode::QRCode.new("16")
     @user = current_user
     @shop = Shop.find(params[:shop_id])
     @rental = Rental.find(params[:rental_id])
     # @menus = Menu.where(shop: @shop_id)
     # @menu = Menu.find(params[:shop_id])
     @total = Rental.where(user: @user).count + 1
+    @menu = SelectionRental.where(rental: @rental).map do |selection|
+      selection.menu
+    end
+    @qr = RQRCode::QRCode.new(@rental.id.to_s)
     @svg = @qr.as_svg(
     color: "000",
     shape_rendering: "crispEdges",
@@ -32,7 +35,9 @@ class RentalsController < ApplicationController
       rental_time_start: Date.today,
       rental_time_end: Date.today + 14.day,
       shop: @shop,
-      user: current_user
+      user: current_user,
+      total_of_box: 1,
+      status: 0
     )
     @rental.selection_rentals.build(manage_menus(rental_params[:menus].to_h))
     if @rental.save

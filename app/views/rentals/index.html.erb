@@ -8,7 +8,7 @@
       </div>
       <div class="text-header-dashboard">
         <h1 style="font-size: 24px; margin-left: 15px;font-weight: 700;"> <span style="color: #329190;"> Ton statut : </span><%= @user.status.gsub(/_/,' ') %></h1>
-        <h2 style="font-size: 20px; margin-left: 15px; color:#B1E4E3; font-weight: 700;">Consignes en cours : <%= @total %><h2>
+        <h2 style="font-size: 20px; margin-left: 15px; color:#B1E4E3; font-weight: 700;">Consignes : <%= @total %><h2>
       </div>
     </div>
   <!---------------------------NAV TAB-------------------------------->
@@ -19,10 +19,10 @@
         <a class="nav-menu-dashboard active" id="pills-pending-tab" data-toggle="pill" href="#pills-pending" role="tab" aria-controls="pills-pending" aria-selected="true">En cours</span></a>
       </li>
       <li class="nav-item" role="presentation">
-        <a class="nav-menu-dashboard" id="pills-render-tab" data-toggle="pill" href="#pills-render" role="tab" aria-controls="pills-render" aria-selected="false">Rendu</a>
+        <a class="nav-menu-dashboard" id="pills-render-tab" data-toggle="pill" href="#pills-render" role="tab" aria-controls="pills-render" aria-selected="false">Rendues</a>
       </li>
       <li class="nav-item" role="presentation">
-        <a class="nav-menu-dashboard" id="pills-paid-tab" data-toggle="pill" href="#pills-paid" role="tab" aria-controls="pills-paid" aria-selected="false">Payé</a>
+        <a class="nav-menu-dashboard" id="pills-paid-tab" data-toggle="pill" href="#pills-paid" role="tab" aria-controls="pills-paid" aria-selected="false">Payées</a>
       </li>
     </ul>
   </div>
@@ -49,7 +49,7 @@
     <div class="div-shop-item">
     <h4 class="nom-restaurant-dashboard" style="font-weight: 600"><%= actual.shop.name %></h4>
     <p>Nombre de consignes: <%= actual.total_of_box %></p>
-    <p>A rendre avant le: <%= actual.rental_time_end %></p>
+    <p>A rendre avant le: <%= actual.rental_time_end.strftime("%d/%m/%Y") %></p>
       <div class="button-dashboard-card">
       <div id="button-fiche">
       <%= link_to "Voir la fiche", shops_path, class: "btn btn-info dash-info-button" %>
@@ -96,20 +96,20 @@
     <h2 id="dash-menu-info-text"> Détails des consignes rendues</h2>
     <div class="big-div-shops">
       <div class="aligner">
-        <% @actuals.each do |actual| %>
-          <div class="number-consigne-span"><%= actual.total_of_box %></div>
+        <% @pasts.each do |past| %>
+          <div class="number-consigne-span"><%= past.total_of_box %></div>
   <div class="dash-card">
     <div class="div-shop-item dash-shop-pic">
-      <%= cl_image_tag actual.shop.photo.key, :transformation=>[
+      <%= cl_image_tag past.shop.photo.key, :transformation=>[
       {:gravity=>"face", :height=>500, :width=>400, :crop=>"crop"},
       {:radius=>"50"},
       {:width=>100, :crop=>"scale"}
       ] %>
     </div>
     <div class="div-shop-item">
-    <h4 class="nom-restaurant-dashboard" style="font-weight: 600"><%= actual.shop.name %></h4>
-    <p>Nombre de consignes: <%= actual.total_of_box %></p>
-    <p>A rendre avant le: <%= actual.rental_time_end %></p>
+    <h4 class="nom-restaurant-dashboard" style="font-weight: 600"><%= past.shop.name %></h4>
+    <p>Nombre de consignes: <%= past.total_of_box %></p>
+    <p>A rendre avant le: <%= past.rental_time_end.strftime("%d/%m/%Y") %></p>
       <div class="button-dashboard-card">
       <div id="button-fiche">
       <%= link_to "Voir la fiche", shops_path, class: "btn btn-info dash-info-button" %>
@@ -123,12 +123,12 @@
               <div class="modal-header">
                   <div>
                   <h3 class="modal-title">Donne ton avis sur</h3>
-                  <h3 style="color: #FFBD36"><%= actual.shop.name %></h3>
+                  <h3 style="color: #FFBD36"><%= past.shop.name %></h3>
                   </div>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               </div>
                 <div class="modal-body">
-                  <%= simple_form_for [actual.shop, actual, @rating] do |f| %>
+                  <%= simple_form_for [past.shop, past, @rating] do |f| %>
                     <p style="text-align: center">Ecris ton avis <span style="color: #FFBD36">ici... </p>
                     <%= f.input :content, placeholder: "J'adore ce commerçant..." %>
                     <p style="text-align: center">Et ta note <span style="color: #FFBD36">là...</span></p>
@@ -155,20 +155,20 @@
     <h2 id="dash-menu-info-text"> Détails des consignes payées</h2>
     <div class="big-div-shops">
       <div class="aligner">
-          <% @actuals.each do |actual| %>
-            <div class="number-consigne-span"><%= actual.total_of_box %></div>
+          <% @paids.each do |paid| %>
+            <div class="number-consigne-span"><%= paid.total_of_box %></div>
   <div class="dash-card">
     <div class="div-shop-item dash-shop-pic">
-      <%= cl_image_tag actual.shop.photo.key, :transformation=>[
+      <%= cl_image_tag paid.shop.photo.key, :transformation=>[
       {:gravity=>"face", :height=>500, :width=>400, :crop=>"crop"},
       {:radius=>"50"},
       {:width=>100, :crop=>"scale"}
       ] %>
     </div>
     <div class="div-shop-item">
-    <h4 class="nom-restaurant-dashboard" style="font-weight: 600"><%= actual.shop.name %></h4>
-    <p>Nombre de consignes: <%= actual.total_of_box %></p>
-    <p>A rendre avant le: <%= actual.rental_time_end %></p>
+    <h4 class="nom-restaurant-dashboard" style="font-weight: 600"><%= paid.shop.name %></h4>
+    <p>Nombre de consignes: <%= paid.total_of_box %></p>
+    <p>A rendre avant le: <%= paid.rental_time_end.strftime("%d/%m/%Y") %></p>
       <div class="button-dashboard-card">
       <div id="button-fiche">
       <%= link_to "Voir la fiche", shops_path, class: "btn btn-info dash-info-button" %>
@@ -182,12 +182,12 @@
               <div class="modal-header">
                   <div>
                   <h3 class="modal-title">Donne ton avis sur</h3>
-                  <h3 style="color: #FFBD36"><%= actual.shop.name %></h3>
+                  <h3 style="color: #FFBD36"><%= paid.shop.name %></h3>
                   </div>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               </div>
                 <div class="modal-body">
-                  <%= simple_form_for [actual.shop, actual, @rating] do |f| %>
+                  <%= simple_form_for [paid.shop, paid, @rating] do |f| %>
                     <p style="text-align: center">Ecris ton avis <span style="color: #FFBD36">ici... </p>
                     <%= f.input :content, placeholder: "J'adore ce commerçant..." %>
                     <p style="text-align: center">Et ta note <span style="color: #FFBD36">là...</span></p>
