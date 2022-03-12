@@ -24,21 +24,29 @@
 }
 
 .name-adress-qrcode-restaurant{
+  border-radius: 10px;
+  width: 90%;
+  margin-left: 20px;
+  padding: 10px;
+  margin-top: -72px;
   background-color: white;
-  border-radius: 5px;
-  filter: drop-shadow(0 0 0.75rem #C8C9C7);
+  z-index: 1000000;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.19));
 }
 .qr-title {
-  font-size: 2.65em;
+  font-size: 30px;
   width: 90%;
   margin-left: 10px;
   margin-bottom: 0;
+  font-weight: 800;
+  margin-top: 10px;
 }
 
 .qr-adresse {
   margin-left: 10px;
   color: #B1E4E3;
   font-size: 18px;
+  margin-top: 15px;
 }
 
 .qr-description {
