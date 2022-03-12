@@ -44,17 +44,14 @@
         <p class="btn btn-ghost"><%= @shop.category.gsub(/_/,' ') %></p>
         <%# <p id="couleur-heure"> Ouvert, ferme à <p> %>
           <div class="card-menu-list">
-            <h3 id="menu-show"><%= @shop.name %> vous propose :</h3>
+            <h3 id="menu-show"><span style="color: #FFBD36"><%= @shop.name %></span> vous propose :</h3><br>
             <form action="/shops/<%= @shop.id %>/rentals" method="post" id="new_rental">
-            <ul>
               <% @menus.each do |menu| %>
               <div class="card-menu-show">
+                <div class= "button-shop-plus"><a class="btn btn-link" href="#" data-toggle="collapse" data-target="#target<%= menu.id %>">+</a></div>
                 <div class="card-menu-show-text-align">
                   <p class="name-card-menu-show"><%= menu.name %></p>
-                  <p class="price-card-menu-show"><%= menu.price.to_f %></p>
-                  <a class="btn btn-link" href="#" data-toggle="collapse" data-target="#target<%= menu.id %>">
-                      Plus d'information
-                  </a>
+                  <p class="price-card-menu-show"><%= menu.price.to_f %> €</p>
                   <div id="target<%= menu.id %>" class="collapse">
                     <p class="description-card-menu-show"><%= menu.description %></p>
                     <div data-controller="insert-in-list" data-id="<%= menu.id %>">
@@ -71,10 +68,9 @@
                 </div>
                 <%= image_tag "boulangerie.jpg", size: "112x112", class: "picture_menu_show" %>
               </div>
-              <br>
+              <hr>
             <% end  %>
-            </ul>
-            <input type="submit" value="Réserver">
+            <div style="align-items-center" ><input type="submit" value="Réserver" class= "btn btn-secondary btn-index-shop"></div>
             </form>
           </div>
     </div>
