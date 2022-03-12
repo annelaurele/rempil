@@ -1,8 +1,13 @@
 <nav class="navbar-nav nav-index fixed-top">
+
   <div class="nav-items-index d-flex">
-      <a class="fleche-retour" href="/"><strong>←</strong></a>
-      <p class="number-consigne">Consigne n°<%= @total %></p>
+      <%# <a class="fleche-retour" href="/"><strong>←</strong></a> %>
+      <%= link_to root_path do %>
+        <%= image_tag "left-arrow.png", class: "fleche-retour" %>
+        <p class="number-consigne">Consigne n°<%= @total %></p>
+      <% end %>
   </div>
+
 </nav>
 
 <%= cl_image_tag @shop.photo.key, class: "shop-show-big-image" %>
