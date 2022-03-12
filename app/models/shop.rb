@@ -19,4 +19,7 @@ class Shop < ApplicationRecord
   algoliasearch do
     attributes :name, :category
   end
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
