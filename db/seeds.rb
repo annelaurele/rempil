@@ -181,7 +181,7 @@ SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Vendredi",
 SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Samedi", shop: alimentation)
 
 biocoop = Shop.create!(name: "Biocoop", address: "7 Place de la Trinité, 31000 Toulouse", mobile: "0534424919", email: "", category: 3, description: "Vous pourrez y trouver des fruits et légumes frais de saison et locaux, du pain frais et tous les produits en vrac d'épicerie", user: annelaure, average_rate: 4.3, longitude: 43.599937791716464, latitude: 1.4448434548568247)
-file = URI.open('https://monpetit20e.com/wp-content/uploads/2020/11/primeurspre%CC%81fe%CC%81re%CC%81s.jpg')
+file = URI.open('https://ad962edbae8ba7b03b7f-d10007df79b5b7a4e475a291e50a08cf.ssl.cf3.rackcdn.com/2104/ouvrir-un-primeur.jpg')
 biocoop.photo.attach(io: file, filename: 'biocoop.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Lundi", shop: biocoop)
 SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Mardi", shop: biocoop)
