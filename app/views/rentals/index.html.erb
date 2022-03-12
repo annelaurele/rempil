@@ -1,13 +1,13 @@
 <div class="container-dashboard">
 
     <div class="header-dashboard">
-      <div id="image-header-dashboard">
+      <div id="image-header-dashboard" style="margin-left: 15px;">
         <% if current_user %>
           <%= image_tag current_user.image_url, class: "user-picture" %>
         <% end %>
       </div>
       <div class="text-header-dashboard">
-        <h1 style="font-size: 24px; margin-left: 15px;font-weight: 700;"> <span style="color: #329190;"> Ton statut : </span><%= @user.status.gsub(/_/,' ') %></h1>
+        <h1 style="font-size: 24px; margin-left: 15px;font-weight: 700;">Ton statut : </span><%= @user.status.gsub(/_/,' ') %></h1>
         <h2 style="font-size: 20px; margin-left: 15px; color:#B1E4E3; font-weight: 700;">Consignes : <%= @total %><h2>
       </div>
     </div>
@@ -37,7 +37,6 @@
             <div class="big-div-shops">
                 <div class="aligner">
                     <% @actuals.each do |actual| %>
-                    <div class="number-consigne-span"><%= actual.total_of_box %></div>
   <div class="dash-card">
     <div class="div-shop-item dash-shop-pic">
       <%= cl_image_tag actual.shop.photo.key, :transformation=>[
@@ -97,7 +96,6 @@
     <div class="big-div-shops">
       <div class="aligner">
         <% @pasts.each do |past| %>
-          <div class="number-consigne-span"><%= past.total_of_box %></div>
   <div class="dash-card">
     <div class="div-shop-item dash-shop-pic">
       <%= cl_image_tag past.shop.photo.key, :transformation=>[
@@ -156,7 +154,6 @@
     <div class="big-div-shops">
       <div class="aligner">
           <% @paids.each do |paid| %>
-            <div class="number-consigne-span"><%= paid.total_of_box %></div>
   <div class="dash-card">
     <div class="div-shop-item dash-shop-pic">
       <%= cl_image_tag paid.shop.photo.key, :transformation=>[
