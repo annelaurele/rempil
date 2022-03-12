@@ -25,7 +25,7 @@
   <br><h3>Meilleures <span style="color: #FFBD36">catégories</span><h3>
 </div>
 
-<div class="content container">
+<div class="content-container">
   <div class="cards-category">
     <div class="card-category-item" style="background-image: url(<%= image_path("boulangerie.jpg")%>)">
       <a href="/shops?query=boulangerie">BOULANGERIE</a>
@@ -50,7 +50,7 @@
 
     <% @shops.each do |shop| %>
       <%= link_to shop_path(shop.id) do %>
-        <div class="card distance-shop-card" style="width: 23.3rem;">
+        <div class="card distance-shop-card" style="width: 24.3rem;">
           <%= cl_image_tag shop.photo.key, class: "card-img-top" %>
           <div class="d-flex justify-content-between shop-info">
             <h4 id="shop-name"> <%= shop.name %></h4>
