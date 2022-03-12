@@ -89,7 +89,7 @@
     <% @similar_shops.each do |shop| %>
     <%= link_to shop_path(shop.id) do %>
     <div class="card commercant-similaire" style="width: 23.3rem;">
-      <%= cl_image_tag shop.photo.key, class: "card-img-top" %>
+      <%= cl_image_tag shop.photo.key, class: "card-img-top", height: "210px" %>
       <div class="d-flex justify-content-between shop-info">
         <h4 id="shop-name"> <%= shop.name %></h4>
         <p class="btn btn-ghost"><%= shop.category.gsub(/_/,' ') %></p>
