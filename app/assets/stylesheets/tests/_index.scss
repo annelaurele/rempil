@@ -1,3 +1,4 @@
+/* ------------ NAVBAR--------*/
 .navbar-nav {
   background-color: #2C9199;
 }
@@ -6,8 +7,10 @@
   font-size: 18px;
   margin-left: 249px;
   margin-bottom: 0;
+  color: white;
 }
 
+/* ------------ CONTAINER--------*/
 .img-banner {
   background-size: cover;
   background-position: center;
@@ -19,6 +22,11 @@
   margin-top: 43px;
 }
 
+.name-adress-qrcode-restaurant{
+  background-color: white;
+  border-radius: 5px;
+  filter: drop-shadow(0 0 0.75rem #C8C9C7);
+}
 .qr-title {
   font-size: 2.65em;
   width: 90%;
@@ -44,7 +52,6 @@
   background-size: cover;
   display: flex; /* or inline-flex */
   justify-content: center;
-  background: linear-gradient(70deg, #BDE9C9, #58C9D4);
   padding: 25px 0 25px 0;
   margin-bottom: 25px;
 }
