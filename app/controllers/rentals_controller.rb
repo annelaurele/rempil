@@ -35,7 +35,8 @@ class RentalsController < ApplicationController
       rental_time_start: Date.today,
       rental_time_end: Date.today + 14.day,
       shop: @shop,
-      user: current_user
+      user: current_user,
+      total_of_box: 1
     )
     @rental.selection_rentals.build(manage_menus(rental_params[:menus].to_h))
     if @rental.save
