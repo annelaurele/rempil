@@ -7,8 +7,16 @@ html{
 .header-dashboard{
   display: flex;
   margin-left: 15px;
+  margin-top: 30px;
 }
 
+.text-header-dashboard{
+  margin-left: 15px;
+}
+
+.image-header-dashboard{
+  margin-left: 15px;
+}
 /*----------MENU DASHBOARD STATUT----------*/
 .menu-dashboard-statut ul li{
   display: inline-block;
@@ -21,7 +29,7 @@ a.nav-menu-dashboard {
     text-decoration: none;
     background-color: transparent;
     border: 2px solid #B1E4E3;
-    padding: 5px 30px 5px 30px;
+    padding: 5px 22px 5px 22px;
     border-radius: 30px;
 }
 
@@ -38,7 +46,7 @@ a.nav-menu-dashboard {
 }
 /*----------Notification----------*/
 
-.-count, .-count:before, .ringBell:after {
+/*.-count, .-count:before, .ringBell:after {
   position: absolute;
 }
 
@@ -77,7 +85,7 @@ a.nav-menu-dashboard {
   margin-left: 10px;
   font-size: 16px;
   font-weight: bold;
-}
+}*/
 
 /*----------MENU CARD----------*/
 
