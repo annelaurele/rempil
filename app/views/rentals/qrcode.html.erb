@@ -1,20 +1,17 @@
 <nav class="navbar-nav nav-index fixed-top">
-
   <div class="nav-items-index d-flex">
-      <%# <a class="fleche-retour" href="/"><strong>←</strong></a> %>
-      <%= link_to root_path do %>
-        <%= image_tag "left-arrow.png", class: "fleche-retour" %>
-        <p class="number-consigne">Consigne n°<%= @total %></p>
-      <% end %>
+      <a class="fleche-retour" href="/"><img src="assets/images/left-arrow.png" alt=""></a>
+      <p class="number-consigne">Consigne n°<%= @total %></p>
   </div>
-
 </nav>
 
 <%= cl_image_tag @shop.photo.key, class: "shop-show-big-image" %>
 
 <div class="container-shop">
-  <h2 class="qr-title"><%= @shop.name %></h2>
-  <p class="qr-adresse"><%= @shop.address %></p>
+  <div class="name-adress-qrcode-restaurant">
+    <h2 class="qr-title"><%= @shop.name %></h2>
+    <p class="qr-adresse"><%= @shop.address %></p>
+  </div>
   <p class="qr-description">Ta réservation est validée 🎉<br>À présenter à ton commerçant</h2>
   <div class="qrcode">
     <%= @svg.html_safe %>
@@ -30,7 +27,6 @@
     Quiche Lorraine
     </div>
   <h2 class="resa-total">Total : 14€</h2>
-
 
 </div>
 
