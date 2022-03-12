@@ -90,11 +90,14 @@
     <%= link_to shop_path(shop.id) do %>
     <div class="card commercant-similaire" style="width: 23.3rem;">
       <%= cl_image_tag shop.photo.key, class: "card-img-top" %>
-      <div class="card-body">
-        <h4 id="shop-title-commercant"> <%= shop.name %> </h4>
-        <p class="card-shop-distance-category-description"><%= shop.description %></p>
+      <div class="d-flex justify-content-between shop-info">
+        <h4 id="shop-name"> <%= shop.name %></h4>
         <p class="btn btn-ghost"><%= shop.category.gsub(/_/,' ') %></p>
       </div>
+      <div class="shops-rates-home">
+        <span style="decoration: none; color: #ffd700; font-size: 18px"> <%= icon('fas','star') %> <%= shop.average_rate %></span>
+      </div>
+      <p class="shop-description"><%= shop.description %></p>
     </div>
     <% end %>
     <% end %>
