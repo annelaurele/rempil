@@ -1,3 +1,4 @@
 <h2><%= shop.name %></h2>
-<p><%= shop.address %></p>
-<%= link_to "fiche resto", shop_path(shop.id) %>
+<p class="map_adress"><%= shop.address %></p>
+<p class="map_category"><%= shop.category.gsub('_', ' ')  %></p>
+<%= link_to "fiche resto", shop_path(shop.id), class: "btn dash-info-button" %>
