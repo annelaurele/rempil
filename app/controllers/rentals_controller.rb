@@ -2,6 +2,9 @@ class RentalsController < ApplicationController
   def index
     @user = current_user
     @total = Rental.where(user: @user).map(&:total_of_box).sum
+    @user = check_status(@user, @total)
+    @user.save
+    @next_step = next_step_func(@total)
     @all_users_rentals = Rental.where(user: @user)
     @actuals = @all_users_rentals.where(status: 0).sort_by(&:rental_time_end)
     @pasts = @all_users_rentals.where(status: 1).sort_by(&:rental_time_end)
@@ -13,8 +16,6 @@ class RentalsController < ApplicationController
     @user = current_user
     @shop = Shop.find(params[:shop_id])
     @rental = Rental.find(params[:rental_id])
-    # @menus = Menu.where(shop: @shop_id)
-    # @menu = Menu.find(params[:shop_id])
     @total = Rental.where(user: @user).count + 1
     @menus = SelectionRental.where(rental: @rental).map do |selection|
       selection.menu
@@ -73,6 +74,27 @@ class RentalsController < ApplicationController
 
   private
 
+  def next_step_func(total)
+    case
+      when total < 5
+        return 5 - total
+      when total < 10
+        return 10 - total
+      when total < 15
+        return 15 - total
+      when total < 20
+        return 20 - total
+    end
+  end
+
+  def check_status(user, total)
+    user.status = 0 if total < 5
+    user.status = 1 if total >= 5
+    user.status = 2 if total >= 10
+    user.status = 3 if total >= 15
+    user
+  end
+
   def manage_menus(menus)
     selection_filtered = menus.map do |menu_id, quantity|
       if quantity.to_i > 0
@@ -80,7 +102,6 @@ class RentalsController < ApplicationController
       else
         nil
       end
-
     end
     selection_filtered.compact
   end
