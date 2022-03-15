@@ -22,6 +22,10 @@
     padding: 12px 2px;
 }
 
+.description-card-menu-show {
+  margin-bottom: 0px;
+}
+
 #shop-address {
     font-size: 16px;
     color: #B1E4E3;
@@ -34,53 +38,72 @@
 
 .card-menu-show {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
-
+.name-card-menu-show  {
+  font-weight: bolder;
+  margin-bottom: 0px;
+}
 
 .card-menu-show-text-align {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin: 8px;
 }
 
 .picture_menu_show {
   display: flex;
 }
 
-.name-card-menu-show {
-  font-weight: bold;
-  margin: 0px;
-}
-
 .price-card-menu-show {
-  margin: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: bolder;
+  color: #FFBD36;
 }
 
-.btn-link {
+#btn-link a {
+  text-decoration: none !important;
+  color:#2C9199;
+  font-weight: normal;
+  margin: 5px;
+}
+
+#btn-link a:hover {
+  text-decoration: none !important;
+  color:#2C9199;
+  font-weight: normal;
+  margin: 5px;
+}
+
+.increment-button {
+  display: flex;
   text-decoration: none;
   background-color:  #2C9199;
   color:white;
-  margin: 5px;
+  margin: 3px;
   font-weight: bolder;
   border-radius: 50%;
   width: 90%;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
 }
 
-.btn-link:hover {
-  text-decoration: none;
-  background-color: white;
-  color: #2C9199;
-  margin: 5px;
-  font-weight: bolder;
-  border-radius: 50%;
-  width: 90%;
-  border-color: #2C9199;
-}
-
-.button-shop-plus {
+.increment-button-display {
   display: flex;
+  align-items: center;
 }
+
+.increment-button-number {
+  max-width: 50px;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 /*---------- Commerçant similaire -----------*/
 
 .title-similaire {
