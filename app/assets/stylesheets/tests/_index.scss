@@ -50,10 +50,10 @@
 }
 
 .qr-description {
-  text-align: center;
   font-size: 22px;
   padding-top: 10px;
-  margin-left: 10px;
+  margin-left: 25px;
+  margin-top: 15px;
 }
 
 .qrcode {
@@ -82,6 +82,7 @@
 
 .rappel-resa-title {
   font-size: 1.65em;
+  color: #B1E4E3;
 }
 
 .item {
@@ -100,10 +101,14 @@
 
 .resa-items {
   font-size: 20px;
+  text-align: start;
+  margin-left: 25px;
 }
 
 .resa-total {
   font-size: 20px;
+  margin-top: 15px;
+  color: #FFBD36;
 }
 
 .btn-consignes {
