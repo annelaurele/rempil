@@ -1,7 +1,8 @@
 <nav class="navbar-nav nav-index fixed-top">
   <div class="nav-items-index d-flex">
-      <a class="fleche-retour" href="/"><img src="assets/images/left-arrow.png" alt=""></a>
-      <p class="number-consigne">Consigne n°<%= @total %></p>
+      <%= link_to root_path do %>
+        <%= image_tag "left-arrow.png", class: "fleche-retour" %><p class="number-consigne">Consigne n°<%= @total %></p>
+      <% end %>
   </div>
 </nav>
 
