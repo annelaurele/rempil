@@ -37,17 +37,18 @@
 .shop-card {
   border-radius: 15px;
   display: inline-block;
-  padding-bottom: 20px;;
+  padding-bottom: 20px;
+  // height: 50vh;
 }
 
 .shop-info {
   flex: 1 1 auto;
   min-height: 1px;
-  margin-top: 10px;
+  margin-top: 15px;
   padding-right: 1.25rem;
   padding-left: 1.25rem;
   padding-bottom: 0px;
-  align-items: center;
+  // align-items: center;
 }
 
 .shops-rates {
@@ -57,6 +58,7 @@
 }
 
 .shop-description {
+  margin-top: 0px;
   font-size: 16px;
   margin-left: 20px;
   margin-right: 20px;
