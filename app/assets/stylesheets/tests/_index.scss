@@ -1,16 +1,29 @@
 /* ------------ NAVBAR--------*/
 .navbar-nav {
   background-color: #2C9199;
+  height: 60px;
 }
 
+.nav-items-index {
+    padding-bottom: 5px;
+    align-items: center;
+    justify-content: center;
+}
 .number-consigne {
-  color: white;
-  font-size: 18px;
-  margin-left: 249px;
-  margin-bottom: 0;
-  color: white;
+    color: white;
+    font-size: 18px;
+    margin-left: 244px;
+    margin-bottom: 0;
+    margin-top: -24px;
+    color: white;
 }
-
+.fleche-retour {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+    height: 20px;
+    margin-left: -15px
+}
 /* ------------ CONTAINER--------*/
 .img-banner {
   background-size: cover;
