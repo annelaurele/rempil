@@ -1,132 +1,136 @@
-<div class="container-search-home">
-  <div class="item-home">
-    <div>
-      <%= image_tag "REMPIL-couleur.png", class: "logo-home" %>
-      <p class="url-modifier">La consigne près de chez toi</p>
+<div class="container-global">
+
+  <div class="container-search-home">
+    <div class="item-home">
+      <div>
+        <%= image_tag "REMPIL-couleur.png", class: "logo-home" %>
+        <p class="url-modifier">La consigne près de chez toi</p>
+      </div>
+      <div>
+        <% if current_user %>
+          <%= image_tag current_user.image_url, class: "user-picture" %>
+        <% end %>
+      </div>
     </div>
     <div>
       <% if current_user %>
-        <%= image_tag current_user.image_url, class: "user-picture" %>
+        <br><h2>Bonjour <%= @user.name %> !</h2>
+        <p><span style="color: #FFBD36"><strong><%= @user.address %></strong></span></p>
+      <% else %>
+      <%= link_to "Se connecter", new_user_session_path, class: "btn sign_in btn-info" %>
       <% end %>
+        <%# <%= link_to 'Modifier', edit_user_path(user), class: "url-modifier" %>
     </div>
   </div>
-  <div>
-    <% if current_user %>
-      <br><h2>Bonjour <%= @user.name %> !</h2>
-      <p><span style="color: #FFBD36"><strong><%= @user.address %></strong></span></p>
-    <% else %>
-    <%= link_to "Se connecter", new_user_session_path, class: "btn sign_in btn-info" %>
-    <% end %>
-      <%# <%= link_to 'Modifier', edit_user_path(user), class: "url-modifier" %>
+
+  <div class= "container-categories" style="text-align: left">
+    <br><h3>Meilleures <span style="color: #FFBD36">catégories</span><h3>
   </div>
-</div>
 
-<div class= "container-categories" style="text-align: left">
-  <br><h3>Meilleures <span style="color: #FFBD36">catégories</span><h3>
-</div>
-
-<div class="content-container">
-  <div class="cards-category">
-    <div class="card-category-item" style="background-image: url(<%= image_path("boulangerie.jpg")%>)">
-      <a href="/shops?query=boulangerie">BOULANGERIE</a>
-    </div>
-    <div class="card-category-item" style="background-image: url(<%= image_path("boucherie.jpg")%>)">
-      <a href="/shops?query=boucherie">BOUCHERIE</a>
-    </div>
-    <div class="card-category-item" style="background-image: url(<%= image_path("traiteur.jpg")%>)">
-      <a href="/shops?query=traiteur">TRAITEUR</a>
-    </div>
-    <div class="card-category-item" style="background-image: url(<%= image_path("restaurant.jpg")%>)">
-      <a href="/shops?query=restaurant">RESTAURANT</a>
+  <div class="content-container">
+    <div class="cards-category">
+      <div class="card-category-item" style="background-image: url(<%= image_path("boulangerie.jpg")%>)">
+        <a href="/shops?query=boulangerie">BOULANGERIE</a>
+      </div>
+      <div class="card-category-item" style="background-image: url(<%= image_path("boucherie.jpg")%>)">
+        <a href="/shops?query=boucherie">BOUCHERIE</a>
+      </div>
+      <div class="card-category-item" style="background-image: url(<%= image_path("traiteur.jpg")%>)">
+        <a href="/shops?query=traiteur">TRAITEUR</a>
+      </div>
+      <div class="card-category-item" style="background-image: url(<%= image_path("restaurant.jpg")%>)">
+        <a href="/shops?query=restaurant">RESTAURANT</a>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="container-distance">
+  <div class="container-distance">
 
-  <br><h3>Les plus<span style="color: #FFBD36"> populaires</span><h3>
+    <br><h3>Les plus<span style="color: #FFBD36"> populaires</span><h3>
 
-  <div class="shop-distance-carousel">
+    <div class="shop-distance-carousel">
 
-    <% @shops.each do |shop| %>
-      <%= link_to shop_path(shop.id) do %>
-        <div class="card distance-shop-card" style="width: 24.3rem;">
-          <%= cl_image_tag shop.photo.key, class: "card-img-top", height: "210px" %>
-          <div class="d-flex justify-content-between shop-info">
-            <h4 id="shop-name"> <%= shop.name %></h4>
-            <span style="decoration: none; color: #ffd700; font-size: 18px"> <%= icon('fas','star') %> <%= shop.average_rate %></span>
-          </div>
-          <div class="shops-category">
-            <p class="category"><%= shop.category.gsub(/_/,' ') %></p>
-          </div>
-          <p class="shop-description"><%= shop.description %></p>
-      <% end %>
+      <% @shops.each do |shop| %>
+        <%= link_to shop_path(shop.id) do %>
+          <div class="card distance-shop-card" style="width: 23.2rem;">
+            <%= cl_image_tag shop.photo.key, class: "card-img-top", height: "210px" %>
+            <div class="d-flex justify-content-between shop-info">
+              <h4 id="shop-name"> <%= shop.name %></h4>
+              <span style="decoration: none; color: #ffd700; font-size: 18px"> <%= icon('fas','star') %> <%= shop.average_rate %></span>
+            </div>
+            <div class="shops-category">
+              <p class="category"><%= shop.category.gsub(/_/,' ') %></p>
+            </div>
+            <p class="shop-description"><%= shop.description %></p>
+        <% end %>
 
-        <!-- Button trigger modal -->
-        <button type="button" class="btn dash-info-button btn-modal-home" data-toggle="modal" data-target="#exampleModal<%= shop.id %>">
-          Horaires
-        </button>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn dash-info-button btn-modal-home" data-toggle="modal" data-target="#exampleModal<%= shop.id %>">
+            Horaires
+          </button>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal<%= shop.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel<%= shop.id %>"><h5>Horaires de <span style="color: #FFBD36"><%= shop.name %></span></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <% if shop.slot_hours.where(day_of_the_week: "Lundi").count == 1 %>
-                    <%= shop.slot_hours.where(day_of_the_week: "Lundi")[0].day_of_the_week %> : <%= shop.slot_hours.where(day_of_the_week: "Lundi")[0].opening_hour %>h - <%= shop.slot_hours.where(day_of_the_week: "Lundi")[0].closing_hour %>h
-                <% end %>
-                <br>
-                <% if shop.slot_hours.where(day_of_the_week: "Mardi").count == 1 %>
-                    <%= shop.slot_hours.where(day_of_the_week: "Mardi")[0].day_of_the_week %> : <%= shop.slot_hours.where(day_of_the_week: "Mardi")[0].opening_hour %>h - <%= shop.slot_hours.where(day_of_the_week: "Mardi")[0].closing_hour %>h
-                <% end %>
-                <br>
-                <% if shop.slot_hours.where(day_of_the_week: "Mercredi").count == 1 %>
-                    <%= shop.slot_hours.where(day_of_the_week: "Mercredi")[0].day_of_the_week %> : <%= shop.slot_hours.where(day_of_the_week: "Mercredi")[0].opening_hour %>h - <%= shop.slot_hours.where(day_of_the_week: "Mercredi")[0].closing_hour %>h
-                <% end %>
-                <br>
-                <% if shop.slot_hours.where(day_of_the_week: "Jeudi").count == 1 %>
-                    <%= shop.slot_hours.where(day_of_the_week: "Jeudi")[0].day_of_the_week %> : <%= shop.slot_hours.where(day_of_the_week: "Jeudi")[0].opening_hour %>h - <%= shop.slot_hours.where(day_of_the_week: "Jeudi")[0].closing_hour %>h
-                <% end %>
-                <br>
-                <% if shop.slot_hours.where(day_of_the_week: "Vendredi").count == 1 %>
-                    <%= shop.slot_hours.where(day_of_the_week: "Vendredi")[0].day_of_the_week %> : <%= shop.slot_hours.where(day_of_the_week: "Vendredi")[0].opening_hour %>h - <%= shop.slot_hours.where(day_of_the_week: "Vendredi")[0].closing_hour %>h
-                <% end %>
-                <br>
-                <% if shop.slot_hours.where(day_of_the_week: "Samedi").count == 1 %>
-                    <%= shop.slot_hours.where(day_of_the_week: "Samedi")[0].day_of_the_week %> : <%= shop.slot_hours.where(day_of_the_week: "Samedi")[0].opening_hour %>h - <%= shop.slot_hours.where(day_of_the_week: "Samedi")[0].closing_hour %>h
-                <% end %>
-                <br>
-                <% if shop.slot_hours.where(day_of_the_week: "Dimanche").count == 1 %>
-                    <%= shop.slot_hours.where(day_of_the_week: "Dimanche")[0].day_of_the_week %> : <%= shop.slot_hours.where(day_of_the_week: "Dimanche")[0].opening_hour %>h - <%= shop.slot_hours.where(day_of_the_week: "Dimanche")[0].closing_hour %>h
-                <% end %>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal<%= shop.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel<%= shop.id %>"><h5>Horaires de <span style="color: #FFBD36"><%= shop.name %></span></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <% if shop.slot_hours.where(day_of_the_week: "Lundi").count == 1 %>
+                      <%= shop.slot_hours.where(day_of_the_week: "Lundi")[0].day_of_the_week %> : <%= shop.slot_hours.where(day_of_the_week: "Lundi")[0].opening_hour %>h - <%= shop.slot_hours.where(day_of_the_week: "Lundi")[0].closing_hour %>h
+                  <% end %>
+                  <br>
+                  <% if shop.slot_hours.where(day_of_the_week: "Mardi").count == 1 %>
+                      <%= shop.slot_hours.where(day_of_the_week: "Mardi")[0].day_of_the_week %> : <%= shop.slot_hours.where(day_of_the_week: "Mardi")[0].opening_hour %>h - <%= shop.slot_hours.where(day_of_the_week: "Mardi")[0].closing_hour %>h
+                  <% end %>
+                  <br>
+                  <% if shop.slot_hours.where(day_of_the_week: "Mercredi").count == 1 %>
+                      <%= shop.slot_hours.where(day_of_the_week: "Mercredi")[0].day_of_the_week %> : <%= shop.slot_hours.where(day_of_the_week: "Mercredi")[0].opening_hour %>h - <%= shop.slot_hours.where(day_of_the_week: "Mercredi")[0].closing_hour %>h
+                  <% end %>
+                  <br>
+                  <% if shop.slot_hours.where(day_of_the_week: "Jeudi").count == 1 %>
+                      <%= shop.slot_hours.where(day_of_the_week: "Jeudi")[0].day_of_the_week %> : <%= shop.slot_hours.where(day_of_the_week: "Jeudi")[0].opening_hour %>h - <%= shop.slot_hours.where(day_of_the_week: "Jeudi")[0].closing_hour %>h
+                  <% end %>
+                  <br>
+                  <% if shop.slot_hours.where(day_of_the_week: "Vendredi").count == 1 %>
+                      <%= shop.slot_hours.where(day_of_the_week: "Vendredi")[0].day_of_the_week %> : <%= shop.slot_hours.where(day_of_the_week: "Vendredi")[0].opening_hour %>h - <%= shop.slot_hours.where(day_of_the_week: "Vendredi")[0].closing_hour %>h
+                  <% end %>
+                  <br>
+                  <% if shop.slot_hours.where(day_of_the_week: "Samedi").count == 1 %>
+                      <%= shop.slot_hours.where(day_of_the_week: "Samedi")[0].day_of_the_week %> : <%= shop.slot_hours.where(day_of_the_week: "Samedi")[0].opening_hour %>h - <%= shop.slot_hours.where(day_of_the_week: "Samedi")[0].closing_hour %>h
+                  <% end %>
+                  <br>
+                  <% if shop.slot_hours.where(day_of_the_week: "Dimanche").count == 1 %>
+                      <%= shop.slot_hours.where(day_of_the_week: "Dimanche")[0].day_of_the_week %> : <%= shop.slot_hours.where(day_of_the_week: "Dimanche")[0].opening_hour %>h - <%= shop.slot_hours.where(day_of_the_week: "Dimanche")[0].closing_hour %>h
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        </div>
-    <% end %>
+          </div>
+      <% end %>
+
+    </div>
 
   </div>
 
-</div>
+  <div class= "container-distance">
 
-<div class= "container-distance">
+    <br><h3>Près de chez<span style="color: #FFBD36"> toi</span><h3>
 
-  <br><h3>Près de chez<span style="color: #FFBD36"> toi</span><h3>
+    <div id="map"
+        style="width: 100%; height: 450px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 
-  <div id="map"
-      style="width: 100%; height: 450px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-
-</div>
 
 <div class="content-wrapper-home">
+</div>
+
 </div>

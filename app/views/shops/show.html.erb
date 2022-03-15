@@ -12,8 +12,9 @@
 
 <div class="container shop-show-title">
 
-    <h2 id="shop-title"> <%= @shop.name %> </h2>
-    <h3 id="shop-address"> <%= @shop.address %> </h3>
+  <h2 id="shop-title"> <%= @shop.name %> </h2>
+  <%# <p class="category-show"><%= @shop.category.gsub(/_/,' ') %>
+  <h3 id="shop-address"> <%= @shop.address %> </h3>
 
 </div>
 
@@ -41,7 +42,6 @@
     </div>
     <p> <%= @shop.description %> </p>
     <div class="sub-show-card">
-        <p class="btn btn-ghost"><%= @shop.category.gsub(/_/,' ') %></p>
         <%# <p id="couleur-heure"> Ouvert, ferme à <p> %>
           <div class="card-menu-list">
             <h3 id="menu-show"><span style="color: #FFBD36"><%= @shop.name %></span> vous propose :</h3><br>
@@ -49,7 +49,7 @@
               <% @menus.each do |menu| %>
               <div class="card-menu-show">
                 <div class="card-menu-show-text-align">
-                  <p class="name-card-menu-show"><%= menu.name %><span id="btn-link"><a href="#" data-toggle="collapse" data-target="#target<%= menu.id %>">Détails</a></span></p>
+                  <p class="name-card-menu-show"><%= menu.name %><span id="btn-link"><a href="#" data-toggle="collapse" data-target="#target<%= menu.id %>">Détails ▾</a></span></p>
                   <div id="target<%= menu.id %>" class="collapse">
                     <p class="description-card-menu-show"><%= menu.description %></p>
                   </div>
