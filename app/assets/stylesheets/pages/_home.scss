@@ -2,10 +2,10 @@
 .container-search-home {
   background-color: #2C9199;
   color: white;
-  padding: 40px;
-  padding-top: 25px;
-  padding-bottom: 15px;
-  margin: -15px;
+  padding: 20px;
+  // padding-top: 25px;
+  // padding-bottom: 15px;
+  // margin: -15px;
 }
 
 .logo-home {
@@ -46,9 +46,10 @@
 }
 
 .form-search {
-  padding-top: 4px;
+  padding-top: 7px;
   padding-bottom: 7px;
   width: 323px;
+  padding-left: 10px;
 }
 
 // .btn-ghost {
@@ -66,11 +67,11 @@
   font-weight: lighter;
   color: #2C9199;
   font-style: italic;
-
 }
 
 .content-container {
   margin-left: 15px;
+  margin-right: 15px;
 }
 
 .shop-distance-carousel {
@@ -92,7 +93,7 @@
 .distance-shop-card {
   border-radius: 15px;
   display: inline-block;
-  height: 50vh;
+  height: 52vh;
 }
 
 .card-shop-distance-category-description {
@@ -113,10 +114,14 @@
 //   color: #2C9199;
 // }
 
+.container-global {
+  height: calc(100vh - 90px);
+  overflow-y: scroll;
+}
+
 .content-wrapper-home {
   min-height: calc(30vh - 70px - 80px);
 }
-
 
 //map
 .map_category {

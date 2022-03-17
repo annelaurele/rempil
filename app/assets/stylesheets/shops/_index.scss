@@ -1,6 +1,7 @@
 .nav-index{
   padding-bottom: 15px;
   padding-top: 15px;
+  background-color: #2C9199;
 }
 
 .nav-items-index {
@@ -90,8 +91,11 @@ input[type=text] {
   background-color: white;
   border: 1px solid #B1E4E3;
   border-radius: 10px;
+  width: 80%;
 }
 
 .btn-home-search {
   border-radius: 10px;
+  padding-top: 9px;
+  padding-bottom: 9px;
 }

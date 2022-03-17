@@ -12,8 +12,8 @@ Rating.destroy_all
 puts '----- Creating users -----'
 
 #Status
-#3 Petite pousse
-#2 Grand arbre
+#3 Petite pousse / Graine
+#2 Grand arbre / Petite Fleur
 #1 Jardin luxuriant
 
 julia = User.create(name: "Julia", last_name: "Foucher", email: "julia814@hotmail.fr", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", status: 1 , shop: "true", image_url: ActionController::Base.helpers.image_path('julia.PNG'))
@@ -33,7 +33,7 @@ puts '----- Creating shops -----'
 
 #----------------TRAITEUR----------------#
 
-stcyp = Shop.create!(name: "Le St Cyp Traiteur", address: "1 Place de la Bourse, 31000 Toulouse", mobile: "0567687719", email: "", category: 4, description: "Un généreux traiteur de quartier à ne pas manquer !", user: julia, average_rate: 4.8, longitude: 43.59780656594087, latitude: 1.4293462494881448)
+stcyp = Shop.create!(name: "Le St Cyp Traiteur", address: "1 Place de la Bourse, 31000 Toulouse", mobile: "0567687719", email: "", category: 4, description: "Un traiteur de quartier à ne pas manquer ! Tous les plats sont généraux, faits maison avec des produits locaux.", user: julia, average_rate: 4.8, longitude: 43.59780656594087, latitude: 1.4293462494881448)
 file = URI.open('https://images.ladepeche.fr/api/v1/images/view/5fbcbc7f8fe56f66601477c8/large/image.jpg?v=1')
 stcyp.photo.attach(io: file, filename: 'stcyp.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 11, closing_hour: 20, day_of_the_week: "Lundi", shop: stcyp)
@@ -44,8 +44,7 @@ SlotHour.create(opening_hour: 11, closing_hour: 20, day_of_the_week: "Vendredi",
 SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Samedi", shop: stcyp)
 SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Dimanche", shop: stcyp)
 
-
-officina = Shop.create!(name: "Officina Gusto", address: "7 Place Saint-Étienne, 31000 Toulouse", mobile: "0564285986", email: "", category: 4, description: "Un traiteur qui vous amènera tout droit en Italie !", user: julia, average_rate: 4.2, longitude: 43.60180718785402, latitude: 1.4402083709321905)
+officina = Shop.create!(name: "Officina Gusto", address: "7 Place Saint-Étienne, 31000 Toulouse", mobile: "0564285986", email: "", category: 4, description: "Un traiteur qui vous amènera tout droit en Italie ! Toutes les spécialités italiennes à découvrir sans modération !", user: julia, average_rate: 4.2, longitude: 43.60180718785402, latitude: 1.4402083709321905)
 file = URI.open('http://foodandsens.com/wp-content/uploads/2020/05/Capture-d%E2%80%99%C3%A9cran-2020-04-28-%C3%A0-16.06.40-800x597.png')
 officina.photo.attach(io: file, filename: 'officina.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 8, closing_hour: 19, day_of_the_week: "Lundi", shop: officina)
@@ -55,7 +54,7 @@ SlotHour.create(opening_hour: 8, closing_hour: 00, day_of_the_week: "Jeudi", sho
 SlotHour.create(opening_hour: 8, closing_hour: 00, day_of_the_week: "Vendredi", shop: officina)
 SlotHour.create(opening_hour: 8, closing_hour: 00, day_of_the_week: "Samedi", shop: officina)
 
-zen = Shop.create!(name: "Zen-Saï", address: "2 Rue Jean Suau, 31000 Toulouse", mobile: "0561120000", email: "", category: 4, description: "Une cuisine recherchée alliant la culture japonaise et le savoir européen.", user: annelaure, average_rate: 4.5, longitude: 43.60034721778966, latitude: 1.4485310846583597)
+zen = Shop.create!(name: "Zen-Saï", address: "2 Rue Jean Suau, 31000 Toulouse", mobile: "0561120000", email: "", category: 4, description: "Une cuisine recherchée alliant la culture japonaise et le savoir européen. Zen-saï signifie « ce qui vient avant la carte ».", user: annelaure, average_rate: 4.5, longitude: 43.60034721778966, latitude: 1.4485310846583597)
 file = URI.open('https://www.sortiraparis.com/images/80/93806/639770-delices-lepic.jpg')
 zen.photo.attach(io: file, filename: 'zen.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 12, closing_hour: 22, day_of_the_week: "Lundi", shop: zen)
@@ -65,7 +64,7 @@ SlotHour.create(opening_hour: 12, closing_hour: 22, day_of_the_week: "Jeudi", sh
 SlotHour.create(opening_hour: 12, closing_hour: 22, day_of_the_week: "Vendredi", shop: zen)
 SlotHour.create(opening_hour: 12, closing_hour: 22, day_of_the_week: "Samedi", shop: zen)
 
-salomé = Shop.create!(name: "Chez Salomé", address: "1 Place des Carmes, 31000 Toulouse", mobile: "0686235886", email: "", category: 4, description: "Traiteur maison : plat revisités au goût du jour à emporter", user: julia, average_rate: 3.5, longitude: 43.59775603780177, latitude: 1.4448161153416401)
+salomé = Shop.create!(name: "Chez Salomé", address: "1 Place des Carmes, 31000 Toulouse", mobile: "0686235886", email: "", category: 4, description: "Traiteur maison : plat revisités au goût du jour, faits uniquement avec des produits locaux. Le tout à emporter !", user: julia, average_rate: 3.5, longitude: 43.59775603780177, latitude: 1.4448161153416401)
 file = URI.open('https://www.marciatack.fr/wp-content/uploads/2019/01/quiche-epaisse.jpg')
 salomé.photo.attach(io: file, filename: 'salomé.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 9, closing_hour: 14, day_of_the_week: "Lundi", shop: salomé)
@@ -89,7 +88,7 @@ SlotHour.create(opening_hour: 12, closing_hour: 00, day_of_the_week: "Vendredi",
 SlotHour.create(opening_hour: 12, closing_hour: 00, day_of_the_week: "Samedi", shop: primalova)
 SlotHour.create(opening_hour: 12, closing_hour: 00, day_of_the_week: "Dimanche", shop: primalova)
 
-fufu = Shop.create!(name: "Fufu Ramen", address: "32 Rue Sainte-Ursule, 31000 Toulouse", mobile: "0562177446", email: "", category: 1, description: "Fufu vous propose de découvrir des plats typiquement japonais comme les ramens, bol de bouillon...", user: julia, average_rate: 4.5, longitude: 43.60298761626409, latitude: 1.4428975892359728)
+fufu = Shop.create!(name: "Fufu Ramen", address: "32 Rue Sainte-Ursule, 31000 Toulouse", mobile: "0562177446", email: "", category: 1, description: "Fufu Ramen est une cantine traditionnelle japonaise qui vous propose des plats typiquement japonais comme les ramen. ", user: julia, average_rate: 4.5, longitude: 43.60298761626409, latitude: 1.4428975892359728)
 file = URI.open('https://www.sudissimo.com/wp-content/uploads/2018/01/fufu-noodle-restaurant-toulouse-bordeaux.jpg')
 fufu.photo.attach(io: file, filename: 'fufu.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 11, closing_hour: 23, day_of_the_week: "Lundi", shop: fufu)
@@ -111,7 +110,7 @@ SlotHour.create(opening_hour: 12, closing_hour: 23, day_of_the_week: "Vendredi",
 SlotHour.create(opening_hour: 12, closing_hour: 23, day_of_the_week: "Samedi", shop: boucheb)
 SlotHour.create(opening_hour: 12, closing_hour: 23, day_of_the_week: "Dimanche", shop: boucheb)
 
-prosciutteria = Shop.create!(name: "Prosciutteria", address: "31 Rue des Filatiers, 31000 Toulouse", mobile: "0971216499", email: "", category: 1, description: "Nous proposons d’incroyables paninis XXL, des bruschettone, des salades gourmandes ainsi que de belles planches de charcuterie fines et fromages.", user: annelaure, average_rate: 4.5, longitude: 43.59904560254555, latitude: 1.4446076260213983)
+prosciutteria = Shop.create!(name: "Prosciutteria", address: "31 Rue des Filatiers, 31000 Toulouse", mobile: "0971216499", email: "", category: 1, description: "Des paninis XXL, des bruschettone, des salades gourmandes et de belles planches de charcuterie fines et fromages.", user: annelaure, average_rate: 4.5, longitude: 43.59904560254555, latitude: 1.4446076260213983)
 file = URI.open('https://images.squarespace-cdn.com/content/v1/5d3ace69b3d0000001bcaebf/1564415113289-BIMI49JLL2O616OE7EJ3/prosciutteria.jpg?format=1000w')
 prosciutteria.photo.attach(io: file, filename: 'prosciutteria.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 12, closing_hour: 22, day_of_the_week: "Lundi", shop: prosciutteria)
@@ -135,7 +134,7 @@ SlotHour.create(opening_hour: 9, closing_hour: 12, day_of_the_week: "Dimanche", 
 
 #----------------SALON DE THÉ----------------#
 
-chapristea = Shop.create!(name: "Chapristea", address: "4 Rue Jules Chalande, 31000 Toulouse", mobile: "0983584945", email: "", category: 5, description: "Le Chapristea est un « Bar à chats » où vous pouvez profiter d'une pause gourmande en compagnie des félins.", user: julia, average_rate: 4.5, longitude: 43.60241434815086, latitude: 1.4444302646549578)
+chapristea = Shop.create!(name: "Chapristea", address: "4 Rue Jules Chalande, 31000 Toulouse", mobile: "0983584945", email: "", category: 5, description: "Le Chapristea est un « bar à chats » où vous pouvez profiter d'une pause gourmande en compagnie des félins.", user: julia, average_rate: 4.5, longitude: 43.60241434815086, latitude: 1.4444302646549578)
 file = URI.open('https://static.actu.fr/uploads/2016/10/Chapristea-960x640.jpg')
 chapristea.photo.attach(io: file, filename: 'chapristea.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 12, closing_hour: 19, day_of_the_week: "Lundi", shop: chapristea)
@@ -157,7 +156,7 @@ SlotHour.create(opening_hour: 10, closing_hour: 20, day_of_the_week: "Vendredi",
 SlotHour.create(opening_hour: 10, closing_hour: 20, day_of_the_week: "Samedi", shop: flowers)
 SlotHour.create(opening_hour: 14, closing_hour: 20, day_of_the_week: "Dimanche", shop: flowers)
 
-autre = Shop.create!(name: "L'autre salon", address: "45 Rue des Tourneurs, 31000 Toulouse", mobile: "0534449366", email: "", category: 5, description: "Endroit idéal pour faire une pause gourmande et sucrée !", user: annelaure, average_rate: 3.7, longitude: 43.6015888057811, latitude: 1.4449899153416401)
+autre = Shop.create!(name: "L'autre salon", address: "45 Rue des Tourneurs, 31000 Toulouse", mobile: "0534449366", email: "", category: 5, description: "Endroit idéal pour faire une pause gourmande et sucrée ! Le paradis des pâtisseries faites maison et des boissons chaudes.", user: annelaure, average_rate: 3.7, longitude: 43.6015888057811, latitude: 1.4449899153416401)
 file = URI.open('https://i.pinimg.com/originals/4d/24/31/4d243165934becd4192b4f1c18e2168a.jpg')
 autre.photo.attach(io: file, filename: 'autre.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 12, closing_hour: 20, day_of_the_week: "Lundi", shop: autre)
@@ -170,7 +169,7 @@ SlotHour.create(opening_hour: 12, closing_hour: 20, day_of_the_week: "Dimanche",
 
 #----------------ÉPICERIE----------------#
 
-alimentation = Shop.create!(name: "L'alimentation", address: "24 Place de la Bourse, 31000 Toulouse", mobile: "0561216905", email: "", category: 3, description: "L'Alimentation vous fera découvrir des produits d'exception, soigneusement sélectionnés parmi des artisans et des vignerons de choix.", user: annelaure, average_rate: 4, longitude: 43.601466143372896, latitude: 1.4428948622483697)
+alimentation = Shop.create!(name: "L'alimentation", address: "24 Place de la Bourse, 31000 Toulouse", mobile: "0561216905", email: "", category: 3, description: "L'Alimentation vous fera découvrir des produits d'exception, soigneusement sélectionnés parmi des artisans de choix.", user: annelaure, average_rate: 4, longitude: 43.601466143372896, latitude: 1.4428948622483697)
 file = URI.open('https://nakide.fr/wp-content/uploads/2019/01/NAKIDE-Lalimentation-lepicerie-design-retail-architecture.jpg')
 alimentation.photo.attach(io: file, filename: 'alimentation.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Lundi", shop: alimentation)
@@ -191,7 +190,7 @@ SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Vendredi", 
 SlotHour.create(opening_hour: 9, closing_hour: 20, day_of_the_week: "Samedi", shop: biocoop)
 SlotHour.create(opening_hour: 9, closing_hour: 12, day_of_the_week: "Dimanche", shop: biocoop)
 
-paradis = Shop.create!(name: "Le Paradis Gourmet", address: "15 Rue des Puits Clos, 31000 Toulouse", mobile: "0561227658", email: "", category: 3, description: "Vous pourrez y découvrir toutes les spécialités de notre région", user: annelaure, average_rate: 4.2, longitude: 43.602457517290965, latitude: 1.4445637267551485)
+paradis = Shop.create!(name: "Le Paradis Gourmet", address: "15 Rue des Puits Clos, 31000 Toulouse", mobile: "0561227658", email: "", category: 3, description: "Vous pourrez y découvrir toutes les spécialités de notre région. Le paradis du sucré mais aussi du salé !", user: annelaure, average_rate: 4.2, longitude: 43.602457517290965, latitude: 1.4445637267551485)
 file = URI.open('https://leparadisgourmet.fr/img/paradis-gourmet-toulouse.jpg')
 paradis.photo.attach(io: file, filename: 'paradis.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 10, closing_hour: 19, day_of_the_week: "Mardi", shop: paradis)
@@ -202,7 +201,7 @@ SlotHour.create(opening_hour: 10, closing_hour: 19, day_of_the_week: "Samedi", s
 
 #----------------BOUCHERIE----------------#
 
-mamie = Shop.create!(name: "Chez Mamie", address: "10 Place de la Trinité, 31000 Toulouse", mobile: "0531225030", email: "", category: 2, description: "Nous vous proposons des produits de qualité, sélectionnés dans la pure tradition bouchère.", user: julia, average_rate: 4.3, longitude: 43.59979350071048, latitude: 1.4449600818443762)
+mamie = Shop.create!(name: "Chez Mamie", address: "10 Place de la Trinité, 31000 Toulouse", mobile: "0531225030", email: "", category: 2, description: "Nous vous proposons des produits de qualité, sélectionnés dans la pure tradition bouchère française.", user: julia, average_rate: 4.3, longitude: 43.59979350071048, latitude: 1.4449600818443762)
 file = URI.open('https://www.boudulemag.com/wp-content/uploads/2021/11/Boudu-magazine-62-f-boucherie-des-copains-minimes-00.jpg')
 mamie.photo.attach(io: file, filename: 'mamie.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Lundi", shop: mamie)
@@ -212,7 +211,7 @@ SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Jeudi", sh
 SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Vendredi", shop: mamie)
 SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Samedi", shop: mamie)
 
-coterie = Shop.create!(name: "La Coterie Française", address: "19 Place de la Bourse, 31000 Toulouse", mobile: "0768335546", email: "", category: 2, description: "Viande saine, de qualité, et durable.", user: annelaure, average_rate: 4.0, longitude: 43.60161481556959, latitude: 1.44215321534164)
+coterie = Shop.create!(name: "La Coterie Française", address: "19 Place de la Bourse, 31000 Toulouse", mobile: "0768335546", email: "", category: 2, description: "Viande saine, de qualité, et durable pour les plus gourmands. Toutes nos viandes sont élevées dans la région.", user: annelaure, average_rate: 4.0, longitude: 43.60161481556959, latitude: 1.44215321534164)
 file = URI.open('https://www.meetpro.fr/wp-content/uploads/2018/11/AdobeStock_145257590-e1565683596225.jpeg')
 coterie.photo.attach(io: file, filename: 'coterie.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Lundi", shop: coterie)
@@ -256,7 +255,7 @@ SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Vendredi", 
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Samedi", shop: lamiecaline)
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Dimanche", shop: lamiecaline)
 
-panetiere = Shop.create!(name: "La Panetière", address: "2 Rue de Metz, 31000 Toulouse", mobile: "0561732990", email: "", category: 0, description: "Le goût du bien-manger. Des produits frais, sains et équilibrés", user: annelaure, average_rate: 3.7, longitude: 43.599880939608894, latitude: 1.441918695513136)
+panetiere = Shop.create!(name: "La Panetière", address: "2 Rue de Metz, 31000 Toulouse", mobile: "0561732990", email: "", category: 0, description: "Le goût du bien-manger. Des produits frais, sains et équilibrés pour une pause gourmande réussie !", user: annelaure, average_rate: 3.7, longitude: 43.599880939608894, latitude: 1.441918695513136)
 file = URI.open('https://www.lapanetiere.fr/images/panetiere-toulouse-lafourcade16.jpg?crc=46408542')
 panetiere.photo.attach(io: file, filename: 'panetiere.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Lundi", shop: panetiere)
@@ -267,7 +266,7 @@ SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Vendredi", 
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Samedi", shop: panetiere)
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Dimanche", shop: panetiere)
 
-perlette = Shop.create!(name: "Perlette", address: "57 Rue des Filatiers, 31000 Toulouse", mobile: "0982366046", email: "", category: 0, description: "Perlette propose des patisseries sur place ou à emporter, mais aussi des menus salés.", user: julia, average_rate: 4.5, longitude: 43.599880939608894, latitude: 1.441918695513136)
+perlette = Shop.create!(name: "Perlette", address: "57 Rue des Filatiers, 31000 Toulouse", mobile: "0982366046", email: "", category: 0, description: "Perlette propose des pâtisseries sur place ou à emporter, mais aussi des menus salés. Une pause gourmande bien méritée !", user: julia, average_rate: 4.5, longitude: 43.599880939608894, latitude: 1.441918695513136)
 file = URI.open('https://www.luckymiam.com/wp-content/uploads/perlette-lucky-miam-9.jpg')
 perlette.photo.attach(io: file, filename: 'perlette.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Lundi", shop: perlette)
