@@ -20,7 +20,7 @@
 <div class="container description-card">
 
     <%= cl_image_tag @shop.photo.key, class: "shop-show-big-image" %>
-    <p style="decoration: none; color: #ffd700; font-size: 18px"> <%= icon('fas','star') %> <%= @shop.average_rate %> <span style= "font-size: 16px" data-toggle="modal" data-target="#Modalcomment">(Voir les commentaires)</span></p>
+    <p style="decoration: none; color: #FFBD36; font-size: 18px"> <%= icon('fas','star') %> <%= @shop.average_rate %> <span style= "font-size: 16px" data-toggle="modal" data-target="#Modalcomment">(Voir les commentaires)</span></p>
     <div class="modal fade" id="Modalcomment" role="dialog" aria-labelledby="ModalreviewLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -31,7 +31,7 @@
           <div class="modal-body">
             <% @shop.ratings.each do |rating| %>
             <div><span style="font-style: italic"><%= rating.user.name %> </span><span style="font-size: 12px"> <%= rating.created_at.strftime("%d %b %Y") %></span></div>
-            <div><span style="color: #ffd700; font-size: 16px important!"> <% rating.rating.times do %><%= icon('fas','star')%><% end %><% (5 - rating.rating).times do %><%= icon('far','star')%><% end %></span></div>
+            <div><span style="color: #FFBD36; font-size: 16px important!"> <% rating.rating.times do %><%= icon('fas','star')%><% end %><% (5 - rating.rating).times do %><%= icon('far','star')%><% end %></span></div>
             <p style="font-size: 16px"><%= rating.content %></p>
             <hr>
             <% end %>
@@ -43,6 +43,7 @@
     <div class="sub-show-card">
         <p class="btn btn-ghost"><%= @shop.category.gsub(/_/,' ') %></p>
         <%# <p id="couleur-heure"> Ouvert, ferme à <p> %>
+        <% if @menus.exists? %>
           <div class="card-menu-list">
             <h3 id="menu-show"><span style="color: #FFBD36"><%= @shop.name %></span> vous propose :</h3><br>
             <form action="/shops/<%= @shop.id %>/rentals" method="post" id="new_rental">
@@ -66,13 +67,21 @@
                     </div>
 
                 </div>
+                <% if menu.photo.attached? %>
+                <%= image_tag menu.photo, size: "112x112", class: "picture_menu_show" %>
+                <% else %>
                 <%= image_tag "boulangerie.jpg", size: "112x112", class: "picture_menu_show" %>
+                <% end %>
+                
               </div>
               <hr>
             <% end  %>
             <br><div style="align-items-center" ><input type="submit" value="Réserver" class= "btn btn-secondary btn-index-shop"></div>
             </form>
           </div>
+        <% else %>
+        <p style="color: red"><span style="font-weight: bolder"> OUPSI !</span> Tu ne peux pas encore réserver ici.</p>
+        <% end %>
     </div>
 </div>
 
