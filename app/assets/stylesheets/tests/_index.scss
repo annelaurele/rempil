@@ -1,16 +1,29 @@
 /* ------------ NAVBAR--------*/
-.navbar-nav {
+.navbar-navbar {
   background-color: #2C9199;
+  height: 60px;
 }
 
-.number-consigne {
-  color: white;
-  font-size: 18px;
-  margin-left: 249px;
-  margin-bottom: 0;
-  color: white;
+.nav-items-index-qrcode {
+    padding-bottom: 5px;
+    align-items: center;
+    justify-content: center;
 }
-
+.number-consigne-qrcode {
+    color: white;
+    font-size: 18px;
+    margin-left: 244px;
+    margin-bottom: 0;
+    margin-top: -24px;
+    color: white;
+}
+.fleche-retour-qrcode {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+    height: 20px;
+    margin-left: -15px
+}
 /* ------------ CONTAINER--------*/
 .img-banner {
   background-size: cover;
@@ -50,10 +63,10 @@
 }
 
 .qr-description {
-  text-align: center;
   font-size: 22px;
   padding-top: 10px;
-  margin-left: 10px;
+  margin-left: 25px;
+  margin-top: 15px;
 }
 
 .qrcode {
@@ -82,6 +95,7 @@
 
 .rappel-resa-title {
   font-size: 1.65em;
+  color: #B1E4E3;
 }
 
 .item {
@@ -100,10 +114,14 @@
 
 .resa-items {
   font-size: 20px;
+  text-align: start;
+  margin-left: 25px;
 }
 
 .resa-total {
   font-size: 20px;
+  margin-top: 15px;
+  color: #FFBD36;
 }
 
 .btn-consignes {
