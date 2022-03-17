@@ -67,6 +67,7 @@
   padding-top: 10px;
   margin-left: 25px;
   margin-top: 15px;
+  text-align: center;
 }
 
 .qrcode {
@@ -112,10 +113,19 @@
   margin-left: 20px;
 }
 
+/*------------------------MENU-----------------------------*/
+
+
 .resa-items {
   font-size: 20px;
-  text-align: start;
-  margin-left: 25px;
+  text-align: center;
+  margin-left: 30px;
+  background-color: white;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.19));
+  width: 85%;
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .resa-total {
@@ -132,4 +142,9 @@
 
 .content-wrapper-qrcode {
   min-height: calc(50vh - 70px - 80px);
+}
+
+
+.bi.bi-flower1{
+  margin-top: -8px;
 }
