@@ -12,8 +12,8 @@ Rating.destroy_all
 puts '----- Creating users -----'
 
 #Status
-#3 Petite pousse
-#2 Grand arbre
+#3 Petite pousse / Graine
+#2 Grand arbre / Petite Fleur
 #1 Jardin luxuriant
 
 julia = User.create(name: "Julia", last_name: "Foucher", email: "julia814@hotmail.fr", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", status: 1 , shop: "true", image_url: ActionController::Base.helpers.image_path('julia.PNG'))
