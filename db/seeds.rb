@@ -211,7 +211,7 @@ SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Jeudi", sh
 SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Vendredi", shop: mamie)
 SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Samedi", shop: mamie)
 
-coterie = Shop.create!(name: "La Coterie Française", address: "19 Place de la Bourse, 31000 Toulouse", mobile: "0768335546", email: "", category: 2, description: "Viande saine, de qualité, et durable. Toutes nos viandes sont élevées dans la région.", user: annelaure, average_rate: 4.0, longitude: 43.60161481556959, latitude: 1.44215321534164)
+coterie = Shop.create!(name: "La Coterie Française", address: "19 Place de la Bourse, 31000 Toulouse", mobile: "0768335546", email: "", category: 2, description: "Viande saine, de qualité, et durable pour les plus gourmands. Toutes nos viandes sont élevées dans la région.", user: annelaure, average_rate: 4.0, longitude: 43.60161481556959, latitude: 1.44215321534164)
 file = URI.open('https://www.meetpro.fr/wp-content/uploads/2018/11/AdobeStock_145257590-e1565683596225.jpeg')
 coterie.photo.attach(io: file, filename: 'coterie.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 11, closing_hour: 19, day_of_the_week: "Lundi", shop: coterie)
