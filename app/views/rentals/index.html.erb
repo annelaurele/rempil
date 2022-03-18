@@ -12,7 +12,7 @@
       </div>
     </div>
 
-<p style="font-size: 14px; text-align: center; margin-top: 10px; color:#1B1818; font-weight: 600;">Plus que <%= @next_step %> consignes avant ton prochain statut !</p>
+<p style="font-size: 14px; text-align: center; margin-top: 10px; color:#1B1818; font-weight: 600;">Plus que <%= @next_step %> consigne(s) avant ton prochain statut !</p>
 
 
   <!---------------------------NAV TAB-------------------------------->
@@ -49,7 +49,7 @@
     </div>
     <div class="div-shop-item">
     <h4 class="nom-restaurant-dashboard" style="font-weight: 600; color: #FFBD36"><%= actual.shop.name %></h4>
-    <p>Nombre de consignes : <%= actual.total_of_box %></p>
+    <p>Nombre de consigne(s) : <%= actual.total_of_box %></p>
     <p>A rendre avant le : <%= actual.rental_time_end.strftime("%d/%m/%Y") %></p>
       <div class="button-dashboard-card">
       <div id="button-fiche">
@@ -108,7 +108,7 @@
     </div>
     <div class="div-shop-item">
     <h4 class="nom-restaurant-dashboard" style="font-weight: 600; color: #FFBD36"><%= past.shop.name %></h4>
-    <p>Nombre de consignes: <%= past.total_of_box %></p>
+    <p>Nombre de consigne(s): <%= past.total_of_box %></p>
     <p>A rendre avant le: <%= past.rental_time_end.strftime("%d/%m/%Y") %></p>
       <div class="button-dashboard-card">
       <div id="button-fiche">
@@ -166,7 +166,7 @@
     </div>
     <div class="div-shop-item">
     <h4 class="nom-restaurant-dashboard" style="font-weight: 600; color: #FFBD36"><%= paid.shop.name %></h4>
-    <p>Nombre de consignes: <%= paid.total_of_box %></p>
+    <p>Nombre de consigne(s): <%= paid.total_of_box %></p>
     <p>A rendre avant le: <%= paid.rental_time_end.strftime("%d/%m/%Y") %></p>
       <div class="button-dashboard-card">
       <div id="button-fiche">
