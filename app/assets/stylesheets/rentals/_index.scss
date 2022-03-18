@@ -166,7 +166,7 @@ color: white;
 
 .dash-info-button:hover{
 background-color: #329190;
-border: 2px solid #329190;
+border: 1px solid #329190;
 color: white;
 }
 
@@ -176,6 +176,14 @@ color: white;
 
 ul li{
       margin-right: 5px;
+}
+
+.tabs-to-dropdown {
+  margin-left: -8px;
+}
+
+.tab-content {
+  margin-left: -7px;
 }
 
 /*----------ASTUCE FOOTER----------*/
