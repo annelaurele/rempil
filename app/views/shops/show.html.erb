@@ -50,7 +50,7 @@
               <% @menus.each do |menu| %>
               <div class="card-menu-show">
                 <div class="card-menu-show-text-align">
-                  <p class="name-card-menu-show"><%= menu.name %><span id="btn-link"><a href="#" data-toggle="collapse" data-target="#target<%= menu.id %>">Détails ▾</a></span></p>
+                  <p class="name-card-menu-show"><%= menu.name %><span id="btn-link"><a href="#" data-toggle="collapse" data-target="#target<%= menu.id %>">| Détails ▾</a></span></p>
                   <div id="target<%= menu.id %>" class="collapse">
                     <p class="description-card-menu-show"><%= menu.description %></p>
                   </div>
