@@ -3,14 +3,16 @@ class RentalsController < ApplicationController
   # self.per_form_csrf_tokens = true
   def index
     @user = current_user
-    @total = Rental.where(user: @user).map(&:total_of_box).sum
+    @rentals = Rental.where(user: @user)
+    @total = SelectionRental.where(rental: @rentals).map(&:quantity).sum
+    @selection_rentals = SelectionRental.where(rental: @rentals)
     @user = check_status(@user, @total)
     @user.save
     @next_step = next_step_func(@total)
     @all_users_rentals = Rental.where(user: @user)
-    @actuals = @all_users_rentals.where(status: 0).sort_by(&:rental_time_end)
-    @pasts = @all_users_rentals.where(status: 1).sort_by(&:rental_time_end)
-    @paids = @all_users_rentals.where(status: 2).sort_by(&:rental_time_end)
+    @actuals = fusion_selection(@selection_rentals, @all_users_rentals.where(status: 0).sort_by(&:rental_time_end))
+    @pasts = fusion_selection(@selection_rentals, @all_users_rentals.where(status: 1).sort_by(&:rental_time_end))
+    @paids = fusion_selection(@selection_rentals, @all_users_rentals.where(status: 2).sort_by(&:rental_time_end))
     @rating = Rating.new
   end
 
@@ -18,10 +20,11 @@ class RentalsController < ApplicationController
     @user = current_user
     @shop = Shop.find(params[:shop_id])
     @rental = Rental.find(params[:rental_id])
-    @total = Rental.where(user: @user).count + 1
+    @total = 0
     @menus = SelectionRental.where(rental: @rental).map do |selection|
-      selection.menu
+      selection
     end
+    @menus.each { |selection| @total += selection.quantity * selection.menu.price }
     @qr = RQRCode::QRCode.new(@rental.id.to_s)
     @svg = @qr.as_svg(
     color: "000",
@@ -100,11 +103,25 @@ class RentalsController < ApplicationController
   def manage_menus(menus)
     selection_filtered = menus.map do |menu_id, quantity|
       if quantity.to_i > 0
-        {menu_id: menu_id, quantity: quantity.to_i}
+        {menu_id: menu_id, quantity: quantity.to_i, user_id: current_user.id}
       else
         nil
       end
     end
     selection_filtered.compact
+  end
+
+  def fusion_selection(selections, rentals)
+    res = []
+    rentals.each do |rtl|
+      tmp = []
+      selections.each do |elm|
+        if elm.rental.id == rtl.id
+          rtl.total_of_box = elm.quantity
+          res << rtl
+        end
+      end
+    end
+    res
   end
 end
