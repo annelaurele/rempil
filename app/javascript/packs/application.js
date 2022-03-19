@@ -50,36 +50,7 @@ document.addEventListener('turbolinks:load', () => {
 
 
 
-
-
-// -----------nav bar------------
-
-  var $listItems = $list.children('li');
-
-  $styledSelect.click(function (e) {
-    e.stopPropagation();
-    $('div.select-styled.active').not(this).each(function () {
-      $(this).removeClass('active').next('ul.select-options').hide();
-    });
-    $(this).toggleClass('active').next('ul.select-options').toggle();
-  });
-
-  $listItems.click(function (e) {
-    e.stopPropagation();
-    $styledSelect.text($(this).text()).removeClass('active');
-    $this.val($(this).attr('rel'));
-    $list.hide();
-    //console.log($this.val());
-  });
-
-  $(document).click(function () {
-    $styledSelect.removeClass('active');
-    $list.hide();
-  });
-
-
-
-  // DASHBOARD NAV BAR ------------------------
+// DASHBOARD NAV BAR ------------------------
 const $tabsToDropdown = $(".tabs-to-dropdown");
 
 function generateDropdownMarkup(container) {
