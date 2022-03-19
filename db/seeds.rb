@@ -22,9 +22,9 @@ julia = User.create(name: "Julia", last_name: "Foucher", email: "julia814@hotmai
 
 marina = User.create(name: "Marina", last_name: "Magnoli", email: "mgnl.marina@gmail.com", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", status: 0, shop: "false", image_url: ActionController::Base.helpers.image_path('marina.jpg'))
 
-elliot = User.create(name: "Elliot", last_name: "Thyrant", email: "xaron.thyrant@gmail.com", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", status: 2, shop: "false", image_url: ActionController::Base.helpers.image_path('bulbizare.png'))
+elliot = User.create(name: "Elliot", last_name: "Thyrant", email: "xaron.thyrant@gmail.com", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", status: 2, shop: "false", image_url: ActionController::Base.helpers.image_path('bulbizare.jpg'))
 
-annelaure = User.create(name: "Anne-Laure", last_name: "Le", email: "annelaurele@hotmail.fr", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", status: 1 , shop: "true", image_url: ActionController::Base.helpers.image_path('bulbizare.png'))
+annelaure = User.create(name: "Anne-Laure", last_name: "Le", email: "annelaurele@hotmail.fr", password: "12345678", address: "16 place Etienne Esquirol 31000 Toulouse", mobile: "0617373935", status: 1 , shop: "true", image_url: ActionController::Base.helpers.image_path('bulbizare.jpg'))
 
 #Creation shops
 
@@ -266,7 +266,7 @@ SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Vendredi", 
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Samedi", shop: panetiere)
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Dimanche", shop: panetiere)
 
-perlette = Shop.create!(name: "Perlette", address: "57 Rue des Filatiers, 31000 Toulouse", mobile: "0982366046", email: "", category: 0, description: "Perlette propose des pâtisseries sur place ou à emporter, mais aussi des menus salés. Une pause gourmande bien méritée !", user: julia, average_rate: 4.5, longitude: 43.599880939608894, latitude: 1.441918695513136)
+perlette = Shop.create!(name: "Perlette", address: "57 Rue des Filatiers, 31000 Toulouse", mobile: "0982366046", email: "", category: 0, description: "Perlette propose des pâtisseries sur place ou à emporter, mais aussi des menus salés pour une pause bien méritée.", user: julia, average_rate: 4.5, longitude: 43.599880939608894, latitude: 1.441918695513136)
 file = URI.open('https://www.luckymiam.com/wp-content/uploads/perlette-lucky-miam-9.jpg')
 perlette.photo.attach(io: file, filename: 'perlette.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Lundi", shop: perlette)
@@ -298,32 +298,72 @@ Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now +
 puts '----- Creating menus -----'
 
 #----------------LA MIE CALINE----------------#
-Menu.create(name: "Salade César", description: "La classique salade césar composée de poulet, oeuf, parmesan et huile d'olive.", price: 8, number_of_box: 1, shop: lamiecaline)
-Menu.create(name: "Salade Poké", description: "Une salade inspirée du poke bowl.", price: 8, number_of_box: 1, shop: lamiecaline)
-Menu.create(name: "Pizza aux fromages", description: "Pizza individuelle généreusement garnie de 4 fromages.", price: 4, number_of_box: 1, shop: lamiecaline)
-Menu.create(name: "Pizza lardons champignons", description: "Pâte à pizza, coulis de tomate, lardons, champignons, emmental, mozzarella.", price: 4, number_of_box: 1, shop: lamiecaline)
-Menu.create(name: "Quiche poireaux saumon", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 4, number_of_box: 1, shop: lamiecaline)
-Menu.create(name: "Quiche lorraine", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 4, number_of_box: 1, shop: lamiecaline)
+salade3 = Menu.create(name: "Salade César", description: "La classique salade césar composée de poulet, oeuf, parmesan et huile d'olive.", price: 8, number_of_box: 1, shop: lamiecaline)
+file = URI.open('https://assets.afcdn.com/recipe/20200212/107449_w1024h1024c1cx1060cy707.webp')
+salade3.photo.attach(io: file, filename: 'salade3.png', content_type: 'image/png')
+salade4 = Menu.create(name: "Salade Poké", description: "Une salade inspirée du poke bowl.", price: 8, number_of_box: 1, shop: lamiecaline)
+file = URI.open('https://dxm.dam.savencia.com/api/wedia/dam/transform/fix635d9eidk9oox7szq1s3wqskwhzxeoyjydge/800?t=resize&width=800')
+salade4.photo.attach(io: file, filename: 'salade4.png', content_type: 'image/png')
+pizza3 = Menu.create(name: "Pizza aux fromages", description: "Pizza individuelle généreusement garnie de 4 fromages.", price: 4, number_of_box: 1, shop: lamiecaline)
+file = URI.open('https://img.cuisineaz.com/660x660/2021/02/25/i159373-pizza-margherita.jpeg')
+pizza3.photo.attach(io: file, filename: 'pizza3.png', content_type: 'image/png')
+pizza4 = Menu.create(name: "Pizza lardons champignons", description: "Pâte à pizza, coulis de tomate, lardons, champignons, emmental, mozzarella.", price: 4, number_of_box: 1, shop: lamiecaline)
+file = URI.open('https://assets.afcdn.com/recipe/20200206/107152_w1024h1024c1cx176cy267cxb353cyb535.jpg')
+pizza4.photo.attach(io: file, filename: 'pizza4.png', content_type: 'image/png')
+quiche3 =Menu.create(name: "Quiche poireaux saumon", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 4, number_of_box: 1, shop: lamiecaline)
+file = URI.open('https://mediacenter.bonduelle.com/cdn/201902/FRA0110_QUICHE_AUX_EPINARDS_ET_CHEVRE_HAUTE_DEFINITION_011650.jpg')
+quiche3.photo.attach(io: file, filename: 'salade3.png', content_type: 'image/png')
+quiche4 = Menu.create(name: "Quiche lorraine", description: "Une pâte feuilletée garnie d'un appareil onctueux composé d'oeufs, de crème et de mozzarella...", price: 4, number_of_box: 1, shop: lamiecaline)
+file = URI.open('https://img.cuisineaz.com/660x660/2015/03/11/i91026-quiche-lorraine-traditionnelle.jpg')
+quiche4.photo.attach(io: file, filename: 'salade4.png', content_type: 'image/png')
 
 #----------------FOURNIL DE PIERRE----------------#
-item1 = Menu.create(name: "La salade tomate mozza", description: "Tomate, mozzarella, pesto, pâtes serpentini, roquette.", price: 7, number_of_box: 1, shop: fournil)
-item2 = Menu.create(name: "La salade César", description: "Poulet rôti mariné citron-romarin, oeuf poché, bacon, chiffonnade Cantal AOP, tomates cerises, croûtons, batavia, ciboulette.", price: 7, number_of_box: 1, shop: fournil)
-item3 = Menu.create(name: "Quiche chèvre épinard", description: "Pâte brisée, chèvre, épinard, fromage frais, crème fraîche, oeuf.", price: 5, number_of_box: 1, shop: fournil)
-item4 = Menu.create(name: "Quiche lorraine", description: "Pâte brisée, jambon*, lardons*, emmental, crème fraîche, oeuf.", price: 5, number_of_box: 1, shop: fournil)
+salade1 = Menu.create(name: "La salade tomate mozza", description: "Tomate, mozzarella, pesto, pâtes serpentini, roquette.", price: 7, number_of_box: 1, shop: fournil)
+file = URI.open('https://m.bettybossi.ch/static/rezepte/x/bb_mcco170508_0010a_x.jpg')
+salade1.photo.attach(io: file, filename: 'salade1.png', content_type: 'image/png')
+salade2 = Menu.create(name: "La salade César", description: "Poulet rôti mariné citron-romarin, oeuf poché, bacon, chiffonnade Cantal AOP, tomates cerises, croûtons, batavia, ciboulette.", price: 7, number_of_box: 1, shop: fournil)
+file = URI.open('https://assets.afcdn.com/recipe/20200212/107449_w1024h1024c1cx1060cy707.webp')
+salade2.photo.attach(io: file, filename: 'salade2.png', content_type: 'image/png')
+quiche1 = Menu.create(name: "Quiche chèvre épinard", description: "Pâte brisée, chèvre, épinard, fromage frais, crème fraîche, oeuf.", price: 5, number_of_box: 1, shop: fournil)
+file = URI.open('https://mediacenter.bonduelle.com/cdn/201902/FRA0110_QUICHE_AUX_EPINARDS_ET_CHEVRE_HAUTE_DEFINITION_011650.jpg')
+quiche1.photo.attach(io: file, filename: 'quiche1.png', content_type: 'image/png')
+quiche2 = Menu.create(name: "Quiche lorraine", description: "Pâte brisée, jambon*, lardons*, emmental, crème fraîche, oeuf.", price: 5, number_of_box: 1, shop: fournil)
+file = URI.open('https://img.cuisineaz.com/660x660/2015/03/11/i91026-quiche-lorraine-traditionnelle.jpg')
+quiche2.photo.attach(io: file, filename: 'quiche2.png', content_type: 'image/png')
 
 #----------------PANETIERE----------------#
-Menu.create!(name: "Poké bowl saumon", description: "Riz, mangue, jeune pousse d'épinard, tomate cerise, saumon fumé, pavot, vinaigrette au soja et gingembre.", price: 9, number_of_box: 1, shop: panetiere)
-Menu.create(name: "Taboulé libanais", description: "Taboulais libanais, feuille de batavia, boulette falafel, tomate cerise.", price: 7, number_of_box: 1, shop: panetiere)
-Menu.create(name: "Pizza royale", description: "Sauce tomate, fromage râpé, champignon, jambon blanc, olive noire, herbes de Provence.", price: 3, number_of_box: 1, shop: panetiere)
-Menu.create(name: "Pizza Margarita", description: "Sauce tomate, fromage râpé, olive noire, herbes de Provence.", price: 3, number_of_box: 1, shop: panetiere)
-Menu.create(name: "Croque boulanger poulet", description: "Pain multi-graînes, poulet, bechamel, fromage, sel, poivre.", price: 5, number_of_box: 1, shop: panetiere)
-Menu.create(name: "Croque boulanger jambon", description: "Pain multi-graînes, jambon, bechamel, fromage, sel, poivre.", price: 5, number_of_box: 1, shop: panetiere)
+poke1 = Menu.create!(name: "Poké bowl saumon", description: "Riz, mangue, jeune pousse d'épinard, tomate cerise, saumon fumé, pavot, vinaigrette au soja et gingembre.", price: 9, number_of_box: 1, shop: panetiere)
+file = URI.open('https://dxm.dam.savencia.com/api/wedia/dam/transform/fix635d9eidk9oox7szq1s3wqskwhzxeoyjydge/800?t=resize&width=800')
+poke1.photo.attach(io: file, filename: 'poke1.png', content_type: 'image/png')
+taboule1 = Menu.create(name: "Taboulé libanais", description: "Taboulais libanais, feuille de batavia, boulette falafel, tomate cerise.", price: 7, number_of_box: 1, shop: panetiere)
+file = URI.open('http://www.drive-patrick-filles.com/161-thickbox_default/taboulet-a-la-menthe-fraiche-200gr.jpg')
+taboule1.photo.attach(io: file, filename: 'taboule1.png', content_type: 'image/png')
+pizza1 = Menu.create(name: "Pizza royale", description: "Sauce tomate, fromage râpé, champignon, jambon blanc, olive noire, herbes de Provence.", price: 3, number_of_box: 1, shop: panetiere)
+file = URI.open('https://img.cuisineaz.com/660x660/2021/02/25/i159373-pizza-margherita.jpeg')
+pizza1.photo.attach(io: file, filename: 'pizza1.png', content_type: 'image/png')
+pizza2 = Menu.create(name: "Pizza Margarita", description: "Sauce tomate, fromage râpé, olive noire, herbes de Provence.", price: 3, number_of_box: 1, shop: panetiere)
+file = URI.open('https://assets.afcdn.com/recipe/20200206/107152_w1024h1024c1cx176cy267cxb353cyb535.jpg')
+pizza2.photo.attach(io: file, filename: 'pizza2.png', content_type: 'image/png')
+croque1 = Menu.create(name: "Croque boulanger poulet", description: "Pain multi-graînes, poulet, bechamel, fromage, sel, poivre.", price: 5, number_of_box: 1, shop: panetiere)
+file = URI.open('https://chefcuisto.com/files/2014/10/croque-monsieur-1.jpg')
+croque1.photo.attach(io: file, filename: 'croque1.png', content_type: 'image/png')
+croque2 = Menu.create(name: "Croque boulanger jambon", description: "Pain multi-graînes, jambon, bechamel, fromage, sel, poivre.", price: 5, number_of_box: 1, shop: panetiere)
+file = URI.open('https://www.delizioso.fr/wp-content/uploads/2019/09/croque-monsieur-poulet-%C3%A9pinards.jpg')
+croque2.photo.attach(io: file, filename: 'croque2.png', content_type: 'image/png')
 
 #----------------PERLETTE----------------#
-Menu.create(name: "Bagel cream cheese & saumon", description: "Pain pavot, cream cheese, saumon fumé, aneth.", price: 3, number_of_box: 1, shop: perlette)
-Menu.create(name: "Bagel poulet curry", description: "Pain pavot, poulet, curry, moutarde, roquette.", price: 3, number_of_box: 1, shop: perlette)
-Menu.create!(name: "Miss Perlette", description: "Crème légère mascarpone vanillée, framboises fraîches, meringues craquantes et fondantes.", price: 4, number_of_box: 1, shop: perlette)
-Menu.create(name: "Le Banoffee", description: "Tartelette spéculoos, caramel, bananes, crème montée.", price: 4, number_of_box: 1, shop: perlette)
+bagle1 = Menu.create(name: "Bagel cream cheese & saumon", description: "Pain pavot, cream cheese, saumon fumé, aneth.", price: 3, number_of_box: 1, shop: perlette)
+file = URI.open('https://static1.terrafemina.com/articles/4/34/24/24/@/504154-recette-de-bagle-pour-l-ete-953x0-2.jpg')
+bagle1.photo.attach(io: file, filename: 'bagle1.png', content_type: 'image/png')
+bagle2 = Menu.create(name: "Bagel poulet curry", description: "Pain pavot, poulet, curry, moutarde, roquette.", price: 3, number_of_box: 1, shop: perlette)
+file = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/0f/01/03/08/salmon-bagle-honey-something.jpg')
+bagle2.photo.attach(io: file, filename: 'bagle2.png', content_type: 'image/png')
+dessert1 = Menu.create!(name: "Miss Perlette", description: "Crème légère mascarpone vanillée, framboises fraîches, meringues craquantes et fondantes.", price: 4, number_of_box: 1, shop: perlette)
+file = URI.open('https://www.rustica.fr/images/211503702-1-l760-h550.jpg')
+dessert1.photo.attach(io: file, filename: 'dessert1.png', content_type: 'image/png')
+dessert2 = Menu.create(name: "Le Banoffee", description: "Tartelette spéculoos, caramel, bananes, crème montée.", price: 4, number_of_box: 1, shop: perlette)
+file = URI.open('https://static.750g.com/images/600-600/daf368733445291fbea90ee8f03c7fa1/banoffee.jpg')
+dessert2.photo.attach(io: file, filename: 'dessert2.png', content_type: 'image/png')
 
 #Creation reviews
 

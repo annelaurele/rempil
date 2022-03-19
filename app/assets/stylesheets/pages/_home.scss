@@ -46,9 +46,10 @@
 }
 
 .form-search {
-  padding-top: 4px;
+  padding-top: 7px;
   padding-bottom: 7px;
   width: 323px;
+  padding-left: 10px;
 }
 
 // .btn-ghost {
@@ -92,7 +93,7 @@
 .distance-shop-card {
   border-radius: 15px;
   display: inline-block;
-  height: 48vh;
+  height: 52vh;
 }
 
 .card-shop-distance-category-description {
@@ -119,9 +120,8 @@
 }
 
 .content-wrapper-home {
-  min-height: calc(21vh - 70px - 80px);
+  min-height: calc(22vh - 70px - 80px);
 }
-
 
 //map
 .map_category {

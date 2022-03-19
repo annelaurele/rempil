@@ -1,4 +1,6 @@
 class RentalsController < ApplicationController
+  # skip_before_action :verify_authenticity_token, only: :create
+  # self.per_form_csrf_tokens = true
   def index
     @user = current_user
     @rentals = Rental.where(user: @user)

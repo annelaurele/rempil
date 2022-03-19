@@ -24,7 +24,6 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import "@fortawesome/fontawesome-free/css/all";
 import { initStarRating } from '../plugins/init_star_rating';
 import "controllers"
 import { initMapbox } from '../plugins/init_mapbox';

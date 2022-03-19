@@ -21,7 +21,7 @@
 <div class="container description-card">
 
     <%= cl_image_tag @shop.photo.key, class: "shop-show-big-image" %>
-    <p style="decoration: none; color: #ffd700; font-size: 18px"> <%= icon('fas','star') %> <%= @shop.average_rate %> <span style= "font-size: 16px" data-toggle="modal" data-target="#Modalcomment">(Voir les commentaires)</span></p>
+    <p style="decoration: none; color: #FFBD36; font-size: 18px"> <%= icon('fas','star') %> <%= @shop.average_rate %> <span style= "font-size: 16px" data-toggle="modal" data-target="#Modalcomment">(Voir les commentaires)</span></p>
     <div class="modal fade" id="Modalcomment" role="dialog" aria-labelledby="ModalreviewLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -32,7 +32,7 @@
           <div class="modal-body">
             <% @shop.ratings.each do |rating| %>
             <div><span style="font-style: italic"><%= rating.user.name %> </span><span style="font-size: 12px"> <%= rating.created_at.strftime("%d %b %Y") %></span></div>
-            <div><span style="color: #ffd700; font-size: 16px important!"> <% rating.rating.times do %><%= icon('fas','star')%><% end %><% (5 - rating.rating).times do %><%= icon('far','star')%><% end %></span></div>
+            <div><span style="color: #FFBD36; font-size: 16px important!"> <% rating.rating.times do %><%= icon('fas','star')%><% end %><% (5 - rating.rating).times do %><%= icon('far','star')%><% end %></span></div>
             <p style="font-size: 16px"><%= rating.content %></p>
             <hr>
             <% end %>
@@ -43,6 +43,7 @@
     <p> <%= @shop.description %> </p>
     <div class="sub-show-card">
         <%# <p id="couleur-heure"> Ouvert, ferme à <p> %>
+        <% if @menus.exists? %>
           <div class="card-menu-list">
             <h3 id="menu-show"><span style="color: #FFBD36"><%= @shop.name %></span> vous propose :</h3><br>
             <form action="/shops/<%= @shop.id %>/rentals" method="post" id="new_rental">
@@ -58,7 +59,7 @@
                       <div class='ctrl; increment-button-display' >
                         <div class='ctrl__button ctrl__button--decrement; increment-button' data-insert-in-list-target="form_less" data-action="click->insert-in-list#less">&ndash;</div>
                         <div class='ctrl__counter'>
-                          <input class='ctrl__counter-input; increment-button-number' maxlength='10' type='text' value='0' data-insert-in-list-target="items" name="rental[menus][<%= menu.id %>]">
+                          <input class='ctrl__counter-input; increment-button-number' maxlength='10' type='number' value='0' data-insert-in-list-target="items" name="rental[menus][<%= menu.id %>]">
                         </div>
                         <div class='ctrl__button ctrl__button--increment; increment-button' data-insert-in-list-target="form_more" data-action="click->insert-in-list#more">+</div>
                       </div>
@@ -66,13 +67,21 @@
                     </div>
 
                 </div>
+                <% if menu.photo.attached? %>
+                <%= image_tag menu.photo, size: "112x112", class: "picture_menu_show" %>
+                <% else %>
                 <%= image_tag "boulangerie.jpg", size: "112x112", class: "picture_menu_show" %>
+                <% end %>
+
               </div>
               <hr>
             <% end  %>
-            <br><div style="align-items-center" ><input type="submit" value="Réserver" class= "btn btn-secondary btn-index-shop"></div>
+            <br><div style="align-items-center"><input type="submit" value="Réserver" class= "btn btn-secondary btn-index-shop"></div>
             </form>
           </div>
+        <% else %>
+        <p style="color: red"><span style="font-weight: bolder"> OUPSI !</span> Tu ne peux pas encore réserver ici.</p>
+        <% end %>
     </div>
 </div>
 
@@ -84,11 +93,11 @@
 
     <% @similar_shops.each do |shop| %>
     <%= link_to shop_path(shop.id) do %>
-    <div class="card commercant-similaire" style="width: 23.3rem;">
+    <div class="card commercant-similaire" style="width: 21.8rem;">
       <%= cl_image_tag shop.photo.key, class: "card-img-top", height: "210px" %>
       <div class="d-flex justify-content-between shop-info">
         <h4 id="shop-name"> <%= shop.name %></h4>
-        <span style="decoration: none; color: #ffd700; font-size: 18px"> <%= icon('fas','star') %> <%= shop.average_rate %></span>
+        <span style="decoration: none; color: #FFBD36; font-size: 18px"> <%= icon('fas','star') %> <%= shop.average_rate %></span>
       </div>
       <div class="shops-category">
         <p class="category"><%= shop.category.gsub(/_/,' ') %></p>
