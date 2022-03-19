@@ -36,6 +36,8 @@
     color: #C8C9C7;
 }
 
+/*----------MENU SHOW-------------------*/
+
 .card-menu-show {
   display: flex;
   justify-content: space-between;
@@ -54,6 +56,7 @@
 
 .picture_menu_show {
   display: flex;
+  border-radius: 5px;
 }
 
 .price-card-menu-show {
@@ -61,8 +64,12 @@
   margin-bottom: 5px;
   font-weight: bolder;
   color: #FFBD36;
+  border: #2C9199;
 }
 
+[data-target="#target267"]{
+  word-spacing: 2px;
+}
 #btn-link a {
   text-decoration: none !important;
   color:#2C9199;

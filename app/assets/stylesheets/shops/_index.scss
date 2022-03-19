@@ -43,6 +43,7 @@
   // height: 50vh;
 }
 
+
 .shop-info {
   flex: 1 1 auto;
   min-height: 1px;
@@ -99,4 +100,8 @@ input[type=text] {
   border-radius: 10px;
   padding-top: 9px;
   padding-bottom: 9px;
+}
+
+a, a:hover, a:active, a:visited, a:focus {
+    text-decoration:none;
 }
