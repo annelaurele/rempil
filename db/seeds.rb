@@ -266,7 +266,7 @@ SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Vendredi", 
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Samedi", shop: panetiere)
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Dimanche", shop: panetiere)
 
-perlette = Shop.create!(name: "Perlette", address: "57 Rue des Filatiers, 31000 Toulouse", mobile: "0982366046", email: "", category: 0, description: "Perlette propose des pâtisseries sur place ou à emporter, mais aussi des menus salés. Une pause gourmande bien méritée !", user: julia, average_rate: 4.5, longitude: 43.599880939608894, latitude: 1.441918695513136)
+perlette = Shop.create!(name: "Perlette", address: "57 Rue des Filatiers, 31000 Toulouse", mobile: "0982366046", email: "", category: 0, description: "Perlette propose des pâtisseries sur place ou à emporter, mais aussi des menus salés pour une pause bien méritée.", user: julia, average_rate: 4.5, longitude: 43.599880939608894, latitude: 1.441918695513136)
 file = URI.open('https://www.luckymiam.com/wp-content/uploads/perlette-lucky-miam-9.jpg')
 perlette.photo.attach(io: file, filename: 'perlette.png', content_type: 'image/png')
 SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Lundi", shop: perlette)

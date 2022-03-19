@@ -59,7 +59,7 @@
                       <div class='ctrl; increment-button-display' >
                         <div class='ctrl__button ctrl__button--decrement; increment-button' data-insert-in-list-target="form_less" data-action="click->insert-in-list#less">&ndash;</div>
                         <div class='ctrl__counter'>
-                          <input class='ctrl__counter-input; increment-button-number' maxlength='10' type='text' value='0' data-insert-in-list-target="items" name="rental[menus][<%= menu.id %>]">
+                          <input class='ctrl__counter-input; increment-button-number' maxlength='10' type='number' value='0' data-insert-in-list-target="items" name="rental[menus][<%= menu.id %>]">
                         </div>
                         <div class='ctrl__button ctrl__button--increment; increment-button' data-insert-in-list-target="form_more" data-action="click->insert-in-list#more">+</div>
                       </div>
@@ -72,11 +72,11 @@
                 <% else %>
                 <%= image_tag "boulangerie.jpg", size: "112x112", class: "picture_menu_show" %>
                 <% end %>
-                
+
               </div>
               <hr>
             <% end  %>
-            <br><div style="align-items-center" ><input type="submit" value="Réserver" class= "btn btn-secondary btn-index-shop"></div>
+            <br><div style="align-items-center"><input type="submit" value="Réserver" class= "btn btn-secondary btn-index-shop"></div>
             </form>
           </div>
         <% else %>
@@ -93,7 +93,7 @@
 
     <% @similar_shops.each do |shop| %>
     <%= link_to shop_path(shop.id) do %>
-    <div class="card commercant-similaire" style="width: 23.3rem;">
+    <div class="card commercant-similaire" style="width: 21.8rem;">
       <%= cl_image_tag shop.photo.key, class: "card-img-top", height: "210px" %>
       <div class="d-flex justify-content-between shop-info">
         <h4 id="shop-name"> <%= shop.name %></h4>

@@ -1,4 +1,6 @@
 class RentalsController < ApplicationController
+  # skip_before_action :verify_authenticity_token, only: :create
+  # self.per_form_csrf_tokens = true
   def index
     @user = current_user
     @total = Rental.where(user: @user).map(&:total_of_box).sum
