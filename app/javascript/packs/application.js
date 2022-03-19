@@ -68,7 +68,7 @@ function generateDropdownMarkup(container) {
       </div>
     </div>
   `;
-  $navWrapper.prepend(markup);
+  // $navWrapper.prepend(markup);
 }
 
 function generateDropdownLinksMarkup(items) {

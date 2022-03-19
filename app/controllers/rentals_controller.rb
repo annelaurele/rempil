@@ -4,15 +4,15 @@ class RentalsController < ApplicationController
   def index
     @user = current_user
     @rentals = Rental.where(user: @user)
-    @total = SelectionRental.where(rental: @rentals).map(&:quantity).sum
-    @selection_rentals = SelectionRental.where(rental: @rentals)
+    @total = Rental.where(user: @user).map(&:total_of_box).sum
+    # @selection_rentals = SelectionRental.where(rental: @rentals)
     @user = check_status(@user, @total)
     @user.save
     @next_step = next_step_func(@total)
     @all_users_rentals = Rental.where(user: @user)
-    @actuals = fusion_selection(@selection_rentals, @all_users_rentals.where(status: 0).sort_by(&:rental_time_end))
-    @pasts = fusion_selection(@selection_rentals, @all_users_rentals.where(status: 1).sort_by(&:rental_time_end))
-    @paids = fusion_selection(@selection_rentals, @all_users_rentals.where(status: 2).sort_by(&:rental_time_end))
+    @actuals = @all_users_rentals.where(status: 0).sort_by(&:rental_time_end)
+    @pasts = @all_users_rentals.where(status: 1).sort_by(&:rental_time_end)
+    @paids = @all_users_rentals.where(status: 2).sort_by(&:rental_time_end)
     @rating = Rating.new
   end
 

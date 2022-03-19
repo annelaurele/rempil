@@ -102,14 +102,14 @@
   <div class="dash-card">
     <div class="div-shop-item dash-shop-pic">
       <%= cl_image_tag past.shop.photo.key, :transformation=>[
-      {:gravity=>"face", :height=>500, :width=>400, :crop=>"crop"},
+      {:gravity=>"face", :height=>400, :width=>400, :crop=>"crop"},
       {:radius=>"50"},
       {:width=>100, :crop=>"scale"}
       ] %>
     </div>
     <div class="div-shop-item">
     <h4 class="nom-restaurant-dashboard" style="font-weight: 600; color: #FFBD36"><%= past.shop.name %></h4>
-    <p>Nombre de consigne(s): <%= past.total_of_box %></p>
+    <%# <p>Nombre de consigne(s): <%= past.total_of_box %>
     <p>A rendre avant le: <%= past.rental_time_end.strftime("%d/%m/%Y") %></p>
       <div class="button-dashboard-card">
       <div id="button-fiche">
@@ -160,14 +160,14 @@
   <div class="dash-card">
     <div class="div-shop-item dash-shop-pic">
       <%= cl_image_tag paid.shop.photo.key, :transformation=>[
-      {:gravity=>"face", :height=>500, :width=>400, :crop=>"crop"},
+      {:gravity=>"face", :height=>400, :width=>400, :crop=>"crop"},
       {:radius=>"50"},
       {:width=>100, :crop=>"scale"}
       ] %>
     </div>
     <div class="div-shop-item">
     <h4 class="nom-restaurant-dashboard" style="font-weight: 600; color: #FFBD36"><%= paid.shop.name %></h4>
-    <p>Nombre de consigne(s): <%= paid.total_of_box %></p>
+    <%# <p>Nombre de consigne(s): <%= paid.total_of_box %>
     <p>A rendre avant le: <%= paid.rental_time_end.strftime("%d/%m/%Y") %></p>
       <div class="button-dashboard-card">
       <div id="button-fiche">
