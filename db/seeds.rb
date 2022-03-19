@@ -281,9 +281,9 @@ SlotHour.create(opening_hour: 7, closing_hour: 20, day_of_the_week: "Dimanche", 
 
 puts '----- Creating rentals -----'
 
-Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 0, shop: stcyp, user: elliot, total_of_box: 1)
-Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 1, shop: prosciutteria, user: elliot, total_of_box: 1)
-Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 2, shop: biocoop, user: elliot, total_of_box: 1)
+r1 = Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 0, shop: stcyp, user: elliot, total_of_box: 1)
+r2 = Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 1, shop: prosciutteria, user: elliot, total_of_box: 1)
+r3 = Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 2, shop: biocoop, user: elliot, total_of_box: 1)
 
 Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 0, shop: stcyp, user: julia, total_of_box: 1)
 Rental.create(rental_time_start: Time.now - 1.hours, rental_time_end: Time.now + 1.hours, status: 1, shop: prosciutteria, user: julia, total_of_box: 1)
@@ -337,3 +337,12 @@ Rating.create!(rating: 3, shop: panetiere, user: julia, content: "Boulangerie sy
 Rating.create!(rating: 4, shop: panetiere, user: elliot, content: "Vendeuse pas très aimable mais le pain est bon")
 Rating.create!(rating: 3, shop: panetiere, user: annelaure, content: "J'y vais de temps en temps, je vous conseille la salade")
 Rating.create!(rating: 2, shop: panetiere, user: marina, content: "Pratique mais pas aimable")
+
+
+puts '----- oeoe -----'
+SelectionRental.create!(rental: r1, user_id: elliot.id, menu: item1, quantity: 3)
+SelectionRental.create!(rental: r1, user_id: elliot.id, menu: item2, quantity: 1)
+
+SelectionRental.create!(rental: r2, user_id: elliot.id, menu: item1, quantity: 1)
+
+SelectionRental.create!(rental: r3, user_id: elliot.id, menu: item1, quantity: 1)
