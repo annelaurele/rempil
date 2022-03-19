@@ -7,12 +7,13 @@
         <% end %>
       </div>
       <div class="text-header-dashboard">
-        <h1 style="font-size: 24px; margin-left: 5px; font-weight: 700;">Ton statut : </span><%= @user.status.gsub(/_/,' ') %></h1>
-        <h2 style="font-size: 20px; margin-left: 5px; color:#B1E4E3; font-weight: 700;">Consignes : <%= @total %><h2>
+        <h1 style="font-size: 24px; margin-left: 5px; font-weight: 700;">Ton statut : </span><%= @user.status.gsub(/_/,' ') %></h1><p class="statut-accordion"><span id="btn-link"><a href="#" data-toggle="collapse" data-target="#target<%= @user.status %>">En savoir plus ▾</a></span></p>
+          <div id="target<%= @user.status %>" class="collapse">
+            <p class="statut-dashboard"><span style="font-size: 14px; color:#1B1818">Plus que <span style= "color: #FFBD36; font-weight: 600;"><%= @next_step %></span> consigne(s) avant de<br>passer au statut <span style= "color: #FFBD36; font-weight: 600;">jolie fleur</span> pour profiter de <span style= "color: #FFBD36; font-weight: 600;">-10%</span> sur ta<br>prochaine commande</p></span>
+          </div>
+        <h2 class="consigne-number" style="font-size: 20px; margin-left: 5px; color:#B1E4E3; font-weight: 700;">Consignes : <%= @total %><h2>
       </div>
     </div>
-
-<p style="font-size: 14px; text-align: center; margin-top: 10px; color:#1B1818; font-weight: 600;">Plus que <%= @next_step %> consigne(s) avant ton prochain statut !</p>
 
 
   <!---------------------------NAV TAB-------------------------------->
@@ -42,21 +43,21 @@
   <div class="dash-card">
     <div class="div-shop-item dash-shop-pic">
       <%= cl_image_tag actual.shop.photo.key, :transformation=>[
-      {:gravity=>"face", :height=>500, :width=>400, :crop=>"crop"},
+      {:gravity=>"face", :height=>400, :width=>400, :crop=>"crop"},
       {:radius=>"50"},
       {:width=>100, :crop=>"scale"}
       ] %>
     </div>
     <div class="div-shop-item">
-    <h4 class="nom-restaurant-dashboard" style="font-weight: 600; color: #FFBD36"><%= actual.shop.name %></h4>
-    <p>Nombre de consigne(s) : <%= actual.total_of_box %></p>
-    <p>A rendre avant le : <%= actual.rental_time_end.strftime("%d/%m/%Y") %></p>
+      <h4 class="nom-restaurant-dashboard" style="font-weight: 600; color: #FFBD36"><%= link_to actual.shop.name, shop_path(actual.shop.id) %></h4>
+      <%# <p>Nombre de consigne(s) : <%= actual.total_of_box %>
+      <p>A rendre avant le : <%= actual.rental_time_end.strftime("%d/%m/%Y") %></p>
       <div class="button-dashboard-card">
-      <div id="button-fiche">
-      <%= link_to "Voir la fiche", shop_path(actual.shop.id), class: "btn dash-info-button" %>
-      </div>
+        <div id="button-fiche">
+          <%= link_to "Voir le QR Code", shop_rental_qrcode_path(actual.shop, actual), class: "btn dash-info-button" %>
+        </div>
         <div id="button-comment">
-            <button type="button" class="btn dash-info-button" data-toggle="modal" data-target="#Modalrating">Noter</button>
+          <button type="button" class="btn dash-info-button" data-toggle="modal" data-target="#Modalrating">Noter</button>
         </div>
         <div class="modal fade" id="Modalrating" role="dialog" aria-labelledby="ModalreviewLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
