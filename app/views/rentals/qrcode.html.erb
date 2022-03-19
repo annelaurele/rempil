@@ -26,9 +26,15 @@
   <div class="resa-items">
     <div class="resa-item">
     <% @menus.each do |menu| %>
-      <%= menu.name %>
-      <h2 class="resa-total"><span>Total : <%= menu.price %>€</span></h2>
+      <div class="resa-item-text">
+        <% if menu.quantity > 1 %>
+          <%= menu.quantity%>x :
+        <% end %>
+        <%= menu.menu.name %>
+        <%= menu.menu.price * menu.quantity %>€
+      </div>
     <% end %>
+    <h2 class="resa-total"><span>Total : <%= @total %>€</span></h2>
     </div>
 
 </div>

@@ -380,9 +380,3 @@ Rating.create!(rating: 2, shop: panetiere, user: marina, content: "Pratique mais
 
 
 puts '----- oeoe -----'
-SelectionRental.create!(rental: r1, user_id: elliot.id, menu: item1, quantity: 3)
-SelectionRental.create!(rental: r1, user_id: elliot.id, menu: item2, quantity: 1)
-
-SelectionRental.create!(rental: r2, user_id: elliot.id, menu: item1, quantity: 1)
-
-SelectionRental.create!(rental: r3, user_id: elliot.id, menu: item1, quantity: 1)

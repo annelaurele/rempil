@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 2022_03_17_182404) do
 
   create_table "shops", force: :cascade do |t|
     t.string "name"
+    t.string "address"
     t.string "description"
     t.string "mobile"
     t.string "email"

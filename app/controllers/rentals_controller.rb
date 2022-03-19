@@ -20,10 +20,11 @@ class RentalsController < ApplicationController
     @user = current_user
     @shop = Shop.find(params[:shop_id])
     @rental = Rental.find(params[:rental_id])
-    @total = Rental.where(user: @user).count + 1
+    @total = 0
     @menus = SelectionRental.where(rental: @rental).map do |selection|
-      selection.menu
+      selection
     end
+    @menus.each { |selection| @total += selection.quantity * selection.menu.price }
     @qr = RQRCode::QRCode.new(@rental.id.to_s)
     @svg = @qr.as_svg(
     color: "000",
@@ -102,7 +103,7 @@ class RentalsController < ApplicationController
   def manage_menus(menus)
     selection_filtered = menus.map do |menu_id, quantity|
       if quantity.to_i > 0
-        {menu_id: menu_id, quantity: quantity.to_i, user: current_user}
+        {menu_id: menu_id, quantity: quantity.to_i, user_id: current_user.id}
       else
         nil
       end
@@ -120,7 +121,6 @@ class RentalsController < ApplicationController
           res << rtl
         end
       end
-      raise
     end
     res
   end
