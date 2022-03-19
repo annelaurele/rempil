@@ -70,10 +70,10 @@
               </div>
                 <div class="modal-body">
                   <%= simple_form_for [actual.shop, actual, @rating] do |f| %>
-                    <p style="text-align: center">Ecris ton avis <span style="color: #FFBD36">ici... </p>
-                    <%= f.input :content, placeholder: "J'adore ce commerçant..." %>
+                    <p style="text-align: center">Ecris ton avis <span style="color: #FFBD36">ici...</span></p>
+                    <div style="width: 125%"><%= f.input :content, placeholder: "J'adore ce commerçant..." %></div>
                     <p style="text-align: center">Et ta note <span style="color: #FFBD36">là...</span></p>
-                    <div class="star-note"><%= f.input :rating, collection: (1..5).to_a %></div>
+                    <div class="star-note"><%= f.input :rating, collection: (1..5).to_a, input_html: {class: "etoile"}  %></div>
                     <%= f.submit "Je valide", class: "btn btn-block btn-info" %>
                   <% end %>
                 </div>
@@ -115,9 +115,9 @@
       <%= link_to "Voir la fiche", shop_path(past.shop.id), class: "btn dash-info-button" %>
       </div>
         <div id="button-comment">
-            <button type="button" class="btn dash-info-button" data-toggle="modal" data-target="#Modalrating">Noter</button>
+            <button type="button" class="btn dash-info-button" data-toggle="modal" data-target="#Modalrating2">Noter</button>
         </div>
-        <div class="modal fade" id="Modalrating" role="dialog" aria-labelledby="ModalreviewLabel" aria-hidden="true">
+        <div class="modal fade" id="Modalrating2" role="dialog" aria-labelledby="ModalreviewLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -130,9 +130,9 @@
                 <div class="modal-body">
                   <%= simple_form_for [past.shop, past, @rating] do |f| %>
                     <p style="text-align: center">Ecris ton avis <span style="color: #FFBD36">ici... </p>
-                    <%= f.input :content, placeholder: "J'adore ce commerçant..." %>
+                    <div style="width: 125%"><%= f.input :content, placeholder: "J'adore ce commerçant..." %></div>
                     <p style="text-align: center">Et ta note <span style="color: #FFBD36">là...</span></p>
-                    <div class="star-note"><%= f.input :rating, collection: (1..5).to_a %></div>
+                    <div class="star-note"><%= f.input :rating, collection: (1..5).to_a, input_html: {class: "etoile"} %></div>
                     <%= f.submit "Je valide", class: "btn btn-block btn-info" %>
                   <% end %>
                 </div>
@@ -173,9 +173,9 @@
       <%= link_to "Voir la fiche", shop_path(paid.shop.id), class: "btn dash-info-button" %>
       </div>
         <div id="button-comment">
-            <button type="button" class="btn dash-info-button" data-toggle="modal" data-target="#Modalrating">Noter</button>
+            <button type="button" class="btn dash-info-button" data-toggle="modal" data-target="#Modalrating3">Noter</button>
         </div>
-        <div class="modal fade" id="Modalrating" role="dialog" aria-labelledby="ModalreviewLabel" aria-hidden="true">
+        <div class="modal fade" id="Modalrating3" role="dialog" aria-labelledby="ModalreviewLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -188,9 +188,9 @@
                 <div class="modal-body">
                   <%= simple_form_for [paid.shop, paid, @rating] do |f| %>
                     <p style="text-align: center">Ecris ton avis <span style="color: #FFBD36">ici... </p>
-                    <%= f.input :content, placeholder: "J'adore ce commerçant..." %>
+                    <div style="width: 125%"><%= f.input :content, placeholder: "J'adore ce commerçant..." %></div>
                     <p style="text-align: center">Et ta note <span style="color: #FFBD36">là...</span></p>
-                    <div class="star-note"><%= f.input :rating, collection: (1..5).to_a %></div>
+                    <div class="star-note"><%= f.input :rating, collection: (1..5).to_a, input_html: {class: "etoile"}  %></div>
                     <%= f.submit "Je valide", class: "btn btn-block btn-info" %>
                   <% end %>
                 </div>
